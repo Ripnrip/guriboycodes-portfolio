@@ -2,75 +2,21 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx';
 import { Badge } from '@/components/ui/badge.jsx';
 import { Spotlight } from '@/components/ui/spotlight.jsx';
-import { Building2, Users, Award, Code, Briefcase } from 'lucide-react';
+import { Building2, Users, Award, Code, Briefcase, GraduationCap, FileText } from 'lucide-react';
+import { portfolioData } from '../data/portfolio';
 
 const About = () => {
   const [selectedJob, setSelectedJob] = useState(0);
+  const { experience, education, patents } = portfolioData;
 
-  const careerData = [
-    {
-      company: "PayPal",
-      role: "Staff iOS Engineer",
-      period: "2019 - Present",
-      location: "Tampa, FL",
-      icon: <Building2 className="h-6 w-6" />,
-      highlights: [
-        "Built and scaled Venmo iOS features for 92M active users",
-        "Led AI initiatives (2023-2025) with patent applications",
-        "Closed $60M enterprise contract in year one",
-        "Designed High-Level Designs (HLD) for cross-org architecture",
-        "Launched Venmo Gift Cards with internal org-wide trailer",
-        "Spearheaded Pay With Venmo with JetBlue partner engineering",
-        "Conducted 400+ interviews and ERG leadership (Sikh Faith Group)"
-      ],
-      technologies: ["Swift", "SwiftUI", "CoreML", "AI/ML", "iOS", "Venmo APIs"]
-    },
-    {
-      company: "Google Stadia",
-      role: "iOS Developer/Consultant",
-      period: "2018 - 2019",
-      location: "Mountain View, CA",
-      icon: <Code className="h-6 w-6" />,
-      highlights: [
-        "Supported launch readiness for Stadia cloud gaming platform",
-        "Streamlined cross-platform integrations",
-        "Worked with Flutter/Dart leveraging iOS domain expertise",
-        "Developed native iOS plugins and troubleshooting",
-        "Conducted ~100 interviews for engineering hires"
-      ],
-      technologies: ["Flutter", "Dart", "iOS", "Objective-C", "Swift", "Cloud Gaming"]
-    },
-    {
-      company: "Morgan Stanley",
-      role: "iOS Engineer",
-      period: "2016 - 2018",
-      location: "Greater New York City",
-      icon: <Briefcase className="h-6 w-6" />,
-      highlights: [
-        "Modernized Wealth Management app for ultra-high-net-worth clients",
-        "Migrated codebase from 98% Objective-C to 80% Objective-C / 20% Swift",
-        "Refactored Cordova hybrid system (~75 plugins)",
-        "Implemented check-deposit, biometric authentication, certificate-pinning",
-        "Added jailbreak detection and push authentication features"
-      ],
-      technologies: ["Swift", "Objective-C", "Cordova", "Angular", "iOS", "Banking"]
-    },
-    {
-      company: "Parabit Systems",
-      role: "Mobile Developer / R&D",
-      period: "2017 - 2018",
-      location: "Freeport, New York",
-      icon: <Award className="h-6 w-6" />,
-      highlights: [
-        "R&D for iOS, Android, Cloud, and Blockchain applications",
-        "Created internal tool using Bluetooth Low Energy on MMR hardware",
-        "Built app from scratch using Swift with MVC-N architecture",
-        "Implemented AWS Serverless with NodeJS/Lambda and DynamoDB",
-        "Worked with Nordic Semiconductor Chipsets and Google Eddystone Beacons"
-      ],
-      technologies: ["Swift", "Bluetooth LE", "AWS", "NodeJS", "DynamoDB", "IoT"]
+  const getJobIcon = (company) => {
+    switch (company.toLowerCase()) {
+      case 'paypal': return <Building2 className="h-6 w-6" />;
+      case 'google stadia': return <Code className="h-6 w-6" />;
+      case 'morgan stanley': return <Briefcase className="h-6 w-6" />;
+      default: return <Award className="h-6 w-6" />;
     }
-  ];
+  };
 
   return (
     <section id="about" className="py-20 px-6 md:px-8 bg-background">
@@ -89,7 +35,7 @@ const About = () => {
           {/* Timeline Navigation */}
           <div className="lg:col-span-1">
             <div className="space-y-4">
-              {careerData.map((job, index) => (
+              {experience.map((job, index) => (
                 <Spotlight key={index}>
                   <Card 
                     className={`cursor-pointer transition-all duration-300 ${
@@ -104,7 +50,7 @@ const About = () => {
                         <div className={`p-2 rounded-lg ${
                           selectedJob === index ? 'bg-primary/20 text-primary' : 'bg-muted text-muted-foreground'
                         }`}>
-                          {job.icon}
+                          {getJobIcon(job.company)}
                         </div>
                         <div>
                           <CardTitle className="text-lg">{job.company}</CardTitle>
@@ -125,17 +71,17 @@ const About = () => {
                 <CardHeader>
                   <div className="flex items-center space-x-3 mb-4">
                     <div className="p-3 rounded-lg bg-primary/20 text-primary">
-                      {careerData[selectedJob].icon}
+                      {getJobIcon(experience[selectedJob].company)}
                     </div>
                     <div>
                       <CardTitle className="text-2xl text-gradient">
-                        {careerData[selectedJob].role}
+                        {experience[selectedJob].title}
                       </CardTitle>
                       <CardDescription className="text-lg">
-                        {careerData[selectedJob].company} • {careerData[selectedJob].period}
+                        {experience[selectedJob].company} • {experience[selectedJob].period}
                       </CardDescription>
                       <CardDescription className="text-sm text-foreground/60">
-                        📍 {careerData[selectedJob].location}
+                        {experience[selectedJob].duration}
                       </CardDescription>
                     </div>
                   </div>
@@ -144,32 +90,94 @@ const About = () => {
                 <CardContent className="space-y-6">
                   {/* Highlights */}
                   <div>
-                    <h4 className="text-lg font-semibold mb-3 text-foreground">Key Achievements</h4>
-                    <ul className="space-y-2">
-                      {careerData[selectedJob].highlights.map((highlight, index) => (
+                    <h4 className="text-lg font-semibold mb-3 text-foreground">Key Contributions</h4>
+                    <ul className="space-y-3">
+                      {experience[selectedJob].highlights.map((highlight, index) => (
                         <li key={index} className="flex items-start space-x-2">
-                          <span className="text-primary mt-1">•</span>
-                          <span className="text-foreground/80">{highlight}</span>
+                          <span className="text-primary mt-1.5">•</span>
+                          <span className="text-foreground/80">
+                            {highlight.project && <strong className="text-foreground">{highlight.project}: </strong>}
+                            {highlight.description}
+                          </span>
                         </li>
                       ))}
                     </ul>
-                  </div>
-
-                  {/* Technologies */}
-                  <div>
-                    <h4 className="text-lg font-semibold mb-3 text-foreground">Technologies</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {careerData[selectedJob].technologies.map((tech, index) => (
-                        <Badge key={index} variant="secondary" className="bg-primary/10 text-primary border-primary/20">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
                   </div>
                 </CardContent>
               </Card>
             </Spotlight>
           </div>
+        </div>
+
+        {/* Education, Patents & Awards Section */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
+          {/* Education */}
+          <Spotlight>
+            <Card className="bg-card-gradient border-primary/20 h-full">
+              <CardHeader>
+                <div className="flex items-center space-x-3">
+                  <GraduationCap className="h-8 w-8 text-primary" />
+                  <CardTitle className="text-2xl text-gradient">Education</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                {education.map((edu, index) => (
+                  <div key={index} className="border-l-2 border-primary/30 pl-4">
+                    <h4 className="text-lg font-semibold text-foreground">{edu.school}</h4>
+                    <p className="text-foreground/80">{edu.degree || edu.program}</p>
+                    <p className="text-sm text-foreground/60">{edu.period}</p>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </Spotlight>
+
+          {/* Patents */}
+          <Spotlight>
+            <Card className="bg-card-gradient border-primary/20 h-full">
+              <CardHeader>
+                <div className="flex items-center space-x-3">
+                  <FileText className="h-8 w-8 text-primary" />
+                  <CardTitle className="text-2xl text-gradient">Patents & IP</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                {patents.map((patent, index) => (
+                  <div key={index} className="border-l-2 border-primary/30 pl-4">
+                    <h4 className="text-lg font-semibold text-foreground">{patent.title}</h4>
+                    <p className="text-foreground/80">{patent.company}</p>
+                    <div className="flex justify-between items-center mt-2">
+                      <Badge variant="outline" className="text-xs border-primary/30 text-primary">
+                        {patent.applicationNumber}
+                      </Badge>
+                      <span className="text-sm text-foreground/60">{patent.year}</span>
+                    </div>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </Spotlight>
+
+          {/* Awards */}
+          <Spotlight>
+            <Card className="bg-card-gradient border-primary/20 h-full">
+              <CardHeader>
+                <div className="flex items-center space-x-3">
+                  <Award className="h-8 w-8 text-primary" />
+                  <CardTitle className="text-2xl text-gradient">Awards</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                {portfolioData.awards.map((award, index) => (
+                  <div key={index} className="border-l-2 border-primary/30 pl-4">
+                    <h4 className="text-lg font-semibold text-foreground">{award.title}</h4>
+                    <p className="text-foreground/80">{award.event}</p>
+                    <p className="text-sm text-foreground/60">{award.date || award.year} • {award.location || award.project}</p>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </Spotlight>
         </div>
 
         {/* Philosophy Section */}

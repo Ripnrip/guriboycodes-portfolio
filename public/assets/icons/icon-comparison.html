@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Comparison: Simple Icons vs Local vs Brandfetch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            padding: 2rem;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+        .section {
+            margin-bottom: 3rem;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #14b8a6;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #14b8a6;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .comparison-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .comparison-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .skill-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .icon-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .icon-section {
+            flex: 1;
+            text-align: center;
+        }
+        .icon-label {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .icon-display {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background: #fafafa;
+            padding: 8px;
+        }
+        .icon-display img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .icon-display .fallback {
+            font-size: 0.75rem;
+            color: #999;
+            text-align: center;
+        }
+        .status {
+            text-align: center;
+            padding: 0.5rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .status-available {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        .status-missing {
+            background: #ffebee;
+            color: #c62828;
+        }
+        .status-pending {
+            background: #fff3e0;
+            color: #e65100;
+        }
+        .divider {
+            width: 1px;
+            background: #e0e0e0;
+            margin: 0 1rem;
+        }
+        .notes {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 0.5rem;
+            text-align: center;
+            font-style: italic;
+        }
+        /* Color permutation testing */
+        .color-permutations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0e0e0;
+        }
+        .color-test {
+            text-align: center;
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+        }
+        .color-test-label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .color-test-icon {
+            width: 32px;
+            height: 32px;
+            margin: 0 auto 0.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .color-test-icon img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .color-light {
+            background: #ffffff;
+            color: #333;
+            border: 1px solid #e0e0e0;
+        }
+        .color-dark {
+            background: #1a1a1a;
+            color: #fff;
+        }
+        .color-primary {
+            background: #14b8a6;
+            color: #fff;
+        }
+        .color-gradient {
+            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Icon Comparison: Simple Icons vs Local vs Brandfetch</h1>
+        <p class="subtitle">Side-by-side comparison of icon sources for AI/ML & Agentic Systems skills with color permutation testing</p>
+        
+        <div class="section">
+            <h2 class="section-title">Icon Source Comparison</h2>
+            <div class="comparison-grid" id="comparisonGrid">
+                <!-- Icons will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const BRANDFETCH_CLIENT_ID = '1idK8XmVyip_uEzPH_4';
+
+        // 🌟 All skills from centralized config
+        const skillsToCompare = [
+            // iOS & Mobile
+            { name: 'Swift', cdn: 'https://cdn.simpleicons.org/swift/FA7343', local: 'Resume App Icon/swift.svg', domain: 'swift.org', status: 'available' },
+            { name: 'SwiftUI', cdn: 'https://cdn.simpleicons.org/swift/FA7343', local: 'Resume App Icon/swiftui.svg', domain: 'apple.com', status: 'available' },
+            { name: 'Objective-C', cdn: 'https://cdn.simpleicons.org/apple/000000', local: null, domain: 'apple.com', status: 'available' },
+            { name: 'UIKit', cdn: 'https://cdn.simpleicons.org/apple/000000', local: 'Resume App Icon/uikit.svg', domain: 'apple.com', status: 'available' },
+            { name: 'Core ML', cdn: 'https://cdn.simpleicons.org/apple/000000', local: 'Resume App Icon/coreml.svg', domain: 'apple.com', status: 'available' },
+            { name: 'MLX', cdn: 'https://cdn.simpleicons.org/apple/000000', local: 'Resume App Icon/coreml.svg', domain: 'apple.com', status: 'available' },
+            { name: 'SwiftData', cdn: 'https://cdn.simpleicons.org/apple/000000', local: 'Resume App Icon/coreml.svg', domain: 'apple.com', status: 'available' },
+            { name: 'Realm', cdn: 'https://cdn.simpleicons.org/realm/39477F', local: 'Resume App Icon/realm.svg', domain: 'realm.io', status: 'available' },
+            { name: 'ARKit', cdn: 'https://cdn.simpleicons.org/apple/000000', local: 'Resume App Icon/arkit.svg', domain: 'apple.com', status: 'available' },
+            { name: 'ActivityKit', cdn: 'https://cdn.simpleicons.org/apple/000000', local: 'Resume App Icon/activitykit.svg', domain: 'apple.com', status: 'available' },
+            { name: 'WidgetKit', cdn: 'https://cdn.simpleicons.org/apple/000000', local: 'Resume App Icon/widgetkit.svg', domain: 'apple.com', status: 'available' },
+            { name: 'MapKit', cdn: 'https://cdn.simpleicons.org/apple/000000', local: 'Resume App Icon/mapkit.svg', domain: 'apple.com', status: 'available' },
+            { name: 'RoomPlan', cdn: 'https://cdn.simpleicons.org/apple/000000', local: 'Resume App Icon/arkit.svg', domain: 'apple.com', status: 'available' },
+            { name: 'Combine', cdn: 'https://cdn.simpleicons.org/apple/000000', local: 'Resume App Icon/swift.svg', domain: 'apple.com', status: 'available' },
+            { name: 'RxSwift', cdn: 'https://cdn.simpleicons.org/reactivex/B7178C', local: null, domain: 'reactivex.io', status: 'available' },
+            { name: 'BLE', cdn: 'https://cdn.simpleicons.org/bluetooth/0082FC', local: 'Resume App Icon/ble.svg', domain: 'bluetooth.com', status: 'available' },
+            { name: 'Vapor', cdn: 'https://cdn.simpleicons.org/vapor/43A5FF', local: 'Resume App Icon/vapor.svg', domain: 'vapor.codes', status: 'available' },
+            { name: 'Serverless Swift', cdn: 'https://cdn.simpleicons.org/serverless/FF5242', local: 'Resume App Icon/serverless-swift.svg', domain: 'serverless.com', status: 'available' },
+            { name: 'Flutter', cdn: 'https://cdn.simpleicons.org/flutter/02569B', local: null, domain: 'flutter.dev', status: 'available' },
+            { name: 'Dart', cdn: 'https://cdn.simpleicons.org/dart/0175C2', local: null, domain: 'dart.dev', status: 'available' },
+            { name: 'React Native', cdn: 'https://cdn.simpleicons.org/react/61DAFB', local: null, domain: 'reactnative.dev', status: 'available' },
+            { name: 'Cordova/Ionic', cdn: 'https://cdn.simpleicons.org/ionic/3880FF', local: null, domain: 'ionicframework.com', status: 'available' },
+
+            // AI/ML & Agentic Systems
+            { name: 'Python', cdn: 'https://cdn.simpleicons.org/python/3776AB', local: 'Resume App Icon/python.svg', domain: 'python.org', status: 'available' },
+            { name: 'PyTorch', cdn: 'https://cdn.simpleicons.org/pytorch/EE4C2C', local: 'Resume App Icon/pytorch.svg', domain: 'pytorch.org', status: 'available' },
+            { name: 'TensorFlow', cdn: 'https://cdn.simpleicons.org/tensorflow/FF6F00', local: 'Resume App Icon/tensorflow.svg', domain: 'tensorflow.org', status: 'available' },
+            { name: 'scikit-learn', cdn: 'https://cdn.simpleicons.org/scikitlearn/F7931E', local: null, domain: 'scikit-learn.org', status: 'available' },
+            { name: 'Pandas', cdn: 'https://cdn.simpleicons.org/pandas/150458', local: null, domain: 'pandas.pydata.org', status: 'available' },
+            { name: 'NumPy', cdn: 'https://cdn.simpleicons.org/numpy/013243', local: 'Resume App Icon/numpy.svg', domain: 'numpy.org', status: 'available' },
+            { name: 'LLMs', cdn: 'https://cdn.simpleicons.org/openai/000000', local: 'Resume App Icon/openai.svg', domain: 'openai.com', status: 'available' },
+            { name: 'RAG Pipelines', cdn: 'https://cdn.simpleicons.org/langchain/000000', local: 'Resume App Icon/langchain.svg', domain: 'langchain.com', status: 'available' },
+            { name: 'LangChain', cdn: 'https://cdn.simpleicons.org/langchain/000000', local: 'Resume App Icon/langchain.svg', domain: 'langchain.com', status: 'available' },
+            { name: 'LlamaIndex', cdn: null, local: 'Resume App Icon/llamaindex.svg', domain: 'llamaindex.ai', status: 'available' },
+            { name: 'LlamaParse', cdn: null, local: 'Resume App Icon/llamaindex.svg', domain: 'llamaindex.ai', status: 'available' },
+            { name: 'MCP Servers', cdn: 'https://cdn.simpleicons.org/modelcontextprotocol/000000', local: 'Resume App Icon/modelcontextprotocol.svg', domain: 'modelcontextprotocol.io', status: 'available' },
+            { name: 'CrewAI', cdn: 'https://cdn.simpleicons.org/crewai/000000', local: 'Resume App Icon/crewai.svg', domain: 'crewai.com', status: 'available' },
+            { name: 'LangFlow', cdn: 'https://cdn.simpleicons.org/langflow/000000', local: 'Resume App Icon/langflow.svg', domain: 'langflow.org', status: 'available' },
+            { name: 'LangGraph', cdn: null, local: 'Resume App Icon/langchain.svg', domain: 'langchain.com', status: 'available' },
+            { name: 'OpenAI', cdn: 'https://cdn.simpleicons.org/openai/000000', local: 'Resume App Icon/openai.svg', domain: 'openai.com', status: 'available' },
+            { name: 'Claude', cdn: null, local: 'Resume App Icon/anthropic.svg', domain: 'anthropic.com', status: 'available' },
+            { name: 'Cohere', cdn: 'https://cdn.simpleicons.org/cohere/000000', local: 'Resume App Icon/cohere.svg', domain: 'cohere.com', status: 'available' },
+            { name: 'Ollama', cdn: 'https://cdn.simpleicons.org/ollama/000000', local: 'Resume App Icon/ollama.svg', domain: 'ollama.com', status: 'available' },
+            { name: 'Hugging Face', cdn: 'https://cdn.simpleicons.org/huggingface/FFD21E', local: 'Resume App Icon/huggingface.svg', domain: 'huggingface.co', status: 'available' },
+            { name: 'Stable Diffusion', cdn: 'https://cdn.simpleicons.org/stabilityai/000000', local: 'Resume App Icon/stable-diffusion.svg', domain: 'stability.ai', status: 'available' },
+            { name: 'ComfyUI', cdn: 'https://cdn.simpleicons.org/comfyui/000000', local: 'Resume App Icon/comfyui.svg', domain: 'comfy.org', status: 'available' },
+            { name: 'LoRA', cdn: 'https://cdn.simpleicons.org/huggingface/FFD21E', local: 'Resume App Icon/huggingface.svg', domain: 'huggingface.co', status: 'available' },
+            { name: 'Computer Vision', cdn: 'https://cdn.simpleicons.org/opencv/5C3EE8', local: 'Resume App Icon/opencv.svg', domain: 'opencv.org', status: 'available' },
+            { name: 'YOLO', cdn: null, local: 'Resume App Icon/opencv.svg', domain: 'ultralytics.com', status: 'available' },
+            { name: 'OpenCV', cdn: 'https://cdn.simpleicons.org/opencv/5C3EE8', local: 'Resume App Icon/opencv.svg', domain: 'opencv.org', status: 'available' },
+            { name: 'TTS/STT', cdn: 'https://cdn.simpleicons.org/elevenlabs/000000', local: 'Resume App Icon/elevenlabs.svg', domain: 'elevenlabs.io', status: 'available' },
+            { name: 'GGUF', cdn: 'https://cdn.simpleicons.org/ollama/000000', local: 'Resume App Icon/ollama.svg', domain: 'ollama.com', status: 'available' },
+            { name: 'N8N', cdn: 'https://cdn.simpleicons.org/n8n/FF6C37', local: 'Resume App Icon/n8n.svg', domain: 'n8n.io', status: 'available' },
+            { name: 'Pydantic AI', cdn: 'https://cdn.simpleicons.org/pydantic/E92062', local: 'Resume App Icon/pydantic.svg', domain: 'pydantic.dev', status: 'available' },
+
+            // Web & Backend
+            { name: 'JavaScript', cdn: 'https://cdn.simpleicons.org/javascript/F7DF1E', local: 'Resume App Icon/javascript.svg', domain: 'javascript.com', status: 'available' },
+            { name: 'TypeScript', cdn: 'https://cdn.simpleicons.org/typescript/3178C6', local: 'Resume App Icon/typescript.svg', domain: 'typescriptlang.org', status: 'available' },
+            { name: 'Node.js', cdn: 'https://cdn.simpleicons.org/nodedotjs/339933', local: 'Resume App Icon/nodejs.svg', domain: 'nodejs.org', status: 'available' },
+            { name: 'Next.js', cdn: 'https://cdn.simpleicons.org/nextdotjs/000000', local: 'Resume App Icon/nextjs.svg', domain: 'nextjs.org', status: 'available' },
+            { name: 'GraphQL', cdn: 'https://cdn.simpleicons.org/graphql/E10098', local: 'Resume App Icon/graphql.svg', domain: 'graphql.org', status: 'available' },
+            { name: 'React', cdn: 'https://cdn.simpleicons.org/react/61DAFB', local: null, domain: 'reactjs.org', status: 'available' },
+            { name: 'AngularJS', cdn: 'https://cdn.simpleicons.org/angular/DD0031', local: null, domain: 'angular.io', status: 'available' },
+
+            // Cloud, DevOps & Reliability
+            { name: 'AWS', cdn: 'https://cdn.simpleicons.org/amazonaws/232F3E', local: 'Resume App Icon/aws.svg', domain: 'aws.amazon.com', status: 'available' },
+            { name: 'AWS Lambda', cdn: 'https://cdn.simpleicons.org/awslambda/FF9900', local: 'Resume App Icon/aws-lambda.svg', domain: 'aws.amazon.com', status: 'available' },
+            { name: 'EC2', cdn: 'https://cdn.simpleicons.org/amazonec2/FF9900', local: 'Resume App Icon/ec2.svg', domain: 'aws.amazon.com', status: 'available' },
+            { name: 'IAM', cdn: 'https://cdn.simpleicons.org/amazonaws/232F3E', local: 'Resume App Icon/iam.svg', domain: 'aws.amazon.com', status: 'available' },
+            { name: 'Azure', cdn: 'https://cdn.simpleicons.org/microsoftazure/0089D6', local: 'Resume App Icon/azure.svg', domain: 'azure.microsoft.com', status: 'available' },
+            { name: 'GCP', cdn: 'https://cdn.simpleicons.org/googlecloud/4285F4', local: 'Resume App Icon/googlecloud.svg', domain: 'cloud.google.com', status: 'available' },
+            { name: 'Vertex AI', cdn: null, local: 'Resume App Icon/vertex-ai.svg', domain: 'cloud.google.com', status: 'available', note: 'Using Wikimedia SVG' },
+            { name: 'AI Cloud Foundry', cdn: 'https://cdn.simpleicons.org/cloudfoundry/00AEEF', local: 'Resume App Icon/ai-cloud-foundry.svg', domain: 'cloudfoundry.org', status: 'available' },
+            { name: 'Docker', cdn: 'https://cdn.simpleicons.org/docker/2496ED', local: 'Resume App Icon/docker.svg', domain: 'docker.com', status: 'available' },
+            { name: 'Serverless', cdn: 'https://cdn.simpleicons.org/serverless/FF5242', local: 'Resume App Icon/serverless.svg', domain: 'serverless.com', status: 'available' },
+            { name: 'Containerization', cdn: 'https://cdn.simpleicons.org/docker/2496ED', local: 'Resume App Icon/containerization.svg', domain: 'docker.com', status: 'available' },
+            { name: 'RunPod', cdn: null, local: 'Resume App Icon/runpod.svg', domain: 'runpod.io', status: 'available', note: 'Using local SVG' },
+            { name: 'DigitalOcean', cdn: 'https://cdn.simpleicons.org/digitalocean/0080FF', local: 'Resume App Icon/digitalocean.svg', domain: 'digitalocean.com', status: 'available' },
+            { name: 'Supabase', cdn: 'https://cdn.simpleicons.org/supabase/3ECF8E', local: 'Resume App Icon/supabase.svg', domain: 'supabase.com', status: 'available' },
+            { name: 'Firebase', cdn: 'https://cdn.simpleicons.org/firebase/FFCA28', local: 'Resume App Icon/firebase.svg', domain: 'firebase.google.com', status: 'available' },
+            { name: 'Vercel', cdn: 'https://cdn.simpleicons.org/vercel/000000', local: 'Resume App Icon/vercel.svg', domain: 'vercel.com', status: 'available' },
+            { name: 'Jenkins', cdn: 'https://cdn.simpleicons.org/jenkins/D24939', local: 'Resume App Icon/jenkins.svg', domain: 'jenkins.io', status: 'available' },
+            { name: 'SonarQube', cdn: 'https://cdn.simpleicons.org/sonarqube/4E9BCD', local: 'Resume App Icon/sonarcube.svg', domain: 'sonarqube.org', status: 'available' },
+            { name: 'BrowserStack', cdn: 'https://cdn.simpleicons.org/browserstack/FF1F3A', local: 'Resume App Icon/browserstack.svg', domain: 'browserstack.com', status: 'available' },
+            { name: 'Datadog', cdn: 'https://cdn.simpleicons.org/datadog/632CA6', local: 'Resume App Icon/datadog.svg', domain: 'datadoghq.com', status: 'available' },
+            { name: 'Observability', cdn: 'https://cdn.simpleicons.org/datadog/632CA6', local: 'Resume App Icon/datadog.svg', domain: 'datadog.com', status: 'available' },
+
+            // Databases
+            { name: 'SQL', cdn: 'https://cdn.simpleicons.org/mysql/4479A1', local: 'Resume App Icon/sql.svg', domain: 'mysql.com', status: 'available' },
+            { name: 'PostgreSQL', cdn: 'https://cdn.simpleicons.org/postgresql/4169E1', local: 'Resume App Icon/postgresql.svg', domain: 'postgresql.org', status: 'available' },
+            { name: 'NoSQL', cdn: 'https://cdn.simpleicons.org/mongodb/47A248', local: 'Resume App Icon/nosql.svg', domain: 'mongodb.com', status: 'available' },
+            { name: 'MongoDB', cdn: 'https://cdn.simpleicons.org/mongodb/47A248', local: 'Resume App Icon/mongodb.svg', domain: 'mongodb.com', status: 'available' },
+            { name: 'Redis', cdn: 'https://cdn.simpleicons.org/redis/DC382D', local: 'Resume App Icon/redis.svg', domain: 'redis.io', status: 'available' },
+            { name: 'DynamoDB', cdn: 'https://cdn.simpleicons.org/amazondynamodb/4053D6', local: 'Resume App Icon/dynamodb.svg', domain: 'aws.amazon.com', status: 'available' },
+            { name: 'Firestore', cdn: 'https://cdn.simpleicons.org/firebase/FFCA28', local: 'Resume App Icon/firestore.svg', domain: 'firebase.google.com', status: 'available' },
+            { name: 'Neo4j', cdn: 'https://cdn.simpleicons.org/neo4j/008CC1', local: 'Resume App Icon/neo4j.svg', domain: 'neo4j.com', status: 'available' },
+            { name: 'Milvus', cdn: null, local: 'Resume App Icon/milvus.svg', domain: 'milvus.io', status: 'available' },
+            { name: 'FAISS', cdn: 'https://cdn.simpleicons.org/meta/0467DF', local: 'Resume App Icon/faiss.svg', domain: 'meta.com', status: 'available' },
+            { name: 'ChromaDB', cdn: null, local: 'Resume App Icon/chromadb.svg', domain: 'trychroma.com', status: 'available' },
+            { name: 'Pinecone', cdn: 'https://cdn.simpleicons.org/pinecone/000000', local: 'Resume App Icon/pinecone.svg', domain: 'pinecone.io', status: 'available' },
+            { name: 'Qdrant', cdn: 'https://cdn.simpleicons.org/qdrant/FF4136', local: 'Resume App Icon/qdrant.svg', domain: 'qdrant.tech', status: 'available' },
+            { name: 'Weaviate', cdn: 'https://cdn.simpleicons.org/weaviate/00D9AA', local: 'Resume App Icon/weaviate.svg', domain: 'weaviate.io', status: 'available' },
+
+            // Product & Tools
+            { name: 'Figma', cdn: 'https://cdn.simpleicons.org/figma/F24E1E', local: 'Resume App Icon/figma.svg', domain: 'figma.com', status: 'available' },
+            { name: 'Miro', cdn: 'https://cdn.simpleicons.org/miro/050038', local: 'Resume App Icon/miro.svg', domain: 'miro.com', status: 'available' },
+            { name: 'TDD', cdn: 'https://cdn.simpleicons.org/testinglibrary/E33332', local: null, domain: 'testing-library.com', status: 'available' },
+            { name: 'Agile/Scrum', cdn: 'https://cdn.simpleicons.org/scrumalliance/0096D6', local: null, domain: 'scrumalliance.org', status: 'available' },
+            { name: 'Snapshot Testing', cdn: 'https://cdn.simpleicons.org/jest/C21325', local: null, domain: 'jestjs.io', status: 'available' },
+            { name: 'UI Testing', cdn: 'https://cdn.simpleicons.org/playwright/2EAD33', local: null, domain: 'playwright.dev', status: 'available' },
+            { name: 'Optimizely', cdn: 'https://cdn.simpleicons.org/optimizely/0055D9', local: 'Resume App Icon/optimizely.svg', domain: 'optimizely.com', status: 'available' },
+            { name: 'Amplitude', cdn: 'https://cdn.simpleicons.org/amplitude/24315E', local: 'Resume App Icon/amplitude.svg', domain: 'amplitude.com', status: 'available' },
+            { name: 'Cursor', cdn: null, local: 'Resume App Icon/cursor.svg', domain: 'cursor.com', status: 'available' },
+            { name: 'Kilo Code', cdn: null, local: 'Resume App Icon/kilo-code.jpeg', domain: 'kilocode.com', status: 'available' },
+            { name: 'Gemini CLI', cdn: 'https://cdn.simpleicons.org/google/4285F4', local: 'Resume App Icon/gemini-icon.png', domain: 'google.com', status: 'available' },
+            { name: 'LMStudio', cdn: null, local: 'Resume App Icon/lmstudio.jpeg', domain: 'lmstudio.ai', status: 'available' },
+
+            // Companies
+            { name: 'Morgan Stanley', cdn: 'https://cdn.simpleicons.org/morganstanley/004A8E', local: 'Resume App Icon/morgan-stanley.jpg', domain: 'morganstanley.com', status: 'available' },
+            { name: 'Stadia', cdn: 'https://cdn.simpleicons.org/google/4285F4', local: 'Resume App Icon/stadia.png', domain: 'stadia.google.com', status: 'available' }
+        ];
+
+        function getBrandfetchUrl(domain) {
+            if (!domain) return null;
+            return `https://cdn.brandfetch.io/${domain}/w/400/h/400/theme/light/fallback/lettermark/type/icon?c=${BRANDFETCH_CLIENT_ID}`;
+        }
+
+        function createIconDisplay(url, type) {
+            const display = document.createElement('div');
+            display.className = 'icon-display';
+            
+            if (url) {
+                const img = document.createElement('img');
+                img.src = url;
+                img.alt = type;
+                img.onerror = () => {
+                    display.innerHTML = '<div class="fallback">❌ Failed</div>';
+                };
+                display.appendChild(img);
+            } else {
+                display.innerHTML = '<div class="fallback">N/A</div>';
+            }
+            
+            return display;
+        }
+
+        function createColorPermutations(iconUrl) {
+            if (!iconUrl) return null;
+            
+            const container = document.createElement('div');
+            container.className = 'color-permutations';
+            
+            const colors = [
+                { name: 'Light', class: 'color-light' },
+                { name: 'Dark', class: 'color-dark' },
+                { name: 'Primary', class: 'color-primary' },
+                { name: 'Gradient', class: 'color-gradient' }
+            ];
+            
+            colors.forEach(color => {
+                const test = document.createElement('div');
+                test.className = `color-test ${color.class}`;
+                
+                const label = document.createElement('div');
+                label.className = 'color-test-label';
+                label.textContent = color.name;
+                test.appendChild(label);
+                
+                const iconContainer = document.createElement('div');
+                iconContainer.className = 'color-test-icon';
+                const img = document.createElement('img');
+                img.src = iconUrl;
+                img.alt = color.name;
+                img.onerror = () => {
+                    iconContainer.innerHTML = '❌';
+                };
+                iconContainer.appendChild(img);
+                test.appendChild(iconContainer);
+                
+                container.appendChild(test);
+            });
+            
+            return container;
+        }
+
+        function createComparisonCard(skill) {
+            const card = document.createElement('div');
+            card.className = 'comparison-card';
+            
+            const skillName = document.createElement('div');
+            skillName.className = 'skill-name';
+            skillName.textContent = skill.name;
+            card.appendChild(skillName);
+            
+            const iconRow = document.createElement('div');
+            iconRow.className = 'icon-row';
+            
+            // Simple Icons CDN
+            const cdnSection = document.createElement('div');
+            cdnSection.className = 'icon-section';
+            const cdnLabel = document.createElement('div');
+            cdnLabel.className = 'icon-label';
+            cdnLabel.textContent = 'Simple Icons';
+            cdnSection.appendChild(cdnLabel);
+            cdnSection.appendChild(createIconDisplay(skill.cdn, 'CDN'));
+            iconRow.appendChild(cdnSection);
+            
+            // Divider
+            const divider1 = document.createElement('div');
+            divider1.className = 'divider';
+            iconRow.appendChild(divider1);
+            
+            // Web-Generated (Local)
+            const localSection = document.createElement('div');
+            localSection.className = 'icon-section';
+            const localLabel = document.createElement('div');
+            localLabel.className = 'icon-label';
+            localLabel.textContent = 'Local (SVG)';
+            localSection.appendChild(localLabel);
+            localSection.appendChild(createIconDisplay(skill.local, 'Local'));
+            iconRow.appendChild(localSection);
+
+            // Divider
+            const divider2 = document.createElement('div');
+            divider2.className = 'divider';
+            iconRow.appendChild(divider2);
+
+            // Brandfetch
+            const brandfetchSection = document.createElement('div');
+            brandfetchSection.className = 'icon-section';
+            const brandfetchLabel = document.createElement('div');
+            brandfetchLabel.className = 'icon-label';
+            brandfetchLabel.textContent = 'Brandfetch';
+            brandfetchSection.appendChild(brandfetchLabel);
+            const bfUrl = getBrandfetchUrl(skill.domain);
+            brandfetchSection.appendChild(createIconDisplay(bfUrl, 'Brandfetch'));
+            iconRow.appendChild(brandfetchSection);
+            
+            card.appendChild(iconRow);
+            
+            // Status
+            const status = document.createElement('div');
+            status.className = `status status-${skill.status}`;
+            if (skill.status === 'available') {
+                status.textContent = '✅ Available';
+            } else if (skill.status === 'missing') {
+                status.textContent = '❌ Missing - Using CDN or Placeholder';
+            } else {
+                status.textContent = '⏳ Pending';
+            }
+            card.appendChild(status);
+            
+            if (skill.status === 'missing' && skill.note) {
+                const notes = document.createElement('div');
+                notes.className = 'notes';
+                notes.textContent = skill.note;
+                card.appendChild(notes);
+            }
+            
+            // Color permutations - use local if available, otherwise Brandfetch, then CDN
+            const iconUrl = skill.local || bfUrl || skill.cdn;
+            if (iconUrl && skill.status === 'available') {
+                const colorPerms = createColorPermutations(iconUrl);
+                if (colorPerms) {
+                    card.appendChild(colorPerms);
+                }
+            }
+            
+            return card;
+        }
+
+        // Render all comparison cards
+        const grid = document.getElementById('comparisonGrid');
+        skillsToCompare.forEach(skill => {
+            grid.appendChild(createComparisonCard(skill));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<svg width="24" height="24" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Teal Hexagon Background -->
+  <path d="M50 2.5 L93.3 26.25 V 73.75 L50 97.5 L6.7 73.75 V 26.25 Z" fill="#4FD1C5"/>
+  
+  <!-- "MLX" Text -->
+  <text x="50" y="62" font-family="Arial, sans-serif" font-size="35" font-weight="bold" fill="white" text-anchor="middle">MLX</text>
+</svg>

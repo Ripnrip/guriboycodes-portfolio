@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <!-- Apache Cordova -->
+  <path d="M12 4L4 8v8l8 4 8-4V8l-8-4z" fill="#E8E8E8"/>
+  <path d="M12 6l6 3v6l-6 3-6-3V9l6-3z" fill="#3B7ABE"/>
+  <circle cx="12" cy="12" r="2" fill="white"/>
+</svg>

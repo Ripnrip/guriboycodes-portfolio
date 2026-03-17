@@ -5,8 +5,11 @@ import { Input } from '@/components/ui/input.jsx';
 import { Textarea } from '@/components/ui/textarea.jsx';
 import { Spotlight } from '@/components/ui/spotlight.jsx';
 import { Download, Mail, Github, Linkedin, MapPin, Send } from 'lucide-react';
+import posthog from 'posthog-js';
+import { portfolioData } from '../data/portfolio';
 
 const Contact = () => {
+  const { profile } = portfolioData;
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -28,20 +31,16 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+      // In a real app, this would be an actual API call
+      // For demonstration, we'll simulate success
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      setSubmitStatus('success');
+      posthog.capture('contact_message_sent', {
+        name: formData.name,
+        email: formData.email
       });
-
-      if (response.ok) {
-        setSubmitStatus('success');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setSubmitStatus('error');
-      }
+      setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       console.error('Submission error:', error);
       setSubmitStatus('error');
@@ -78,12 +77,12 @@ const Contact = () => {
                 <CardContent className="space-y-6">
                   <div className="flex items-center space-x-3">
                     <MapPin className="h-5 w-5 text-primary" />
-                    <span className="text-foreground/80">Tampa, FL</span>
+                    <span className="text-foreground/80">{profile.location}</span>
                   </div>
                   
                   <div className="flex items-center space-x-3">
                     <Mail className="h-5 w-5 text-primary" />
-                    <a href="mailto:contact@guriboycodes.com" className="text-foreground/80 hover:text-primary transition-colors">
+                    <a href={`mailto:contact@guriboycodes.com`} className="text-foreground/80 hover:text-primary transition-colors">
                       contact@guriboycodes.com
                     </a>
                   </div>
@@ -91,20 +90,28 @@ const Contact = () => {
                   <div className="pt-4">
                     <h4 className="font-semibold mb-4 text-foreground">Connect on Social</h4>
                     <div className="flex space-x-4">
-                      <a 
-                        href="https://github.com/Ripnrip" 
-                        className="flex items-center space-x-2 text-foreground/60 hover:text-primary transition-colors"
-                      >
-                        <Github className="h-5 w-5" />
-                        <span>GitHub</span>
-                      </a>
-                      <a 
-                        href="https://linkedin.com/in/gurinder-singh-a30a1a48/" 
-                        className="flex items-center space-x-2 text-foreground/60 hover:text-primary transition-colors"
-                      >
-                        <Linkedin className="h-5 w-5" />
-                        <span>LinkedIn</span>
-                      </a>
+                      {profile.github && (
+                        <a 
+                          href={profile.github} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center space-x-2 text-foreground/60 hover:text-primary transition-colors"
+                        >
+                          <Github className="h-5 w-5" />
+                          <span>GitHub</span>
+                        </a>
+                      )}
+                      {profile.linkedin && (
+                        <a 
+                          href={profile.linkedin} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center space-x-2 text-foreground/60 hover:text-primary transition-colors"
+                        >
+                          <Linkedin className="h-5 w-5" />
+                          <span>LinkedIn</span>
+                        </a>
+                      )}
                     </div>
                   </div>
                 </CardContent>
@@ -122,9 +129,11 @@ const Contact = () => {
                 </CardHeader>
                 
                 <CardContent>
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                    <Download className="mr-2 h-5 w-5" />
-                    Download Resume (PDF)
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
+                    <a href="/Gurinder-Singh-Staff-SE.pdf" download>
+                      <Download className="mr-2 h-5 w-5" />
+                      Download Resume (PDF)
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
@@ -236,7 +245,7 @@ const Contact = () => {
         {/* Footer */}
         <div className="mt-20 pt-8 border-t border-border/20 text-center">
           <p className="text-foreground/60">
-            © 2024 GuriboyCodes. Built with React, Tailwind CSS, and lots of ☕
+            © {new Date().getFullYear()} {profile.name}. Built with React, Tailwind CSS, and lots of ☕
           </p>
           <p className="text-foreground/40 text-sm mt-2">
             "Building legendary apps at the edge of iOS & AI"

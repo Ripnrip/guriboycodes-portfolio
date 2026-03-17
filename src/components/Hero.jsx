@@ -5,8 +5,11 @@ import { AnimatedCounter } from '@/components/ui/animated-counter.jsx';
 import { Marquee } from '@/components/ui/marquee.jsx';
 import ThemeToggle from '@/components/ui/theme-toggle.jsx';
 import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
+import { portfolioData } from '../data/portfolio';
 
 const Hero = () => {
+  const { profile, stats } = portfolioData;
+
   return (
     <section className="min-h-screen bg-hero-gradient relative overflow-hidden">
       {/* Background Elements */}
@@ -20,7 +23,7 @@ const Hero = () => {
         {/* Navigation */}
         <nav className="flex justify-between items-center p-6 md:p-8">
           <div className="text-2xl font-bold text-gradient">
-            GuriboyCodes
+            {profile.handle}
           </div>
           <div className="hidden md:flex space-x-8 items-center">
             <a href="#about" className="text-foreground/80 hover:text-foreground transition-colors">About</a>
@@ -45,8 +48,8 @@ const Hero = () => {
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
-                  Staff iOS & AI/ML Engineer with over a decade of experience scaling apps for 90M+ users. 
-                  Patent-holder, technical leader, and hackathon veteran building legendary apps at global scale.
+                  {profile.title} with over {stats.yearsExperience} years of experience scaling apps for {stats.usersImpacted} users. 
+                  {profile.tagline}.
                 </p>
 
                 {/* CTA Buttons */}
@@ -64,10 +67,10 @@ const Hero = () => {
 
                 {/* Social Links */}
                 <div className="flex justify-center lg:justify-start space-x-6">
-                  <a href="https://github.com/Ripnrip" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-primary transition-colors">
+                  <a href={profile.github} target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-primary transition-colors">
                     <Github className="h-6 w-6" />
                   </a>
-                  <a href="https://linkedin.com/in/gurinder-singh-a30a1a48/" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-primary transition-colors">
+                  <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-primary transition-colors">
                     <Linkedin className="h-6 w-6" />
                   </a>
                   <a href="mailto:gsingh622@yahoo.com" className="text-foreground/60 hover:text-primary transition-colors">
@@ -82,7 +85,7 @@ const Hero = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-accent/30 rounded-full blur-2xl" />
                   <img 
                     src="/me_ghibli.png" 
-                    alt="Gurinder Singh - Studio Ghibli Style" 
+                    alt={`${profile.name} - Studio Ghibli Style`}
                     className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full object-cover shadow-2xl border-4 border-primary/20"
                   />
                 </div>
@@ -93,25 +96,25 @@ const Hero = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
               <div className="glass rounded-lg p-6">
                 <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
-                  <AnimatedCounter end={90} suffix="M+" />
+                  <AnimatedCounter end={parseInt(stats.usersImpacted)} suffix="M+" />
                 </div>
-                <div className="text-sm text-foreground/60">Venmo Users</div>
+                <div className="text-sm text-foreground/60">Users Impacted</div>
               </div>
               <div className="glass rounded-lg p-6">
                 <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
-                  <AnimatedCounter end={500} suffix="+" />
+                  <AnimatedCounter end={stats.interviews} suffix="+" />
                 </div>
                 <div className="text-sm text-foreground/60">Interviews</div>
               </div>
               <div className="glass rounded-lg p-6">
                 <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
-                  <AnimatedCounter end={28} suffix="+" />
+                  <AnimatedCounter end={stats.hackathons} suffix="+" />
                 </div>
                 <div className="text-sm text-foreground/60">Hackathons</div>
               </div>
               <div className="glass rounded-lg p-6">
                 <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
-                  <AnimatedCounter end={10} suffix="+" />
+                  <AnimatedCounter end={stats.yearsExperience} suffix="+" />
                 </div>
                 <div className="text-sm text-foreground/60">Years Exp</div>
               </div>
@@ -122,17 +125,14 @@ const Hero = () => {
         {/* Marquee Ticker */}
         <div className="py-8 border-t border-border/20">
           <Marquee className="text-foreground/60" speed={30}>
-            <span className="mx-8">🚀 PayPal Staff Engineer</span>
-            <span className="mx-8">📱 90M Venmo Users</span>
-            <span className="mx-8">🤖 Project Mercury - AI Agentic Platform</span>
-            <span className="mx-8">🏆 $60M Contract Closed</span>
-            <span className="mx-8">🎯 500+ Interviews Conducted</span>
-            <span className="mx-8">🌟 28+ Hackathons</span>
-            <span className="mx-8">🏅 2× 1st Place Wins</span>
-            <span className="mx-8">📺 BBC Documentary Featured</span>
-            <span className="mx-8">🔬 AI/ML Patents</span>
+            <span className="mx-8">🚀 {profile.company} {profile.title}</span>
+            <span className="mx-8">📱 {stats.usersImpacted} Users Impacted</span>
+            <span className="mx-8">🤖 AI/ML Patents</span>
+            <span className="mx-8">🏆 {stats.firstPlaceWins}× 1st Place Wins</span>
             <span className="mx-8">👨‍🏫 CTE Advisory Board</span>
-            <span className="mx-8">🎪 ERG Leadership</span>
+            <span className="mx-8">🌟 {stats.hackathons}+ Hackathons</span>
+            <span className="mx-8">🏅 {profile.connections} Connections</span>
+            <span className="mx-8">🎯 {stats.interviews}+ Interviews Conducted</span>
           </Marquee>
         </div>
       </Spotlight>
