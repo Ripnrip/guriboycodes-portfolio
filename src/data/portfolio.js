@@ -497,8 +497,122 @@ export const portfolioData = {
       github: null,
       link: "https://agentic-seo-three.vercel.app/",
       ghibliImage: "/images/projects/agentic-seo-ghibli.png"
+    },
+    {
+      id: 26,
+      title: "Gina and Gurinder",
+      description: "Personal wedding website built with modern web tech",
+      longDescription: "A beautifully crafted personal wedding website featuring interactive maps, RSVP systems, and dynamic storytelling elements. Built to celebrate and share a special journey with friends and family worldwide.",
+      category: "Personal",
+      featured: false,
+      technologies: ["React", "Next.js", "Vercel", "Tailwind CSS"],
+      github: "https://github.com/Ripnrip/gng-website-2025-main",
+      link: "https://www.ginaandgurinder.com/",
+      ghibliImage: "/images/projects/wedding-ghibli.png"
     }
   ],
+  leadership: {
+    summary: "Committed to fostering inclusive communities, mentoring the next generation of technologists, and bridging the gap between industry and education.",
+    stats: [
+      { label: "Technical Interviews", value: 500, suffix: "+" },
+      { label: "Engineers Mentored", value: 20, suffix: "+" },
+      { label: "ERG Members", value: 150, suffix: "+" },
+      { label: "Students Reached", value: 500, suffix: "+" },
+      { label: "Years Experience", value: 10, suffix: "+" },
+      { label: "Community Events", value: 25, suffix: "+" }
+    ],
+    initiatives: [
+      {
+        title: "CTE Advisory Board",
+        role: "Industry Advisory Member",
+        organization: "Bayside High School",
+        period: "2023 - Present",
+        description: "Guiding high school tech curriculum development and providing industry insights to prepare students for modern tech careers.",
+        highlights: [
+          "Curriculum review and modernization recommendations",
+          "Guest speaking at career development sessions",
+          "Industry trend analysis and future skills mapping",
+          "Student mentorship and career guidance"
+        ],
+        impact: "500+ students reached through curriculum improvements"
+      },
+      {
+        title: "Sikh Faith ERG Leadership",
+        role: "Co-Lead & Founding Member",
+        organization: "PayPal",
+        period: "2020 - Present",
+        description: "Leading PayPal's Sikh Faith Employee Resource Group, fostering inclusion and cultural awareness across the organization.",
+        highlights: [
+          "Founded and grew ERG to 150+ members globally",
+          "Organized cultural awareness events and celebrations",
+          "Developed Langar App for community education",
+          "Cross-ERG collaboration and allyship programs"
+        ],
+        impact: "150+ ERG members across PayPal globally"
+      },
+      {
+        title: "Technical Mentorship",
+        role: "Senior Engineer Mentor",
+        organization: "PayPal & Industry",
+        period: "2019 - Present",
+        description: "Mentoring junior engineers, conducting technical interviews, and fostering the next generation of tech talent.",
+        highlights: [
+          "500+ technical interviews conducted",
+          "Mentored 20+ junior engineers to promotion",
+          "Technical leadership in cross-functional teams",
+          "Knowledge sharing through internal tech talks"
+        ],
+        impact: "20+ engineers promoted under mentorship"
+      },
+      {
+        title: "Community Tech Education",
+        role: "Volunteer Educator",
+        organization: "Local Schools & Organizations",
+        period: "2018 - Present",
+        description: "Volunteering time to teach coding, mobile development, and AI/ML concepts to underrepresented communities.",
+        highlights: [
+          "Coding workshops for underrepresented youth",
+          "Mobile app development bootcamps",
+          "AI/ML awareness sessions for educators",
+          "Open source contributions and tutorials"
+        ],
+        impact: "200+ hours of volunteer education"
+      }
+    ],
+    featuredProject: {
+      title: "ERG Langar App",
+      subtitle: "Gamified Sikh Temple Education",
+      description: "A React Native application designed to educate PayPal ERG members about Sikh temple traditions, specifically the concept of Langar (community kitchen). Features gamification elements to make learning engaging and interactive.",
+      features: [
+        "Interactive temple tour with AR elements",
+        "Gamified learning modules about Sikh traditions",
+        "Community engagement tracking",
+        "Cultural awareness quizzes and challenges",
+        "Multi-language support for global ERG members"
+      ],
+      technologies: ["React Native", "Gamification", "Education", "Cultural Awareness"],
+      footer: "Used for ERG onboarding and cultural education at PayPal",
+      link: "#projects"
+    }
+  },
+  engineeringPhilosophy: {
+    title: "Engineering Philosophy",
+    quote: "Building legendary apps at the edge of iOS & AI",
+    principles: [
+      {
+        title: "Human-Centered AI",
+        description: "AI should elevate human skill and judgment, not replace it. I focus on creating tools that feel like extensions of the user's creative process."
+      },
+      {
+        title: "Craftsmanship & Detail",
+        description: "Whether it's a fluid animation in SwiftUI or a robust RAG pipeline, the magic is in the details. I believe in software that feels pixel-perfect and logically sound."
+      },
+      {
+        title: "Rapid Innovation",
+        description: "Moving from proof-of-concept to production at speed. I leverage agentic workflows and modern tools to ship impactful features quickly."
+      }
+    ]
+  },
   skills: {
     mobile: [
       { name: "Swift", icon: "swift.svg", level: 95 },

@@ -181,37 +181,33 @@ const About = () => {
         </div>
 
         {/* Philosophy Section */}
-        <div className="mt-20">
+        <div className="mt-24">
           <Spotlight>
-            <Card className="bg-card-gradient border-primary/20">
-              <CardHeader>
-                <CardTitle className="text-2xl text-gradient text-center">
-                  Engineering Philosophy
+            <Card className="bg-card-gradient border-primary/20 overflow-hidden relative">
+              <div className="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
+                <Code className="h-48 w-48 text-primary" />
+              </div>
+              <CardHeader className="text-center relative z-10">
+                <Badge variant="outline" className="mb-4 mx-auto border-primary/30 text-primary uppercase tracking-widest">
+                  {portfolioData.engineeringPhilosophy.title}
+                </Badge>
+                <CardTitle className="text-3xl md:text-4xl font-bold text-gradient mb-4">
+                  "{portfolioData.engineeringPhilosophy.quote}"
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-3 gap-8 text-center">
-                  <div>
-                    <Users className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <h3 className="text-lg font-semibold mb-2">Scale & Impact</h3>
-                    <p className="text-foreground/80">
-                      Building systems that serve millions while maintaining performance and reliability.
-                    </p>
-                  </div>
-                  <div>
-                    <Code className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <h3 className="text-lg font-semibold mb-2">Innovation</h3>
-                    <p className="text-foreground/80">
-                      Bridging cutting-edge AI/ML with practical mobile solutions for real-world problems.
-                    </p>
-                  </div>
-                  <div>
-                    <Award className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <h3 className="text-lg font-semibold mb-2">Leadership</h3>
-                    <p className="text-foreground/80">
-                      Mentoring engineers, conducting interviews, and fostering inclusive tech communities.
-                    </p>
-                  </div>
+              <CardContent className="relative z-10">
+                <div className="grid md:grid-cols-3 gap-8">
+                  {portfolioData.engineeringPhilosophy.principles.map((principle, idx) => (
+                    <div key={idx} className="space-y-3 p-6 rounded-2xl bg-background/40 border border-primary/5 hover:border-primary/20 transition-all duration-300">
+                      <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+                        {idx === 0 ? <Users className="h-5 w-5" /> : idx === 1 ? <Code className="h-5 w-5" /> : <Award className="h-5 w-5" />}
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground">{principle.title}</h3>
+                      <p className="text-sm text-foreground/70 leading-relaxed">
+                        {principle.description}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </CardContent>
             </Card>
