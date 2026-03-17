@@ -18,7 +18,7 @@ export const portfolioData = {
     hackathons: 28,
     firstPlaceWins: 2,
     patents: 1,
-    projectCount: 24,
+    projectCount: 26,
     yearsExperience: 10,
     interviews: 500
   },
