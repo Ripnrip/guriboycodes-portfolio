@@ -2,11 +2,24 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx';
 import { Badge } from '@/components/ui/badge.jsx';
 import { Button } from '@/components/ui/button.jsx';
-import { Spotlight } from '@/components/ui/spotlight.jsx';
-import { ExternalLink, Github, Play, Smartphone, Brain, Search, Heart, GraduationCap, Globe, Music, Palette, BarChart3, Mic, BookOpen, Gamepad2 } from 'lucide-react';
+import { MagicCard } from '@/components/ui/magic-card.jsx';
+import { BorderBeam } from '@/components/ui/border-beam.jsx';
+import { BlurFade } from '@/components/ui/blur-fade.jsx';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Github, Play, Smartphone, Brain, Search, Heart, GraduationCap, Globe, Music, Palette, BarChart3, Mic, BookOpen, Gamepad2, X, Sparkles, Eye } from 'lucide-react';
+
+// Ghibli image map for top 5 projects
+const ghibliImages = {
+  "Flow": "/images/projects/flow-ghibli.png",
+  "Ethereal Dimension": "/images/projects/ethereal-dimension-ghibli.png",
+  "Zai Vision Suite": "/images/projects/zai-vision-suite-ghibli.png",
+  "Rosicrucian Knowledge Explorer": "/images/projects/rosicrucian-knowledge-explorer-ghibli.png",
+  "Agentic News Transformer": "/images/projects/agentic-news-transformer-ghibli.png",
+};
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [imageLoaded, setImageLoaded] = useState({});
 
   const projects = [
     {
@@ -62,7 +75,7 @@ const Projects = () => {
       icon: <Search className="h-6 w-6" />,
       technologies: ["Python", "RAG", "Vector DB", "OpenAI", "Semantic Search"],
       category: "AI/ML",
-      featured: false,
+      featured: true,
       link: "https://rosicrucian-knowledge-explorer.vercel.app",
       github: "https://github.com/noeticactivity/Rosicrucian-Knowledge-Explorer"
     },
@@ -74,7 +87,7 @@ const Projects = () => {
       icon: <Brain className="h-6 w-6" />,
       technologies: ["Python", "AI Agents", "Automation", "LLMs", "News Context"],
       category: "AI/ML",
-      featured: false,
+      featured: true,
       github: "https://github.com/Ripnrip/Agentic-News-Transformer"
     },
     {
@@ -129,7 +142,7 @@ const Projects = () => {
       icon: <Heart className="h-6 w-6" />,
       technologies: ["Flutter", "iOS", "Android", "Web", "Full Stack"],
       category: "Mobile",
-      featured: true,
+      featured: false,
       link: "https://rosicrucian-parenting.org/"
     },
     {
@@ -140,7 +153,7 @@ const Projects = () => {
       icon: <Music className="h-6 w-6" />,
       technologies: ["Flutter", "Dart", "iOS", "Android", "Audio"],
       category: "Mobile",
-      featured: true,
+      featured: false,
       link: "https://apps.apple.com/us/app/rosicrucian-vowel-sounds/id6529521816"
     },
     {
@@ -151,7 +164,7 @@ const Projects = () => {
       icon: <Gamepad2 className="h-6 w-6" />,
       technologies: ["Swift", "SpriteKit", "iOS", "Game Design", "Storytelling"],
       category: "Mobile",
-      featured: true,
+      featured: false,
       link: "https://apps.apple.com/us/app/hylios/id6474466548"
     },
     {
@@ -236,186 +249,325 @@ const Projects = () => {
   const categories = ["All", "AI/ML", "Mobile", "Creative", "Community", "Tools"];
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const filteredProjects = activeCategory === "All" 
-    ? projects 
+  const filteredProjects = activeCategory === "All"
+    ? projects
     : projects.filter(project => project.category === activeCategory);
 
+  const hasGhibliImage = (title) => ghibliImages[title] != null;
+
   return (
-    <section id="projects" className="py-20 px-6 md:px-8 bg-background">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
-            Featured Projects
-          </h2>
-          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-            A showcase of innovative projects spanning AI/ML, mobile development, 
-            creative storytelling, and community impact initiatives.
-          </p>
-        </div>
+    <section id="projects" className="py-20 px-6 md:px-8 bg-background relative overflow-hidden">
+      {/* Subtle background decoration */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section Header */}
+        <BlurFade delay={0.1} inView>
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-medium">
+              <Sparkles className="h-4 w-4" />
+              20 Projects & Counting
+            </div>
+            <h2 className="text-4xl md:text-6xl font-bold text-gradient mb-6">
+              Featured Projects
+            </h2>
+            <p className="text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
+              A showcase of innovative projects spanning AI/ML, mobile development,
+              creative storytelling, and community impact initiatives.
+            </p>
+          </div>
+        </BlurFade>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {categories.map((category) => (
-            <Button
-              key={category}
-              variant={activeCategory === category ? "default" : "outline"}
-              onClick={() => setActiveCategory(category)}
-              className={activeCategory === category 
-                ? "bg-primary text-primary-foreground" 
-                : "border-primary/50 text-foreground hover:bg-primary/10"
-              }
-            >
-              {category}
-            </Button>
-          ))}
-        </div>
+        <BlurFade delay={0.2} inView>
+          <div className="flex flex-wrap justify-center gap-2 mb-12">
+            {categories.map((category) => (
+              <Button
+                key={category}
+                variant={activeCategory === category ? "default" : "outline"}
+                onClick={() => setActiveCategory(category)}
+                className={`transition-all duration-300 ${activeCategory === category
+                  ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25"
+                  : "border-primary/30 text-foreground/70 hover:bg-primary/10 hover:text-foreground hover:border-primary/50"
+                }`}
+              >
+                {category}
+              </Button>
+            ))}
+          </div>
+        </BlurFade>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project, index) => (
-            <Spotlight key={project.id}>
-              <Card 
-                className={`h-full cursor-pointer transition-all duration-300 hover:scale-105 ${
-                  project.featured 
-                    ? 'md:col-span-2 lg:col-span-2 bg-card-gradient border-primary/50' 
-                    : 'bg-card/80 hover:bg-card-gradient/50 border-border/50'
-                } hover:border-primary/50 hover:shadow-lg`}
-                onClick={() => setSelectedProject(project)}
-              >
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <div className="p-2 rounded-lg bg-primary/20 text-primary">
-                        {project.icon}
+          {filteredProjects.map((project, index) => {
+            const hasImage = hasGhibliImage(project.title);
+            const isFeatured = project.featured;
+
+            return (
+              <BlurFade key={project.id} delay={0.1 + index * 0.05} inView>
+                <MagicCard
+                  className={`h-full transition-all duration-500`}
+                  gradientFrom={isFeatured ? "#9E7AFF" : "#6366f1"}
+                  gradientTo={isFeatured ? "#FE8BBB" : "#8b5cf6"}
+                  gradientOpacity={0.15}
+                >
+                  <div
+                    className="h-full cursor-pointer group relative"
+                    onClick={() => setSelectedProject(project)}
+                  >
+                    {/* Ghibli Image Banner */}
+                    {hasImage && (
+                      <div className="relative overflow-hidden rounded-t-xl">
+                        <div className="aspect-video relative">
+                          <img
+                            src={ghibliImages[project.title]}
+                            alt={`${project.title} — Ghibli-style illustration`}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            loading="lazy"
+                            onLoad={() => setImageLoaded(prev => ({ ...prev, [project.id]: true }))}
+                          />
+                          {/* Gradient overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
+                          {/* Ghibli sparkle indicator */}
+                          <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-background/80 backdrop-blur-sm border border-primary/20 text-xs font-medium text-primary">
+                            <Sparkles className="h-3 w-3" />
+                            AI Generated
+                          </div>
+                        </div>
                       </div>
-                      <div>
-                        <CardTitle className="text-lg">{project.title}</CardTitle>
-                        <Badge variant="secondary" className="mt-1 bg-primary/10 text-primary border-primary/20">
-                          {project.category}
-                        </Badge>
+                    )}
+
+                    {/* Card Content */}
+                    <div className={`p-6 ${hasImage ? 'pt-4' : ''}`}>
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="flex items-center space-x-3">
+                          <div className={`p-2.5 rounded-xl ${
+                            isFeatured
+                              ? 'bg-gradient-to-br from-primary/30 to-accent/30 text-primary shadow-lg shadow-primary/10'
+                              : 'bg-primary/15 text-primary'
+                          }`}>
+                            {project.icon}
+                          </div>
+                          <div>
+                            <CardTitle className="text-lg font-bold group-hover:text-primary transition-colors duration-300">
+                              {project.title}
+                            </CardTitle>
+                            <Badge
+                              variant="secondary"
+                              className="mt-1 text-xs bg-primary/10 text-primary/80 border-primary/20"
+                            >
+                              {project.category}
+                            </Badge>
+                          </div>
+                        </div>
+                        {isFeatured && (
+                          <Badge className="bg-gradient-to-r from-primary to-pink-500 text-white border-0 shadow-lg shadow-primary/20">
+                            Featured
+                          </Badge>
+                        )}
+                      </div>
+
+                      <p className="text-foreground/60 text-sm mb-4 line-clamp-2 leading-relaxed">
+                        {project.description}
+                      </p>
+
+                      {/* Tech Tags */}
+                      <div className="flex flex-wrap gap-1.5 mb-4">
+                        {project.technologies.slice(0, 4).map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="text-xs px-2 py-0.5 rounded-md bg-foreground/5 text-foreground/50 border border-foreground/10"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                        {project.technologies.length > 4 && (
+                          <span className="text-xs px-2 py-0.5 rounded-md bg-primary/10 text-primary/70 border border-primary/20">
+                            +{project.technologies.length - 4}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Action Buttons */}
+                      <div className="flex space-x-2 pt-2 border-t border-foreground/5">
+                        {project.link && (
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="flex-1 border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
+                            asChild
+                          >
+                            <a href={project.link} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>
+                              <Eye className="h-3.5 w-3.5 mr-1.5" />
+                              Live Demo
+                            </a>
+                          </Button>
+                        )}
+                        {project.github && (
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="flex-1 border-foreground/20 text-foreground/70 hover:bg-foreground/5 hover:border-foreground/30 transition-all duration-300"
+                            asChild
+                          >
+                            <a href={project.github} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>
+                              <Github className="h-3.5 w-3.5 mr-1.5" />
+                              Source
+                            </a>
+                          </Button>
+                        )}
                       </div>
                     </div>
-                    {project.featured && (
-                      <Badge className="bg-gradient-to-r from-primary to-accent text-primary-foreground">
-                        Featured
-                      </Badge>
-                    )}
-                  </div>
-                </CardHeader>
-                
-                <CardContent>
-                  <CardDescription className="text-foreground/80 mb-4">
-                    {project.description}
-                  </CardDescription>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="outline" className="text-xs border-primary/30 text-foreground/70">
-                        {tech}
-                      </Badge>
-                    ))}
-                    {project.technologies.length > 3 && (
-                      <Badge variant="outline" className="text-xs border-primary/30 text-foreground/70">
-                        +{project.technologies.length - 3} more
-                      </Badge>
-                    )}
-                  </div>
 
-                  <div className="flex space-x-2">
-                    {project.link && (
-                      <Button size="sm" variant="outline" className="border-primary/50 text-primary hover:bg-primary/10" asChild>
-                        <a href={project.link} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-4 w-4 mr-1" />
-                          View
-                        </a>
-                      </Button>
-                    )}
-                    {project.github && (
-                      <Button size="sm" variant="outline" className="border-primary/50 text-primary hover:bg-primary/10" asChild>
-                        <a href={project.github} target="_blank" rel="noopener noreferrer">
-                          <Github className="h-4 w-4 mr-1" />
-                          Code
-                        </a>
-                      </Button>
+                    {/* Border Beam for featured projects */}
+                    {isFeatured && (
+                      <BorderBeam
+                        size={120}
+                        duration={8}
+                        colorFrom="#9E7AFF"
+                        colorTo="#FE8BBB"
+                        borderWidth={2}
+                      />
                     )}
                   </div>
-                </CardContent>
-              </Card>
-            </Spotlight>
-          ))}
+                </MagicCard>
+              </BlurFade>
+            );
+          })}
         </div>
 
-        {/* Project Modal/Detail View */}
-        {selectedProject && (
-          <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <Spotlight>
-              <Card className="max-w-2xl w-full bg-card-gradient border-primary/50 max-h-[80vh] overflow-y-auto">
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <div className="p-3 rounded-lg bg-primary/20 text-primary">
-                        {selectedProject.icon}
+        {/* Project Detail Modal */}
+        <AnimatePresence>
+          {selectedProject && (
+            <motion.div
+              className="fixed inset-0 bg-background/80 backdrop-blur-md z-50 flex items-center justify-center p-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedProject(null)}
+            >
+              <motion.div
+                className="max-w-3xl w-full"
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 40, scale: 0.95 }}
+                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <MagicCard
+                  gradientFrom="#9E7AFF"
+                  gradientTo="#FE8BBB"
+                  gradientOpacity={0.1}
+                  className="overflow-hidden"
+                >
+                  <div className="max-h-[85vh] overflow-y-auto">
+                    {/* Modal Ghibli Image */}
+                    {hasGhibliImage(selectedProject.title) && (
+                      <div className="relative">
+                        <img
+                          src={ghibliImages[selectedProject.title]}
+                          alt={`${selectedProject.title} — Ghibli-style illustration`}
+                          className="w-full h-64 object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
                       </div>
-                      <div>
-                        <CardTitle className="text-2xl text-gradient">{selectedProject.title}</CardTitle>
-                        <Badge variant="secondary" className="mt-1 bg-primary/10 text-primary border-primary/20">
-                          {selectedProject.category}
-                        </Badge>
+                    )}
+
+                    <div className="p-8">
+                      {/* Header */}
+                      <div className="flex items-start justify-between mb-6">
+                        <div className="flex items-center space-x-4">
+                          <div className="p-3 rounded-xl bg-gradient-to-br from-primary/30 to-accent/30 text-primary shadow-lg shadow-primary/10">
+                            {selectedProject.icon}
+                          </div>
+                          <div>
+                            <h3 className="text-2xl font-bold text-gradient">{selectedProject.title}</h3>
+                            <div className="flex items-center gap-2 mt-1">
+                              <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+                                {selectedProject.category}
+                              </Badge>
+                              {selectedProject.featured && (
+                                <Badge className="bg-gradient-to-r from-primary to-pink-500 text-white border-0">
+                                  Featured
+                                </Badge>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => setSelectedProject(null)}
+                          className="text-foreground/40 hover:text-foreground hover:bg-foreground/5 rounded-full h-9 w-9 p-0"
+                        >
+                          <X className="h-5 w-5" />
+                        </Button>
                       </div>
-                    </div>
-                    <Button 
-                      variant="ghost" 
-                      onClick={() => setSelectedProject(null)}
-                      className="text-foreground/60 hover:text-foreground"
-                    >
-                      ✕
-                    </Button>
-                  </div>
-                </CardHeader>
-                
-                <CardContent className="space-y-6">
-                  <p className="text-foreground/80 leading-relaxed">
-                    {selectedProject.longDescription}
-                  </p>
-                  
-                  <div>
-                    <h4 className="text-lg font-semibold mb-3 text-foreground">Technologies Used</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedProject.technologies.map((tech, index) => (
-                        <Badge key={index} variant="secondary" className="bg-primary/10 text-primary border-primary/20">
-                          {tech}
-                        </Badge>
-                      ))}
+
+                      {/* Description */}
+                      <p className="text-foreground/70 leading-relaxed mb-6 text-base">
+                        {selectedProject.longDescription}
+                      </p>
+
+                      {/* Technologies */}
+                      <div className="mb-6">
+                        <h4 className="text-sm font-semibold text-foreground/50 uppercase tracking-wider mb-3">
+                          Technologies
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {selectedProject.technologies.map((tech, index) => (
+                            <Badge
+                              key={index}
+                              variant="secondary"
+                              className="bg-primary/10 text-primary border border-primary/20 px-3 py-1"
+                            >
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Action Buttons */}
+                      <div className="flex flex-wrap gap-3 pt-4 border-t border-foreground/10">
+                        {selectedProject.link && (
+                          <Button
+                            className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25"
+                            asChild
+                          >
+                            <a href={selectedProject.link} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="h-4 w-4 mr-2" />
+                              View Live
+                            </a>
+                          </Button>
+                        )}
+                        {selectedProject.github && (
+                          <Button
+                            variant="outline"
+                            className="border-foreground/20 text-foreground/70 hover:bg-foreground/5"
+                            asChild
+                          >
+                            <a href={selectedProject.github} target="_blank" rel="noopener noreferrer">
+                              <Github className="h-4 w-4 mr-2" />
+                              View Source
+                            </a>
+                          </Button>
+                        )}
+                      </div>
                     </div>
                   </div>
 
-                  <div className="flex space-x-4 pt-4">
-                    {selectedProject.link && (
-                      <Button className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
-                        <a href={selectedProject.link} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-4 w-4 mr-2" />
-                          View Project
-                        </a>
-                      </Button>
-                    )}
-                    {selectedProject.github && (
-                      <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary/10" asChild>
-                        <a href={selectedProject.github} target="_blank" rel="noopener noreferrer">
-                          <Github className="h-4 w-4 mr-2" />
-                          View Code
-                        </a>
-                      </Button>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            </Spotlight>
-          </div>
-        )}
+                  <BorderBeam size={150} duration={10} colorFrom="#9E7AFF" colorTo="#FE8BBB" />
+                </MagicCard>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
 };
 
 export default Projects;
-
