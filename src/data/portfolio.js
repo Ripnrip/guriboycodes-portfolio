@@ -43,7 +43,13 @@ export const portfolioData = {
         },
         {
           project: "iOS Engineering Excellence & Business Impact",
-          description: "Pay With Venmo Checkout (2024-Present): Reduced end-to-end latency by ~2s. Venmo Gift Cards (2023): Led iOS architecture for Amazon/Starbucks support. Venmo × Amazon (2022): Built sandbox/integration app in 48h. QRC Touch-Free (2021): Led moonshot initiative winning $60M CVS contract. Amex (2020): Built payment-splitting for $400M deal."
+          description: [
+            "• Pay With Venmo Checkout (2024-Present): Reduced end-to-end latency by ~2s.",
+            "• Venmo Gift Cards (2023): Led iOS architecture for Amazon/Starbucks support.",
+            "• Venmo × Amazon (2022): Built sandbox/integration app in 48h.",
+            "• QRC Touch-Free (2021): Led moonshot initiative winning $60M CVS contract.",
+            "• Amex (2020): Built payment-splitting for $400M deal."
+          ].join("\n")
         }
       ]
     },

@@ -97,7 +97,7 @@ const About = () => {
                           <span className="text-primary mt-1.5">•</span>
                           <span className="text-foreground/80">
                             {highlight.project && <strong className="text-foreground">{highlight.project}: </strong>}
-                            {highlight.description}
+                            <span className="whitespace-pre-line">{highlight.description}</span>
                           </span>
                         </li>
                       ))}

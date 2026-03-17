@@ -57,7 +57,7 @@ const SkillGraph = () => {
             Knowledge Ecosystem
           </h2>
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-            Interactive visualization of $100+$ specialized tools and frameworks 
+            Interactive visualization of 100+ specialized tools and frameworks 
             orchestrated across my engineering career.
           </p>
         </div>
