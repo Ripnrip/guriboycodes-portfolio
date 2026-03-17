@@ -437,7 +437,8 @@ export const portfolioData = {
       title: "ARon — AI Fitness Coach",
       description: "HackZurich 2021 — AR fitness coach with real-time pose detection",
       longDescription: "Built at HackZurich 2021, ARon uses CreateML and ARKit for real-time body pose detection during workouts. Integrated Garmin wearables for biometric tracking.",
-      category: "AI/ML",
+      featured: true,
+      technologies: ["Swift", "ARKit", "CreateML", "CoreML", "Garmin SDK"],
       github: "https://github.com/Ripnrip/ARon",
       link: null,
       ghibliImage: "/images/projects/aron-ai-fitness-ghibli.png",
@@ -617,7 +618,7 @@ export const portfolioData = {
       { name: "XCTest / Snapshot", icon: "tdd.svg", level: 90, tags: ["Testing"] },
       { name: "Design Systems", icon: "figma.svg", level: 90, tags: ["UI/UX"] },
       { name: "Flutter & Dart", icon: "flutter.svg", level: 85, tags: ["Cross-Platform"] },
-      { name: "Cordova / Hybrid", icon: "smartphone.svg", level: 80, tags: ["Web-to-Native"] }
+      { name: "Cordova / Hybrid", icon: "cordova.svg", level: 80, tags: ["Web-to-Native"] }
     ],
     ai_ml: [
       { name: "Python", icon: "python.svg", level: 95, tags: ["Core", "AI"] },
@@ -654,7 +655,7 @@ export const portfolioData = {
       { name: "GitHub Actions", icon: "github-actions.svg", level: 95, tags: ["CI/CD"] },
       { name: "Jenkins / CI", icon: "jenkins.svg", level: 80, tags: ["CI/CD"] },
       { name: "Fastlane", icon: "fastlane.svg", level: 95, tags: ["iOS", "Automation"] },
-      { name: "Terraform / IaC", icon: "terraform.svg", level: 75, tags: ["Infrastructure"] },
+      { name: "Terraform / IaC", icon: "containerization.svg", level: 75, tags: ["Infrastructure"] },
       { name: "Vercel / Next.js", icon: "vercel.svg", level: 95, tags: ["Deployment"] },
       { name: "DataDog / Monitoring", icon: "datadog.svg", level: 85, tags: ["DevOps", "Observability"] }
     ],
@@ -665,7 +666,7 @@ export const portfolioData = {
       { name: "Redis / Caching", icon: "redis.svg", level: 90, tags: ["Performance"] },
       { name: "GraphQL / Apollo", icon: "graphql.svg", level: 85, tags: ["API"] },
       { name: "Next.js / React", icon: "nextjs.svg", level: 95, tags: ["Frontend"] },
-      { name: "Tailwind CSS", icon: "palette.svg", level: 95, tags: ["Styling"] },
+      { name: "Tailwind CSS", icon: "figma.svg", level: 95, tags: ["Styling"] },
       { name: "Three.js / WebGL", icon: "comfyui.svg", level: 80, tags: ["Graphics"] },
       { name: "Framer Motion", icon: "activitykit.svg", level: 90, tags: ["Animations"] },
       { name: "Obsidian / Zettelkasten", icon: "confluence.svg", level: 95, tags: ["Knowledge Management"] },

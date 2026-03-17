@@ -124,7 +124,7 @@ const Community = () => {
                         {item.description}
                       </p>
                       <div className="space-y-2">
-                        {item.highlights.slice(0, 2).map((hg, hIdx) => (
+                      {item.highlights?.slice(0, 2).map((hg, hIdx) => (
                           <div key={hIdx} className="flex items-center space-x-2 text-[11px] text-foreground/80">
                             <span className="h-1 w-1 bg-primary rounded-full shrink-0" />
                             <span>{hg}</span>

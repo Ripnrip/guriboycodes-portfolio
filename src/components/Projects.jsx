@@ -107,7 +107,7 @@ const Projects = () => {
                   </CardDescription>
                   
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                    {project.technologies?.slice(0, 3).map((tech, techIndex) => (
                       <Badge key={techIndex} variant="outline" className="text-xs border-primary/30 text-foreground/70">
                         {tech}
                       </Badge>
@@ -196,7 +196,7 @@ const Projects = () => {
                   <div>
                     <h4 className="text-lg font-semibold mb-3 text-foreground">Technologies Used</h4>
                     <div className="flex flex-wrap gap-2">
-                      {selectedProject.technologies.map((tech, index) => (
+                      {selectedProject.technologies?.map((tech, index) => (
                         <Badge key={index} variant="secondary" className="bg-primary/10 text-primary border-primary/20">
                           {tech}
                         </Badge>
