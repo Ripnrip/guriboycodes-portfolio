@@ -2,6 +2,23 @@
 
 All notable changes to the GuriboyCodes Portfolio will be documented in this file.
 
+## [1.1.0] - 2026-03-17
+
+### 🚀 Gemini Portfolio Expansion
+
+#### Added
+- **Knowledge Ecosystem (Tech Orbit)**: Interactive, constraint-based visualization of **100+ granular skills** (SkillGraph.jsx)
+- **Leadership & Community Section**: Animated impact tickers for **500+ interviews**, 20+ mentors, and leadership highlights (Community.jsx)
+- **Engineering Philosophy**: Dedicated spotlight on core development principles and mission statement
+- **Expanded Projects**: Added **Agentic-SEO** automation and **Gina & Gurinder** wedding projects (26 total)
+- **PostHog Analytics**: Full observability for page views, clicks, and conversion tracking
+- **Git LFS Integration**: Specialized tracking for 200+ icons and high-fidelity media assets
+- **Data-Driven Architecture**: Single source of truth in `portfolio.js` powering the entire UI
+
+#### Fixed
+- Standardized project image paths and video metadata across the catalog
+- Optimized mobile responsiveness for complex animated components
+
 ## [1.0.0] - 2026-03-17
 
 ### 🎉 Initial Release

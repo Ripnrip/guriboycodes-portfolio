@@ -4,19 +4,22 @@
 
 Personal portfolio website for **Gurinder Singh** — Staff iOS & AI/ML Engineer with 10+ years of experience scaling apps for 90M+ users.
 
-🌐 **Live at**: [guriboycodes.com](https://guriboycodes.com)
+🌐 **Live at**: [guriboycodes.com](https://guriboycodes.com) | [Gemini Edition](https://guriboycodes-portfolio-gemini-q0oqdj13a-gsinghdevs-projects.vercel.app)
 
 ---
 
 ## ✨ Features
 
-- **20 Showcased Projects** — spanning iOS apps, Flutter cross-platform, AI/ML tools, creative web experiences, and community impact
+- **26 Showcased Projects** — spanning iOS apps, AI Agents, personal milestones, and community impact
+- **Knowledge Ecosystem (Tech Orbit)** — Creative, interactive visualization of **100+ skills** orbiting your core expertise
+- **Leadership & Community** — Animated impact stats (500+ interviews) and mentorship initiatives
+- **Engineering Philosophy** — Dedicated section for core development principles (Human-Centered AI, Craftsmanship)
 - **Functional Contact Form** — powered by Resend API (Vercel Serverless Function)
-- **Downloadable Resume** — latest PDF resume available for download
+- **Git LFS Enabled** — High-fidelity media and icon tracking (200+ icons)
 - **Dark Mode** — elegant theme toggle with smooth transitions
 - **Responsive Design** — mobile-first, works beautifully on all screen sizes
 - **Animated Stats** — counters, marquee ticker, spotlight effects
-- **Project Filtering** — filter by AI/ML, Mobile, Creative, Community, and Tools
+- **Project Filtering** — filter by AI/ML, Mobile, Creative, Community, Personal, and Tools
 
 ## 🛠 Tech Stack
 
@@ -30,8 +33,11 @@ Personal portfolio website for **Gurinder Singh** — Staff iOS & AI/ML Engineer
 - **Tailwind CSS** + **shadcn/ui** for a polished design system
 - **Framer Motion** for smooth animations
 - **Lucide React** for beautiful icons
+- **Recharts** for domain expertise visualization
+- **PostHog** for observability and analytics
 - **Resend API** for contact form emails
 - **Vercel** for deployment and serverless functions
+- **Git LFS** for large asset management
 
 ## 📂 Project Structure
 
@@ -45,12 +51,16 @@ guriboycodes-portfolio/
 │   └── favicon.ico
 ├── src/
 │   ├── components/
-│   │   ├── Hero.jsx        # Hero section with stats & marquee
-│   │   ├── About.jsx       # About section
-│   │   ├── Projects.jsx    # 20 project showcases
-│   │   ├── Hackathons.jsx  # Hackathon history
+│   │   ├── Hero.jsx        # Dynamic profile & stats
+│   │   ├── SkillGraph.jsx  # 100+ skills Tech Orbit visualization
+│   │   ├── About.jsx       # Career journey & Engineering Philosophy
+│   │   ├── Community.jsx   # Leadership & Impact section
+│   │   ├── Projects.jsx    # 26 project showcases (from portfolio.js)
+│   │   ├── Hackathons.jsx  # Hackathon timeline (28+ events)
 │   │   └── Contact.jsx     # Contact form & info
 │   │   └── ui/             # shadcn/ui components
+│   ├── data/
+│   │   └── portfolio.js    # Single Source of Truth (Central Data Store)
 │   ├── App.jsx
 │   ├── App.css             # Tailwind + custom styles
 │   └── main.jsx
