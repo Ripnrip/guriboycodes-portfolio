@@ -16,8 +16,8 @@ export const portfolioData = {
   stats: {
     usersImpacted: "90M+",
     hackathons: 28,
-    firstPlaceWins: 3,
-    patents: 1,
+    firstPlaceWins: 2,
+    countries: "6+",
     projectCount: 26,
     yearsExperience: 10,
     interviews: "500+"
@@ -486,13 +486,10 @@ export const portfolioData = {
   leadership: {
     summary: "Committed to fostering inclusive communities, mentoring the next generation of technologists, and bridging the gap between industry and education.",
     stats: [
-      { label: "1st Place Wins", value: 3, suffix: "× 🏆" },
-      { label: "Technical Interviews", value: 500, suffix: "+" },
-      { label: "Engineers Mentored", value: 20, suffix: "+" },
-      { label: "ERG Members", value: 150, suffix: "+" },
-      { label: "Students Reached", value: 500, suffix: "+" },
-      { label: "Years Experience", value: 10, suffix: "+" },
-      { label: "Community Events", value: 30, suffix: "+" }
+      { label: "Hackathons Attended", value: 28, suffix: "+" },
+      { label: "Countries Visited", value: 6, suffix: "+" },
+      { label: "1st Place Wins", value: 2, suffix: "" },
+      { label: "Interviews Conducted", value: 500, suffix: "+" }
     ],
     initiatives: [
       {
