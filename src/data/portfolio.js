@@ -30,36 +30,20 @@ export const portfolioData = {
       duration: "5 yrs 11 mos",
       highlights: [
         {
-          project: "Project Mercury",
-          description: "AI-Powered Agentic E-Commerce Platform — lead engineer managing 2 new hires. Built merchant knowledge graph with GraphRAG for Ads Intelligence. Implemented MCP multi-agent orchestration."
+          project: "Agent0 — Autonomous AI Agent for Engineering Teams (Feb 2026)",
+          description: "Deployed agent0, an open-source agentic AI framework, to Venmo and PayPal engineering teams — enabling autonomous task execution, intelligent tool use, and self-correcting workflows across development pipelines. Serves as the next evolution of Project Mercury."
         },
         {
-          project: "Amex Partnership (2020)",
-          description: "Built payment-splitting integration for $400M partnership deal"
+          project: "Project Mercury — AI-Powered Agentic E-Commerce Platform (June 2025 → Present)",
+          description: "Built fully functional prototype in 72 hours; presented to SVP of AI, earning immediate backing and leading a high-velocity team. Trained five SDXL LoRA models achieving 23% loss reduction and 109MB optimized models."
         },
         {
-          project: "Pay With Venmo Checkout (2024–Present)",
-          description: "Key stakeholder driving hypergrowth through merchant integrations"
+          project: "AI/ML Implementation & Automation (2024)",
+          description: "Developed AI-powered crash detection system using RAG pipelines + Vector stores with automated DataDog monitors — now adopted team-wide. Created 10%+ productivity improvements via AI-powered automation tools."
         },
         {
-          project: "QRC Touch-Free Payments (COVID era)",
-          description: "Led moonshot initiative winning $60M CVS contract for contactless payments"
-        },
-        {
-          project: "Venmo × Amazon Partnership (2023)",
-          description: "Built sandbox/integration app in two days for partnership launch"
-        },
-        {
-          project: "Gift Cards (2023)",
-          description: "Led successful delivery of mission-critical feature set"
-        },
-        {
-          project: "QRC Widget Patent (2022)",
-          description: "Filed 'Interface Widget Tool for Automatic QR Code Generation'. First team to use SwiftUI for iOS widgets at Venmo. Reduced user friction by 66%"
-        },
-        {
-          project: "Dynamic Island / Live Activities / App Clip",
-          description: "Built end-to-end infrastructure for modern iOS features"
+          project: "iOS Engineering Excellence & Business Impact",
+          description: "Pay With Venmo Checkout (2024-Present): Reduced end-to-end latency by ~2s. Venmo Gift Cards (2023): Led iOS architecture for Amazon/Starbucks support. Venmo × Amazon (2022): Built sandbox/integration app in 48h. QRC Touch-Free (2021): Led moonshot initiative winning $60M CVS contract. Amex (2020): Built payment-splitting for $400M deal."
         }
       ]
     },
@@ -96,17 +80,7 @@ export const portfolioData = {
         }
       ]
     },
-    {
-      title: "Co-Founder",
-      company: "BeeBack",
-      period: "Jan 2017 – Jul 2019",
-      duration: "2 yrs 7 mos",
-      highlights: [
-        {
-          description: "Published iOS app"
-        }
-      ]
-    }
+
   ],
   education: [
     {
