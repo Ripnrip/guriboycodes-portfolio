@@ -1,0 +1,23 @@
+
+> guriboycodes-portfolio@0.0.0 build
+> vite build
+
+vite v6.4.1 building for production...
+transforming...
+✓ 349 modules transformed.
+✗ Build failed in 2.93s
+error during build:
+[vite]: Rollup failed to resolve import "react-intersection-observer" from "/Users/gurindersingh/Documents/Developer/Career-Resume-Learning/Portfolio/Guriboycodes-Manus/guriboycodes-portfolio-gemini-worktree/src/components/Community.jsx".
+This is most likely unintended because it can break your application at runtime.
+If you do want to externalize this module explicitly add it to
+`build.rollupOptions.external`
+    at viteLog (file:///Users/gurindersingh/Documents/Developer/Career-Resume-Learning/Portfolio/Guriboycodes-Manus/guriboycodes-portfolio-gemini-worktree/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46374:15)
+    at file:///Users/gurindersingh/Documents/Developer/Career-Resume-Learning/Portfolio/Guriboycodes-Manus/guriboycodes-portfolio-gemini-worktree/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46432:18
+    at onwarn (file:///Users/gurindersingh/Documents/Developer/Career-Resume-Learning/Portfolio/Guriboycodes-Manus/guriboycodes-portfolio-gemini-worktree/node_modules/@vitejs/plugin-react/dist/index.js:90:7)
+    at file:///Users/gurindersingh/Documents/Developer/Career-Resume-Learning/Portfolio/Guriboycodes-Manus/guriboycodes-portfolio-gemini-worktree/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46430:7
+    at onRollupLog (file:///Users/gurindersingh/Documents/Developer/Career-Resume-Learning/Portfolio/Guriboycodes-Manus/guriboycodes-portfolio-gemini-worktree/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46422:5)
+    at onLog (file:///Users/gurindersingh/Documents/Developer/Career-Resume-Learning/Portfolio/Guriboycodes-Manus/guriboycodes-portfolio-gemini-worktree/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46072:7)
+    at file:///Users/gurindersingh/Documents/Developer/Career-Resume-Learning/Portfolio/Guriboycodes-Manus/guriboycodes-portfolio-gemini-worktree/node_modules/rollup/dist/es/shared/node-entry.js:20981:32
+    at Object.logger [as onLog] (file:///Users/gurindersingh/Documents/Developer/Career-Resume-Learning/Portfolio/Guriboycodes-Manus/guriboycodes-portfolio-gemini-worktree/node_modules/rollup/dist/es/shared/node-entry.js:22968:9)
+    at ModuleLoader.handleInvalidResolvedId (file:///Users/gurindersingh/Documents/Developer/Career-Resume-Learning/Portfolio/Guriboycodes-Manus/guriboycodes-portfolio-gemini-worktree/node_modules/rollup/dist/es/shared/node-entry.js:21712:26)
+    at file:///Users/gurindersingh/Documents/Developer/Career-Resume-Learning/Portfolio/Guriboycodes-Manus/guriboycodes-portfolio-gemini-worktree/node_modules/rollup/dist/es/shared/node-entry.js:21670:26
