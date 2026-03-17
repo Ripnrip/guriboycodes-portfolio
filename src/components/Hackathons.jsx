@@ -14,8 +14,7 @@ const Hackathons = () => {
   const stats = [
     { label: "Total Hackathons", value: portfolioStats.hackathons, icon: <Code className="h-6 w-6" /> },
     { label: "Countries Visited", value: new Set(hackathons.map(h => h.location.split(', ')[1])).size, icon: <Globe className="h-6 w-6" /> },
-    { label: "1st Place Wins", value: portfolioStats.firstPlaceWins, icon: <Trophy className="h-6 w-6" /> },
-    { label: "Years Active", value: portfolioStats.yearsExperience, icon: <Calendar className="h-6 w-6" /> }
+    { label: "1st Place Wins", value: portfolioStats.firstPlaceWins, icon: <Trophy className="h-6 w-6" /> }
   ];
 
   const getFlag = (location) => {
@@ -41,7 +40,7 @@ const Hackathons = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {stats.map((stat, index) => (
             <Spotlight key={index}>
               <Card className="glass text-center">
@@ -62,7 +61,7 @@ const Hackathons = () => {
         {/* Featured Hackathons */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-center mb-8 text-gradient">Featured Achievements</h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {hackathons.filter(h => h.placement === '1st Place').map((hackathon, idx) => (
               <Spotlight key={idx}>
                 <Card 

@@ -9,30 +9,59 @@ import { useInView } from 'react-intersection-observer';
 
 const Ticker = ({ value, suffix }) => {
   const [count, setCount] = useState(0);
+  const [displayInfinity, setDisplayInfinity] = useState(false);
   const { ref, inView } = useInView();
 
   useEffect(() => {
-    if (inView && value > 0) {
-      let start = 0;
-      const end = parseInt(value);
-      if (start === end) return;
+    if (inView) {
+      if (suffix === '∞' || value === 0) {
+        // Animation for "Countless Learnings"
+        let start = 0;
+        const end = 100;
+        let totalMiliseconds = 1500;
+        let incrementTime = totalMiliseconds / end;
 
-      let totalMiliseconds = 2000;
-      let incrementTime = Math.max(totalMiliseconds / end, 10);
+        let timer = setInterval(() => {
+          start += 1;
+          setCount(start);
+          if (start === end) {
+            clearInterval(timer);
+            setTimeout(() => setDisplayInfinity(true), 200);
+          }
+        }, incrementTime);
 
-      let timer = setInterval(() => {
-        start += 1;
-        setCount(start);
-        if (start === end) clearInterval(timer);
-      }, incrementTime);
+        return () => clearInterval(timer);
+      } else if (value > 0) {
+        let start = 0;
+        const end = parseInt(value);
+        let totalMiliseconds = 2000;
+        let incrementTime = Math.max(totalMiliseconds / end, 10);
 
-      return () => clearInterval(timer);
+        let timer = setInterval(() => {
+          start += 1;
+          setCount(start);
+          if (start === end) clearInterval(timer);
+        }, incrementTime);
+
+        return () => clearInterval(timer);
+      }
     }
-  }, [inView, value]);
+  }, [inView, value, suffix]);
 
   return (
-    <span ref={ref} className="text-4xl font-bold text-gradient">
-      {value > 0 ? count : ""}{suffix}
+    <span ref={ref} className="text-4xl font-bold text-gradient inline-flex items-center justify-center min-w-[2ch]">
+      {displayInfinity ? (
+        <motion.span 
+          initial={{ opacity: 0, scale: 0.5, rotate: -45 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ type: "spring", stiffness: 200 }}
+          className="text-5xl leading-none"
+        >
+          ∞
+        </motion.span>
+      ) : (
+        <span className="tabular-nums">{count}{value > 0 ? suffix : ""}</span>
+      )}
     </span>
   );
 };

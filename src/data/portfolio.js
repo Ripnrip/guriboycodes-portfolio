@@ -7,7 +7,7 @@ export const portfolioData = {
     title: "Staff iOS & AI/ML Engineer",
     tagline: "LLM Agents · RAG Pipelines · Mobile · Automation · Patent Holder",
     company: "PayPal",
-    location: "NYC/Tampa (Open to Remote)",
+    location: "Tampa, FL (Open Remote + Hybrid NYC)",
     linkedin: "https://www.linkedin.com/in/gurinder-singh-a30a1a48",
     github: "https://github.com/Ripnrip",
     followers: 1355,
@@ -485,7 +485,7 @@ export const portfolioData = {
       { label: "Total Hackathons", value: 28, suffix: "+" },
       { label: "Countries Visited", value: 6, suffix: "+" },
       { label: "1st Place Wins", value: 2, suffix: "+" },
-      { label: "Countless Learnings", value: 100, suffix: "+" }
+      { label: "Countless Learnings", value: 0, suffix: "∞" }
     ],
     initiatives: [
       {
@@ -530,20 +530,6 @@ export const portfolioData = {
         ],
         impact: "Direct mentorship to 1000+ students across various institutions"
       },
-      {
-        title: "Community Tech Education",
-        role: "Volunteer Educator",
-        organization: "Local Schools & Organizations",
-        period: "2018 - Present",
-        description: "Volunteering time to teach coding, mobile development, and AI/ML concepts to underrepresented communities.",
-        highlights: [
-          "Coding workshops for underrepresented youth",
-          "Mobile app development bootcamps",
-          "AI/ML awareness sessions for educators",
-          "Open source contributions and tutorials"
-        ],
-        impact: "200+ hours of volunteer education"
-      }
     ],
     featuredProject: {
       title: "ERG Langar App",
