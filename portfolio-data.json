@@ -1,4 +1,7 @@
 {
+  "cdnBase": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public",
+  "vercelBase": "https://guriboycodes.com",
+
   "profile": {
     "name": "Gurinder Singh",
     "handle": "GuriboyCodes",
@@ -215,6 +218,7 @@
     "Flow": {
       "localPath": "/images/projects/flow-ghibli.png",
       "filename": "flow-ghibli.png",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/flow-ghibli.png",
       "prompt": "Studio Ghibli anime style illustration of a Dynamic Island iOS app concept — flowing water and cherry blossoms",
       "model": "black-forest-labs/flux-1.1-pro",
       "projectId": 1
@@ -222,6 +226,7 @@
     "Ethereal Dimension": {
       "localPath": "/images/projects/ethereal-dimension-ghibli.png",
       "filename": "ethereal-dimension-ghibli.png",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/ethereal-dimension-ghibli.png",
       "prompt": "Studio Ghibli anime style illustration of an ethereal storytelling dimension with floating islands and magical portals",
       "model": "black-forest-labs/flux-1.1-pro",
       "projectId": 2
@@ -229,6 +234,7 @@
     "Zai Vision Suite": {
       "localPath": "/images/projects/zai-vision-suite-ghibli.png",
       "filename": "zai-vision-suite-ghibli.png",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/zai-vision-suite-ghibli.png",
       "prompt": "Studio Ghibli anime style illustration of an AI vision laboratory with glowing screens and neural networks",
       "model": "black-forest-labs/flux-1.1-pro",
       "projectId": 3
@@ -236,6 +242,7 @@
     "Rosicrucian Knowledge Explorer": {
       "localPath": "/images/projects/rosicrucian-knowledge-explorer-ghibli.png",
       "filename": "rosicrucian-knowledge-explorer-ghibli.png",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/rosicrucian-knowledge-explorer-ghibli.png",
       "prompt": "Studio Ghibli anime style illustration of an ancient library with mystical knowledge and glowing books",
       "model": "black-forest-labs/flux-1.1-pro",
       "projectId": 5
@@ -243,6 +250,7 @@
     "Agentic News Transformer": {
       "localPath": "/images/projects/agentic-news-transformer-ghibli.png",
       "filename": "agentic-news-transformer-ghibli.png",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/agentic-news-transformer-ghibli.png",
       "prompt": "Studio Ghibli anime style illustration of AI news agents working in a magical newsroom",
       "model": "black-forest-labs/flux-1.1-pro",
       "projectId": 6
@@ -250,6 +258,7 @@
     "AI IDE Setup & Workflows": {
       "localPath": "/images/projects/ai-ide-setup-ghibli.png",
       "filename": "ai-ide-setup-ghibli.png",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/ai-ide-setup-ghibli.png",
       "prompt": "Studio Ghibli anime style illustration of a cozy developer workspace with magical AI tools",
       "model": "black-forest-labs/flux-1.1-pro",
       "projectId": 4
@@ -257,6 +266,7 @@
     "Gurduwara Langar Game": {
       "localPath": "/images/projects/gurduwara-langar-game-ghibli.png",
       "filename": "gurduwara-langar-game-ghibli.png",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/gurduwara-langar-game-ghibli.png",
       "prompt": "Studio Ghibli anime style illustration of a colorful Sikh gurdwara kitchen serving langar",
       "model": "black-forest-labs/flux-1.1-pro",
       "projectId": 7
@@ -264,6 +274,7 @@
     "Ethereal Search Showcase": {
       "localPath": "/images/projects/ethereal-search-ghibli.png",
       "filename": "ethereal-search-ghibli.png",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/ethereal-search-ghibli.png",
       "prompt": "Studio Ghibli anime style illustration of a magical search engine with floating results and glowing queries",
       "model": "black-forest-labs/flux-1.1-pro",
       "projectId": 8
@@ -271,6 +282,7 @@
     "Artful Archives": {
       "localPath": "/images/projects/artful-archives-ghibli.png",
       "filename": "artful-archives-ghibli.png",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/artful-archives-ghibli.png",
       "prompt": "Studio Ghibli anime style illustration of a grand artistic archive with paintings and creative artifacts",
       "model": "black-forest-labs/flux-1.1-pro",
       "projectId": 9
@@ -278,6 +290,7 @@
     "Rosicrucian Parenting": {
       "localPath": "/images/projects/rosicrucian-parenting-ghibli.png",
       "filename": "rosicrucian-parenting-ghibli.png",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/rosicrucian-parenting-ghibli.png",
       "prompt": "Studio Ghibli anime style illustration of a nurturing family scene with mystical warmth",
       "model": "black-forest-labs/flux-1.1-pro",
       "projectId": 11
@@ -285,6 +298,7 @@
     "Rosicrucian Vowel Sounds": {
       "localPath": "/images/projects/rosicrucian-vowel-sounds-ghibli.png",
       "filename": "rosicrucian-vowel-sounds-ghibli.png",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/rosicrucian-vowel-sounds-ghibli.png",
       "prompt": "Studio Ghibli anime style illustration of musical vowel sounds floating through a mystical temple",
       "model": "black-forest-labs/flux-1.1-pro",
       "projectId": 12
@@ -292,6 +306,7 @@
     "Hylios — Ethereal Dimension": {
       "localPath": "/images/projects/hylios-ghibli.png",
       "filename": "hylios-ghibli.png",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/hylios-ghibli.png",
       "prompt": "Studio Ghibli anime style illustration of a fantasy game world with floating islands and adventure",
       "model": "black-forest-labs/flux-1.1-pro",
       "projectId": 13
@@ -299,6 +314,7 @@
     "Cycles of Fate": {
       "localPath": "/images/projects/cycles-of-fate-ghibli.png",
       "filename": "cycles-of-fate-ghibli.png",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/cycles-of-fate-ghibli.png",
       "prompt": "Studio Ghibli anime style illustration of cosmic cycles of fate and destiny with celestial imagery",
       "model": "black-forest-labs/flux-1.1-pro",
       "projectId": 15
@@ -306,6 +322,7 @@
     "Geometric Graph Design": {
       "localPath": "/images/projects/geometric-graph-ghibli.png",
       "filename": "geometric-graph-ghibli.png",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/geometric-graph-ghibli.png",
       "prompt": "Studio Ghibli anime style illustration of geometric patterns and mathematical beauty",
       "model": "black-forest-labs/flux-1.1-pro",
       "projectId": 16
@@ -313,6 +330,7 @@
     "Voice Practice Hub": {
       "localPath": "/images/projects/voice-practice-hub-ghibli.png",
       "filename": "voice-practice-hub-ghibli.png",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/voice-practice-hub-ghibli.png",
       "prompt": "Studio Ghibli anime style illustration of a peaceful voice practice studio with sound waves",
       "model": "black-forest-labs/flux-1.1-pro",
       "projectId": 17
@@ -320,6 +338,7 @@
     "Audio Dialogues": {
       "localPath": "/images/projects/audio-dialogues-ghibli.png",
       "filename": "audio-dialogues-ghibli.png",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/audio-dialogues-ghibli.png",
       "prompt": "Studio Ghibli anime style illustration of audio conversations floating through magical space",
       "model": "black-forest-labs/flux-1.1-pro",
       "projectId": 18
@@ -327,6 +346,7 @@
     "ARon — AI Fitness Coach": {
       "localPath": "/images/projects/aron-ai-fitness-ghibli.png",
       "filename": "aron-ai-fitness-ghibli.png",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/aron-ai-fitness-ghibli.png",
       "prompt": "Studio Ghibli anime style illustration of an AR fitness coach with glowing body pose detection",
       "model": "black-forest-labs/flux-1.1-pro",
       "projectId": 21
@@ -334,6 +354,7 @@
     "Carly — AR Car Visualizer": {
       "localPath": "/images/projects/carly-ar-car-ghibli.png",
       "filename": "carly-ar-car-ghibli.png",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/carly-ar-car-ghibli.png",
       "prompt": "Studio Ghibli anime style illustration of an AR car visualization with magical holographic vehicles",
       "model": "black-forest-labs/flux-1.1-pro",
       "projectId": 22
@@ -343,6 +364,7 @@
   "videos": {
     "hackzurich-2022-elate": {
       "file": "/videos/hackzurich-2022-elate-720p.mp4",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/videos/hackzurich-2022-elate-720p.mp4",
       "sizeMB": 10.07,
       "resolution": "720p",
       "source": "LinkedIn",
@@ -351,6 +373,7 @@
     },
     "hackzurich-2021-aron": {
       "file": "/videos/hackzurich-2021-aron-fitness.mp4",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/videos/hackzurich-2021-aron-fitness.mp4",
       "sizeMB": 5.83,
       "resolution": "720p",
       "source": "LinkedIn",
@@ -359,6 +382,7 @@
     },
     "mlh-2017-drone-bbc": {
       "file": "/videos/mlh-2017-drone-bbc.mp4",
+      "cdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/videos/mlh-2017-drone-bbc.mp4",
       "sizeMB": 17.87,
       "resolution": "720p",
       "source": "LinkedIn",
@@ -380,6 +404,7 @@
       "link": null,
       "hackathon": null,
       "ghibliImage": "/images/projects/flow-ghibli.png",
+      "ghibliImageCdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/flow-ghibli.png",
       "video": null
     },
     {
@@ -394,6 +419,7 @@
       "link": "https://ethereal-dimension-nextjs.vercel.app",
       "hackathon": null,
       "ghibliImage": "/images/projects/ethereal-dimension-ghibli.png",
+      "ghibliImageCdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/ethereal-dimension-ghibli.png",
       "video": null
     },
     {
@@ -408,6 +434,7 @@
       "link": null,
       "hackathon": null,
       "ghibliImage": "/images/projects/zai-vision-suite-ghibli.png",
+      "ghibliImageCdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/zai-vision-suite-ghibli.png",
       "video": null
     },
     {
@@ -422,6 +449,7 @@
       "link": null,
       "hackathon": null,
       "ghibliImage": "/images/projects/ai-ide-setup-ghibli.png",
+      "ghibliImageCdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/ai-ide-setup-ghibli.png",
       "video": null
     },
     {
@@ -436,6 +464,7 @@
       "link": "https://rosicrucian-knowledge-explorer.vercel.app",
       "hackathon": null,
       "ghibliImage": "/images/projects/rosicrucian-knowledge-explorer-ghibli.png",
+      "ghibliImageCdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/rosicrucian-knowledge-explorer-ghibli.png",
       "video": null
     },
     {
@@ -450,6 +479,7 @@
       "link": null,
       "hackathon": null,
       "ghibliImage": "/images/projects/agentic-news-transformer-ghibli.png",
+      "ghibliImageCdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/agentic-news-transformer-ghibli.png",
       "video": null
     },
     {
@@ -464,6 +494,7 @@
       "link": null,
       "hackathon": null,
       "ghibliImage": "/images/projects/gurduwara-langar-game-ghibli.png",
+      "ghibliImageCdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/gurduwara-langar-game-ghibli.png",
       "video": null
     },
     {
@@ -478,6 +509,7 @@
       "link": "https://etherealsearch-showcase.vercel.app",
       "hackathon": null,
       "ghibliImage": "/images/projects/ethereal-search-ghibli.png",
+      "ghibliImageCdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/ethereal-search-ghibli.png",
       "video": null
     },
     {
@@ -492,6 +524,7 @@
       "link": "https://artful-archives-website.vercel.app",
       "hackathon": null,
       "ghibliImage": "/images/projects/artful-archives-ghibli.png",
+      "ghibliImageCdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/artful-archives-ghibli.png",
       "video": null
     },
     {
@@ -520,6 +553,7 @@
       "link": "https://rosicrucian-parenting.org/",
       "hackathon": null,
       "ghibliImage": "/images/projects/rosicrucian-parenting-ghibli.png",
+      "ghibliImageCdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/rosicrucian-parenting-ghibli.png",
       "video": null
     },
     {
@@ -534,6 +568,7 @@
       "link": "https://apps.apple.com/us/app/rosicrucian-vowel-sounds/id6529521816",
       "hackathon": null,
       "ghibliImage": "/images/projects/rosicrucian-vowel-sounds-ghibli.png",
+      "ghibliImageCdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/rosicrucian-vowel-sounds-ghibli.png",
       "video": null
     },
     {
@@ -548,6 +583,7 @@
       "link": "https://apps.apple.com/us/app/hylios/id6474466548",
       "hackathon": null,
       "ghibliImage": "/images/projects/hylios-ghibli.png",
+      "ghibliImageCdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/hylios-ghibli.png",
       "video": null
     },
     {
@@ -576,6 +612,7 @@
       "link": "https://cycles-of-fate.vercel.app/",
       "hackathon": null,
       "ghibliImage": "/images/projects/cycles-of-fate-ghibli.png",
+      "ghibliImageCdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/cycles-of-fate-ghibli.png",
       "video": null
     },
     {
@@ -590,6 +627,7 @@
       "link": "https://v0-geometric-graph-design.vercel.app/",
       "hackathon": null,
       "ghibliImage": "/images/projects/geometric-graph-ghibli.png",
+      "ghibliImageCdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/geometric-graph-ghibli.png",
       "video": null
     },
     {
@@ -604,6 +642,7 @@
       "link": "https://voice-practice-hub.vercel.app/",
       "hackathon": null,
       "ghibliImage": "/images/projects/voice-practice-hub-ghibli.png",
+      "ghibliImageCdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/voice-practice-hub-ghibli.png",
       "video": null
     },
     {
@@ -618,6 +657,7 @@
       "link": "https://audio-dialogues.vercel.app",
       "hackathon": null,
       "ghibliImage": "/images/projects/audio-dialogues-ghibli.png",
+      "ghibliImageCdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/audio-dialogues-ghibli.png",
       "video": null
     },
     {
@@ -660,7 +700,9 @@
       "link": null,
       "hackathon": "HackZurich 2021",
       "ghibliImage": "/images/projects/aron-ai-fitness-ghibli.png",
-      "video": "/videos/hackzurich-2021-aron-fitness.mp4"
+      "ghibliImageCdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/aron-ai-fitness-ghibli.png",
+      "video": "/videos/hackzurich-2021-aron-fitness.mp4",
+      "videoCdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/videos/hackzurich-2021-aron-fitness.mp4"
     },
     {
       "id": 22,
@@ -674,6 +716,7 @@
       "link": null,
       "hackathon": "HackZurich 2018",
       "ghibliImage": "/images/projects/carly-ar-car-ghibli.png",
+      "ghibliImageCdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/carly-ar-car-ghibli.png",
       "video": null
     },
     {
@@ -702,7 +745,8 @@
       "link": "https://devpost.com/software/automated-search-rescue-system",
       "hackathon": "MLH Prime 2017 — 1st Place",
       "ghibliImage": null,
-      "video": "/videos/mlh-2017-drone-bbc.mp4"
+      "video": "/videos/mlh-2017-drone-bbc.mp4",
+      "videoCdnUrl": "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/videos/mlh-2017-drone-bbc.mp4"
     }
   ]
 }
