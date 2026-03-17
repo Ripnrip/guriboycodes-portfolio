@@ -6,15 +6,28 @@ import { MagicCard } from '@/components/ui/magic-card.jsx';
 import { BorderBeam } from '@/components/ui/border-beam.jsx';
 import { BlurFade } from '@/components/ui/blur-fade.jsx';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, Play, Smartphone, Brain, Search, Heart, GraduationCap, Globe, Music, Palette, BarChart3, Mic, BookOpen, Gamepad2, X, Sparkles, Eye } from 'lucide-react';
+import { ExternalLink, Github, Play, Smartphone, Brain, Search, Heart, GraduationCap, Globe, Music, Palette, BarChart3, Mic, BookOpen, Gamepad2, X, Sparkles, Eye, Trophy, Car } from 'lucide-react';
 
-// Ghibli image map for top 5 projects
+// Ghibli image map for all projects
 const ghibliImages = {
   "Flow": "/images/projects/flow-ghibli.png",
   "Ethereal Dimension": "/images/projects/ethereal-dimension-ghibli.png",
   "Zai Vision Suite": "/images/projects/zai-vision-suite-ghibli.png",
   "Rosicrucian Knowledge Explorer": "/images/projects/rosicrucian-knowledge-explorer-ghibli.png",
   "Agentic News Transformer": "/images/projects/agentic-news-transformer-ghibli.png",
+  "AI IDE Setup & Workflows": "/images/projects/ai-ide-setup-ghibli.png",
+  "Gurduwara Langar Game": "/images/projects/gurduwara-langar-game-ghibli.png",
+  "Ethereal Search Showcase": "/images/projects/ethereal-search-ghibli.png",
+  "Artful Archives": "/images/projects/artful-archives-ghibli.png",
+  "Rosicrucian Parenting": "/images/projects/rosicrucian-parenting-ghibli.png",
+  "Rosicrucian Vowel Sounds": "/images/projects/rosicrucian-vowel-sounds-ghibli.png",
+  "Hylios — Ethereal Dimension": "/images/projects/hylios-ghibli.png",
+  "Cycles of Fate": "/images/projects/cycles-of-fate-ghibli.png",
+  "Geometric Graph Design": "/images/projects/geometric-graph-ghibli.png",
+  "Voice Practice Hub": "/images/projects/voice-practice-hub-ghibli.png",
+  "Audio Dialogues": "/images/projects/audio-dialogues-ghibli.png",
+  "ARon — AI Fitness Coach": "/images/projects/aron-ai-fitness-ghibli.png",
+  "Carly — AR Car Visualizer": "/images/projects/carly-ar-car-ghibli.png",
 };
 
 const Projects = () => {
@@ -89,6 +102,53 @@ const Projects = () => {
       category: "AI/ML",
       featured: true,
       github: "https://github.com/Ripnrip/Agentic-News-Transformer"
+    },
+    {
+      id: 21,
+      title: "ARon — AI Fitness Coach",
+      description: "HackZurich 2021 — AR fitness coach with real-time pose detection",
+      longDescription: "Built at HackZurich 2021, ARon uses CreateML and ARKit for real-time body pose detection during workouts, achieving 93% ML accuracy in under 24 hours. Integrated Garmin wearables for biometric tracking.",
+      icon: <Trophy className="h-6 w-6" />,
+      technologies: ["Swift", "ARKit", "CreateML", "CoreML", "Garmin SDK"],
+      category: "AI/ML",
+      featured: true,
+      hackathon: "HackZurich 2021",
+      github: "https://github.com/Ripnrip/ARon"
+    },
+    {
+      id: 22,
+      title: "Carly — AR Car Visualizer",
+      description: "HackZurich 2018 — AR car customization & visualization tool",
+      longDescription: "Created at HackZurich 2018, Carly is a voice-controlled AR car configurator combining real-time 3D rendering with Credit Suisse financial API integration for smart vehicle purchasing decisions.",
+      icon: <Car className="h-6 w-6" />,
+      technologies: ["Swift", "ARKit", "CoreML", "Laravel", "Azure"],
+      category: "Mobile",
+      featured: true,
+      hackathon: "HackZurich 2018",
+      github: "https://github.com/niccolosolbiati/Carly"
+    },
+    {
+      id: 23,
+      title: "Legal Lunatics",
+      description: "HackZurich 2023 — Legal tech solution for Implenia workshop challenge",
+      longDescription: "Built at HackZurich 2023 for the Implenia workshop challenge. A legal-tech project built with the gang — Wael, Thuong, Roman, and Jan. Tackled construction industry legal workflows with AI-powered automation.",
+      icon: <Trophy className="h-6 w-6" />,
+      technologies: ["AI", "Legal Tech", "Construction", "Automation", "Hackathon"],
+      category: "AI/ML",
+      featured: false,
+      hackathon: "HackZurich 2023",
+    },
+    {
+      id: 24,
+      title: "Drone Search & Rescue",
+      description: "MLH Prime 2017 — 1st Place Winner at Bloomberg London",
+      longDescription: "1st Place at MLH Prime Europe Regional (Bloomberg, London). Used DJI drones with IBM Watson facial recognition to autonomously locate stranded people in disaster scenarios, sending precise GPS coordinates via SMS using Twilio. Built in Swift with DJI SDK, IBM Watson, AWS, and Node.js.",
+      icon: <Trophy className="h-6 w-6" />,
+      technologies: ["Swift", "DJI SDK", "IBM Watson", "Twilio", "AWS"],
+      category: "AI/ML",
+      featured: true,
+      hackathon: "MLH Prime 2017 — 1st Place",
+      link: "https://devpost.com/software/automated-search-rescue-system"
     },
     {
       id: 7,
@@ -269,7 +329,7 @@ const Projects = () => {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-medium">
               <Sparkles className="h-4 w-4" />
-              20 Projects & Counting
+              24 Projects & Counting
             </div>
             <h2 className="text-4xl md:text-6xl font-bold text-gradient mb-6">
               Featured Projects
@@ -363,11 +423,16 @@ const Projects = () => {
                             </Badge>
                           </div>
                         </div>
-                        {isFeatured && (
+                        {project.hackathon ? (
+                          <Badge className="bg-gradient-to-r from-amber-500 to-orange-500 text-white border-0 shadow-lg shadow-amber-500/20">
+                            <Trophy className="h-3 w-3 mr-1" />
+                            {project.hackathon}
+                          </Badge>
+                        ) : isFeatured ? (
                           <Badge className="bg-gradient-to-r from-primary to-pink-500 text-white border-0 shadow-lg shadow-primary/20">
                             Featured
                           </Badge>
-                        )}
+                        ) : null}
                       </div>
 
                       <p className="text-foreground/60 text-sm mb-4 line-clamp-2 leading-relaxed">
