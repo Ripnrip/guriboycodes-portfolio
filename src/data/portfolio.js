@@ -7,7 +7,7 @@ export const portfolioData = {
     title: "Staff iOS & AI/ML Engineer",
     tagline: "LLM Agents · RAG Pipelines · Mobile · Automation · Patent Holder",
     company: "PayPal",
-    location: "New York",
+    location: "NYC/Tampa (Open to Remote)",
     linkedin: "https://www.linkedin.com/in/gurinder-singh-a30a1a48",
     github: "https://github.com/Ripnrip",
     followers: 1355,
@@ -34,7 +34,7 @@ export const portfolioData = {
           description: "Deployed agent0, an open-source agentic AI framework, to Venmo and PayPal engineering teams — enabling autonomous task execution, intelligent tool use, and self-correcting workflows across development pipelines. Serves as the next evolution of Project Mercury."
         },
         {
-          project: "Project Mercury — AI-Powered Agentic E-Commerce Platform (June 2025 → Present)",
+          project: "Project Mercury — AI-Powered Agentic E-Commerce Platform (AI/GraphRAG/MCP) (June 2025 → Present)",
           description: "Built fully functional prototype in 72 hours; presented to SVP of AI, earning immediate backing and leading a high-velocity team. Trained five SDXL LoRA models achieving 23% loss reduction and 109MB optimized models."
         },
         {
@@ -104,6 +104,14 @@ export const portfolioData = {
   ],
   awards: [
     {
+      title: "🥇 1st Place",
+      event: "Devcamp NYC (Google NYC)",
+      location: "New York, USA 🇺🇸",
+      date: "Oct 2016",
+      project: "Talent Management App",
+      description: "Won first place by building a comprehensive talent management application for modeling agencies to streamline interactions between agencies, talent, and customers. Held at Google NYC with 300+ participants."
+    },
+    {
       title: "1st Place Winner",
       event: "Major League Hacking Prime Europe Regional",
       location: "Bloomberg, London",
@@ -152,11 +160,12 @@ export const portfolioData = {
       video: {
         file: "/videos/hackzurich-2022-elate-720p.mp4",
         sizeMB: 10.07,
-        resolution: "720p"
+        resolution: "720p",
+        venue: "Google NYC Venue"
       },
       projectId: null,
       year: "2022",
-      location: "Zurich, Switzerland"
+      location: "Google NYC Venue"
     },
     {
       event: "HackZurich 2021",
@@ -471,6 +480,7 @@ export const portfolioData = {
   leadership: {
     summary: "Committed to fostering inclusive communities, mentoring the next generation of technologists, and bridging the gap between industry and education.",
     stats: [
+      { label: "1st Place Wins", value: 3, suffix: "× 🏆" },
       { label: "Technical Interviews", value: 500, suffix: "+" },
       { label: "Engineers Mentored", value: 20, suffix: "+" },
       { label: "ERG Members", value: 150, suffix: "+" },
