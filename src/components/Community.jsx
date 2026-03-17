@@ -9,17 +9,16 @@ import { useInView } from 'react-intersection-observer';
 
 const Ticker = ({ value, suffix }) => {
   const [count, setCount] = useState(0);
-  const controls = useAnimation();
   const { ref, inView } = useInView();
 
   useEffect(() => {
-    if (inView) {
+    if (inView && value > 0) {
       let start = 0;
       const end = parseInt(value);
       if (start === end) return;
 
       let totalMiliseconds = 2000;
-      let incrementTime = (totalMiliseconds / end);
+      let incrementTime = Math.max(totalMiliseconds / end, 10);
 
       let timer = setInterval(() => {
         start += 1;
@@ -33,7 +32,7 @@ const Ticker = ({ value, suffix }) => {
 
   return (
     <span ref={ref} className="text-4xl font-bold text-gradient">
-      {count}{suffix}
+      {value > 0 ? count : ""}{suffix}
     </span>
   );
 };
@@ -77,7 +76,7 @@ const Community = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
             Leadership & Community
           </h2>
-          <p className="text-cl text-foreground/80 max-w-3xl mx-auto italic">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto italic">
             "{leadership.summary}"
           </p>
         </div>

@@ -102,21 +102,21 @@ const Hero = () => {
               </div>
               <div className="glass rounded-lg p-6">
                 <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
-                  <AnimatedCounter end={stats.interviews} suffix="+" />
+                  <AnimatedCounter end={parseInt(stats.interviews)} suffix="+" />
                 </div>
-                <div className="text-sm text-foreground/60">Interviews</div>
-              </div>
-              <div className="glass rounded-lg p-6">
-                <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
-                  <AnimatedCounter end={stats.hackathons} suffix="+" />
-                </div>
-                <div className="text-sm text-foreground/60">Hackathons</div>
+                <div className="text-sm text-foreground/60">Interviews Conducted</div>
               </div>
               <div className="glass rounded-lg p-6">
                 <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
                   <AnimatedCounter end={stats.yearsExperience} suffix="+" />
                 </div>
-                <div className="text-sm text-foreground/60">Years Exp</div>
+                <div className="text-sm text-foreground/60">Years Experience</div>
+              </div>
+              <div className="glass rounded-lg p-6">
+                <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
+                  <AnimatedCounter end={stats.patents} suffix="" />
+                </div>
+                <div className="text-sm text-foreground/60">Patent</div>
               </div>
             </div>
           </div>

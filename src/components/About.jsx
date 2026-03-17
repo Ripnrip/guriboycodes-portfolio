@@ -14,6 +14,7 @@ const About = () => {
       case 'paypal': return <Building2 className="h-6 w-6" />;
       case 'google stadia': return <Code className="h-6 w-6" />;
       case 'morgan stanley': return <Briefcase className="h-6 w-6" />;
+      case 'parabit systems': return <Building2 className="h-6 w-6" />;
       default: return <Award className="h-6 w-6" />;
     }
   };
@@ -80,9 +81,14 @@ const About = () => {
                       <CardDescription className="text-lg">
                         {experience[selectedJob].company} • {experience[selectedJob].period}
                       </CardDescription>
-                      <CardDescription className="text-sm text-foreground/60">
-                        {experience[selectedJob].duration}
-                      </CardDescription>
+                      <div className="flex items-center gap-4 mt-1">
+                        <CardDescription className="text-sm text-foreground/60 flex items-center">
+                          📍 {experience[selectedJob].location}
+                        </CardDescription>
+                        <CardDescription className="text-sm text-foreground/60">
+                          {experience[selectedJob].duration}
+                        </CardDescription>
+                      </div>
                     </div>
                   </div>
                 </CardHeader>
@@ -90,19 +96,33 @@ const About = () => {
                 <CardContent className="space-y-6">
                   {/* Highlights */}
                   <div>
-                    <h4 className="text-lg font-semibold mb-3 text-foreground">Key Contributions</h4>
+                    <h4 className="text-lg font-semibold mb-3 text-foreground">Key Achievements</h4>
                     <ul className="space-y-3">
                       {experience[selectedJob].highlights.map((highlight, index) => (
                         <li key={index} className="flex items-start space-x-2">
                           <span className="text-primary mt-1.5">•</span>
                           <span className="text-foreground/80">
-                            {highlight.project && <strong className="text-foreground">{highlight.project}: </strong>}
+                            {highlight.project && <strong className="text-foreground">{highlight.project.split('(')[0].trim()}: </strong>}
                             <span className="whitespace-pre-line">{highlight.description}</span>
                           </span>
                         </li>
                       ))}
                     </ul>
                   </div>
+
+                  {/* Technologies */}
+                  {experience[selectedJob].technologies && (
+                    <div className="pt-4">
+                      <h4 className="text-lg font-semibold mb-3 text-foreground">Technologies</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {experience[selectedJob].technologies.map((tech, idx) => (
+                          <Badge key={idx} variant="secondary" className="bg-primary/5 text-primary border-primary/10 text-[10px]">
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             </Spotlight>

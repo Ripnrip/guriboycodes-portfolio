@@ -14,76 +14,72 @@ export const portfolioData = {
     connections: "500+"
   },
   stats: {
-    usersImpacted: "90M+",
+    usersImpacted: "92M+",
     hackathons: 28,
     firstPlaceWins: 2,
     countries: "6+",
     projectCount: 26,
     yearsExperience: 10,
-    interviews: "500+"
+    interviews: "500+",
+    patents: 1
   },
   experience: [
     {
-      title: "Staff Software Engineer",
+      title: "Staff iOS Engineer → Applied AI/ML Engineer",
       company: "PayPal",
       period: "May 2020 – Present",
+      location: "San Jose, CA / Remote",
       duration: "5 yrs 11 mos",
+      technologies: ["Swift", "SwiftUI", "CoreML", "Python", "PyTorch", "LangChain", "SDXL", "LoRA", "MCP", "RAG", "CrewAI", "DataDog"],
       highlights: [
-        {
-          project: "Agent0 — Autonomous AI Agent for Engineering Teams (Feb 2026)",
-          description: "Deployed agent0, an open-source agentic AI framework, to Venmo and PayPal engineering teams — enabling autonomous task execution, intelligent tool use, and self-correcting workflows across development pipelines. Serves as the next evolution of Project Mercury."
-        },
-        {
-          project: "Project Mercury — AI-Powered Agentic E-Commerce Platform (AI/GraphRAG/MCP) (June 2025 → Present)",
-          description: "Built fully functional prototype in 72 hours; presented to SVP of AI, earning immediate backing and leading a high-velocity team. Trained five SDXL LoRA models achieving 23% loss reduction and 109MB optimized models."
-        },
-        {
-          project: "AI/ML Implementation & Automation (2024)",
-          description: "Developed AI-powered crash detection system using RAG pipelines + Vector stores with automated DataDog monitors — now adopted team-wide. Created 10%+ productivity improvements via AI-powered automation tools."
-        },
-        {
-          project: "iOS Engineering Excellence & Business Impact",
-          description: [
-            "• Pay With Venmo Checkout (2024-Present): Reduced end-to-end latency by ~2s.",
-            "• Venmo Gift Cards (2023): Led iOS architecture for Amazon/Starbucks support.",
-            "• Venmo × Amazon (2022): Built sandbox/integration app in 48h.",
-            "• QRC Touch-Free (2021): Led moonshot initiative winning $60M CVS contract.",
-            "• Amex (2020): Built payment-splitting for $400M deal."
-          ].join("\n")
-        }
+        { description: "Project Mercury (2025): Built AI-powered agentic e-commerce platform in 72 hours; presented to SVP of AI, earning immediate backing" },
+        { description: "Trained 5 SDXL LoRA models achieving 23% loss reduction and 109MB optimized models for production deployment" },
+        { description: "Agent0 (2025): Deployed autonomous AI agent framework to Venmo & PayPal engineering teams for self-correcting workflows" },
+        { description: "AI-powered crash detection using RAG pipelines + Vector stores with automated DataDog monitors — adopted team-wide" },
+        { description: "Pay With Venmo (2024): Reduced end-to-end pay sheet render latency by ~2 seconds, lowering conversion drop-offs" },
+        { description: "Venmo Gift Cards (2023): Led iOS architecture supporting major merchants like Amazon & Starbucks" },
+        { description: "QRC Touch-Free Payments (2021): Led moonshot initiative winning $60M CVS contract" },
+        { description: "QRC Widget Patent (2022): Filed 'Interface Widget Tool for Automatic QR Code Generation' — first team to use SwiftUI for iOS widgets at Venmo" },
+        { description: "Conducted 500+ technical interviews; Interfaith ERG Chapter Lead (Sikh community)" }
       ]
     },
     {
-      title: "Advisory Board Member",
-      company: "Bayside High School",
-      period: "Jan 2017 – Present",
-      duration: "9 yrs",
-      highlights: [
-        {
-          description: "CTE program curriculum: VR, ML, IoT, mobile dev, web dev, blockchain"
-        }
-      ]
-    },
-    {
-      title: "Software Engineer, Consultant for Google Stadia",
-      company: "HCL Technologies",
+      title: "Software Engineer, Consultant",
+      company: "Google Stadia",
       period: "Jul 2019 – May 2020",
+      location: "Mountain View, CA / NYC",
       duration: "11 mos",
+      technologies: ["Flutter", "Dart", "Swift", "Core Bluetooth", "XCTest"],
       highlights: [
-        {
-          description: "Flutter/iOS development, Core Bluetooth integration for Stadia controller"
-        }
+        { description: "Spearheaded Flutter/iOS development for the Google Stadia controller integration" },
+        { description: "Implemented low-latency Core Bluetooth communication protocols for high-performance gaming" },
+        { description: "Developed automated test suites using XCTest and Flutter driver for hardware-software parity" }
       ]
     },
     {
       title: "iOS Developer",
       company: "Morgan Stanley",
       period: "Apr 2018 – Jul 2019",
+      location: "New York, NY",
       duration: "1 yr 4 mos",
+      technologies: ["Objective-C", "Swift", "UIKit", "FaceID/TouchID", "Security"],
       highlights: [
-        {
-          description: "Wealth Management iOS application"
-        }
+        { description: "Developed and maintained core features for the Wealth Management iOS application serving high-net-worth clients" },
+        { description: "Architected secure authentication flows utilizing biometric integration (FaceID/TouchID)" },
+        { description: "Modernized legacy Objective-C codebases into reactive Swift components" }
+      ]
+    },
+    {
+      title: "iOS Developer",
+      company: "Parabit Systems",
+      period: "Jan 2017 – Apr 2018",
+      location: "Roosevelt, NY",
+      duration: "1 yr 4 mos",
+      technologies: ["Swift", "NFC", "Core Bluetooth", "Hardware Integration", "Security"],
+      highlights: [
+        { description: "Engineered secure mobile access solutions using NFC and Bluetooth Low Energy (BLE) for enterprise entry systems" },
+        { description: "Integrated biometric security layers into mobile reader applications" },
+        { description: "Collaborated with hardware teams to define communication protocols for ATM and secure facility access" }
       ]
     },
 
@@ -486,10 +482,10 @@ export const portfolioData = {
   leadership: {
     summary: "Committed to fostering inclusive communities, mentoring the next generation of technologists, and bridging the gap between industry and education.",
     stats: [
-      { label: "Hackathons Attended", value: 28, suffix: "+" },
+      { label: "Total Hackathons", value: 28, suffix: "+" },
       { label: "Countries Visited", value: 6, suffix: "+" },
-      { label: "1st Place Wins", value: 2, suffix: "" },
-      { label: "Interviews Conducted", value: 500, suffix: "+" }
+      { label: "1st Place Wins", value: 2, suffix: "+" },
+      { label: "Countless Learnings", value: 100, suffix: "+" }
     ],
     initiatives: [
       {
