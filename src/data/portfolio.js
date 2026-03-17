@@ -16,11 +16,11 @@ export const portfolioData = {
   stats: {
     usersImpacted: "90M+",
     hackathons: 28,
-    firstPlaceWins: 2,
+    firstPlaceWins: 3,
     patents: 1,
     projectCount: 26,
     yearsExperience: 10,
-    interviews: 500
+    interviews: "500+"
   },
   experience: [
     {
@@ -492,50 +492,50 @@ export const portfolioData = {
       { label: "ERG Members", value: 150, suffix: "+" },
       { label: "Students Reached", value: 500, suffix: "+" },
       { label: "Years Experience", value: 10, suffix: "+" },
-      { label: "Community Events", value: 25, suffix: "+" }
+      { label: "Community Events", value: 30, suffix: "+" }
     ],
     initiatives: [
       {
-        title: "CTE Advisory Board",
-        role: "Industry Advisory Member",
-        organization: "Bayside High School",
-        period: "2023 - Present",
-        description: "Guiding high school tech curriculum development and providing industry insights to prepare students for modern tech careers.",
+        title: "Official Bar Raiser & Technical Leadership",
+        role: "Official Bar Raiser",
+        organization: "PayPal & Venmo",
+        period: "2020 - Present",
+        description: "One of a selective group of engineers responsible for maintaining the 'Bar' for all technical hires across PayPal and Venmo globally.",
         highlights: [
-          "Curriculum review and modernization recommendations",
-          "Guest speaking at career development sessions",
-          "Industry trend analysis and future skills mapping",
-          "Student mentorship and career guidance"
+          "500+ technical interviews conducted across iOS, System Design, and AI/ML",
+          "Final decision-maker for critical hiring rounds, ensuring elite engineering quality",
+          "Mentored 20+ junior and senior engineers through to successful promotions",
+          "Technical leadership in cross-functional architecture reviews and RFCs"
         ],
-        impact: "500+ students reached through curriculum improvements"
+        impact: "Maintainer of elite engineering standards for 30,000+ employee org"
       },
       {
-        title: "Sikh Faith ERG Leadership",
-        role: "Co-Lead & Founding Member",
+        title: "Interfaith ERG Chapter Lead (Sikh Community)",
+        role: "Chapter Lead & Founding Member",
         organization: "PayPal",
         period: "2020 - Present",
-        description: "Leading PayPal's Sikh Faith Employee Resource Group, fostering inclusion and cultural awareness across the organization.",
+        description: "Leading PayPal's Sikh Faith Employee Resource Group, fostering inclusion and cultural awareness through innovative tech-driven community projects.",
         highlights: [
           "Founded and grew ERG to 150+ members globally",
-          "Organized cultural awareness events and celebrations",
-          "Developed Langar App for community education",
-          "Cross-ERG collaboration and allyship programs"
+          "Developed 'Gurduwara Langar Seva' (React Native) to teach Sikh traditions through gamification",
+          "Organized high-impact cross-ERG cultural events and interfaith mentorship programs",
+          "Advocated for inclusive workplace policies and recognition of diverse religious traditions"
         ],
-        impact: "150+ ERG members across PayPal globally"
+        impact: "150+ ERG members; Gamified heritage app deployed to 500+ students"
       },
       {
-        title: "Technical Mentorship",
-        role: "Senior Engineer Mentor",
-        organization: "PayPal & Industry",
-        period: "2019 - Present",
-        description: "Mentoring junior engineers, conducting technical interviews, and fostering the next generation of tech talent.",
+        title: "Academic & Competitive Mentorship",
+        role: "Hackathon Judge & Mentor",
+        organization: "Yale University & UPenn (PennApps)",
+        period: "2017 - Present",
+        description: "Serving the next generation of engineers by judging at Ivy League hackathons and mentoring top-tier student talent.",
         highlights: [
-          "500+ technical interviews conducted",
-          "Mentored 20+ junior engineers to promotion",
-          "Technical leadership in cross-functional teams",
-          "Knowledge sharing through internal tech talks"
+          "Judge (2×) at Hack Yale – evaluating technical feasibility and innovation for 500+ participants",
+          "Mentor at PennApps (UPenn) – guiding students through complex mobile and AI implementations",
+          "Advisory Board Member at Bayside High School (CTE program) defining modern tech curriculum",
+          "Regular guest speaker on AI/ML and the future of Mobile Engineering"
         ],
-        impact: "20+ engineers promoted under mentorship"
+        impact: "Direct mentorship to 1000+ students across various institutions"
       },
       {
         title: "Community Tech Education",
