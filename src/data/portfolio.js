@@ -298,8 +298,7 @@ export const portfolioData = {
       technologies: ["Python", "RAG", "Vector DB", "OpenAI", "Semantic Search"],
       github: "https://github.com/noeticactivity/Rosicrucian-Knowledge-Explorer",
       link: "https://rosicrucian-knowledge-explorer.vercel.app",
-      ghibliImage: "/images/projects/rosicrucian-knowledge-explorer-ghibli.png",
-      ghibliImageCdnUrl: "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/rosicrucian-knowledge-explorer-ghibli.png"
+      ghibliImage: "/images/projects/rosicrucian-knowledge-explorer-ghibli.png"
     },
     {
       id: 6,
@@ -311,8 +310,7 @@ export const portfolioData = {
       technologies: ["Python", "AI Agents", "Automation", "LLMs", "News Context"],
       github: "https://github.com/Ripnrip/Agentic-News-Transformer",
       link: null,
-      ghibliImage: "/images/projects/agentic-news-transformer-ghibli.png",
-      ghibliImageCdnUrl: "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/agentic-news-transformer-ghibli.png"
+      ghibliImage: "/images/projects/agentic-news-transformer-ghibli.png"
     },
     {
       id: 7,
@@ -324,8 +322,7 @@ export const portfolioData = {
       technologies: ["React Native", "Gamification", "Education", "Cultural Impact"],
       github: "https://github.com/Ripnrip/GurduwaraLangarGame",
       link: null,
-      ghibliImage: "/images/projects/gurduwara-langar-game-ghibli.png",
-      ghibliImageCdnUrl: "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/gurduwara-langar-game-ghibli.png"
+      ghibliImage: "/images/projects/gurduwara-langar-game-ghibli.png"
     },
     {
       id: 8,
@@ -337,8 +334,7 @@ export const portfolioData = {
       technologies: ["React", "Next.js", "AI Search", "UI/UX", "Vercel"],
       github: null,
       link: "https://etherealsearch-showcase.vercel.app",
-      ghibliImage: "/images/projects/ethereal-search-ghibli.png",
-      ghibliImageCdnUrl: "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/ethereal-search-ghibli.png"
+      ghibliImage: "/images/projects/ethereal-search-ghibli.png"
     },
     {
       id: 9,
@@ -350,8 +346,7 @@ export const portfolioData = {
       technologies: ["React", "Performance", "Animation", "Creative", "Vercel"],
       github: null,
       link: "https://artful-archives-website.vercel.app",
-      ghibliImage: "/images/projects/artful-archives-ghibli.png",
-      ghibliImageCdnUrl: "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/artful-archives-ghibli.png"
+      ghibliImage: "/images/projects/artful-archives-ghibli.png"
     },
     {
       id: 11,
@@ -363,8 +358,7 @@ export const portfolioData = {
       technologies: ["Flutter", "iOS", "Android", "Web", "Full Stack"],
       github: null,
       link: "https://rosicrucian-parenting.org/",
-      ghibliImage: "/images/projects/rosicrucian-parenting-ghibli.png",
-      ghibliImageCdnUrl: "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/rosicrucian-parenting-ghibli.png"
+      ghibliImage: "/images/projects/rosicrucian-parenting-ghibli.png"
     },
     {
       id: 12,
@@ -376,8 +370,7 @@ export const portfolioData = {
       technologies: ["Flutter", "Dart", "iOS", "Android", "Audio"],
       github: null,
       link: "https://apps.apple.com/us/app/rosicrucian-vowel-sounds/id6529521816",
-      ghibliImage: "/images/projects/rosicrucian-vowel-sounds-ghibli.png",
-      ghibliImageCdnUrl: "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/rosicrucian-vowel-sounds-ghibli.png"
+      ghibliImage: "/images/projects/rosicrucian-vowel-sounds-ghibli.png"
     },
     {
       id: 13,
@@ -389,8 +382,7 @@ export const portfolioData = {
       technologies: ["Swift", "SpriteKit", "iOS", "Game Design", "Storytelling"],
       github: null,
       link: "https://apps.apple.com/us/app/hylios/id6474466548",
-      ghibliImage: "/images/projects/hylios-ghibli.png",
-      ghibliImageCdnUrl: "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/hylios-ghibli.png"
+      ghibliImage: "/images/projects/hylios-ghibli.png"
     },
     {
       id: 15,
@@ -402,8 +394,7 @@ export const portfolioData = {
       technologies: ["React", "Next.js", "Animation", "Vercel", "Creative"],
       github: null,
       link: "https://cycles-of-fate.vercel.app/",
-      ghibliImage: "/images/projects/cycles-of-fate-ghibli.png",
-      ghibliImageCdnUrl: "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/cycles-of-fate-ghibli.png"
+      ghibliImage: "/images/projects/cycles-of-fate-ghibli.png"
     },
     {
       id: 16,
@@ -415,8 +406,7 @@ export const portfolioData = {
       technologies: ["React", "Canvas", "Generative Art", "Math", "Vercel"],
       github: null,
       link: "https://v0-geometric-graph-design.vercel.app/",
-      ghibliImage: "/images/projects/geometric-graph-ghibli.png",
-      ghibliImageCdnUrl: "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/geometric-graph-ghibli.png"
+      ghibliImage: "/images/projects/geometric-graph-ghibli.png"
     },
     {
       id: 17,
@@ -428,8 +418,7 @@ export const portfolioData = {
       technologies: ["React", "Web Audio", "Next.js", "Education", "Vercel"],
       github: null,
       link: "https://voice-practice-hub.vercel.app/",
-      ghibliImage: "/images/projects/voice-practice-hub-ghibli.png",
-      ghibliImageCdnUrl: "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/voice-practice-hub-ghibli.png"
+      ghibliImage: "/images/projects/voice-practice-hub-ghibli.png"
     },
     {
       id: 18,
@@ -441,8 +430,7 @@ export const portfolioData = {
       technologies: ["React", "Audio API", "AI", "Vercel", "Next.js"],
       github: null,
       link: "https://audio-dialogues.vercel.app",
-      ghibliImage: "/images/projects/audio-dialogues-ghibli.png",
-      ghibliImageCdnUrl: "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/audio-dialogues-ghibli.png"
+      ghibliImage: "/images/projects/audio-dialogues-ghibli.png"
     },
     {
       id: 21,
@@ -450,14 +438,10 @@ export const portfolioData = {
       description: "HackZurich 2021 — AR fitness coach with real-time pose detection",
       longDescription: "Built at HackZurich 2021, ARon uses CreateML and ARKit for real-time body pose detection during workouts. Integrated Garmin wearables for biometric tracking.",
       category: "AI/ML",
-      featured: true,
-      technologies: ["Swift", "ARKit", "CreateML", "CoreML", "Garmin SDK"],
       github: "https://github.com/Ripnrip/ARon",
       link: null,
       ghibliImage: "/images/projects/aron-ai-fitness-ghibli.png",
-      ghibliImageCdnUrl: "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/aron-ai-fitness-ghibli.png",
-      video: "/videos/hackzurich-2021-aron-fitness.mp4",
-      videoCdnUrl: "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/videos/hackzurich-2021-aron-fitness.mp4"
+      video: "/videos/hackzurich-2021-aron-fitness.mp4"
     },
     {
       id: 22,
@@ -469,8 +453,7 @@ export const portfolioData = {
       technologies: ["Swift", "ARKit", "CoreML", "Laravel", "Azure"],
       github: "https://github.com/niccolosolbiati/Carly",
       link: null,
-      ghibliImage: "/images/projects/carly-ar-car-ghibli.png",
-      ghibliImageCdnUrl: "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/images/projects/carly-ar-car-ghibli.png"
+      ghibliImage: "/images/projects/carly-ar-car-ghibli.png"
     },
     {
       id: 24,
@@ -482,9 +465,8 @@ export const portfolioData = {
       technologies: ["Swift", "DJI SDK", "IBM Watson", "Twilio", "AWS"],
       github: null,
       link: "https://devpost.com/software/automated-search-rescue-system",
-      ghibliImage: null,
-      video: "/videos/mlh-2017-drone-bbc.mp4",
-      videoCdnUrl: "https://raw.githubusercontent.com/Ripnrip/guriboycodes-portfolio/claude-portfolio/public/videos/mlh-2017-drone-bbc.mp4"
+      ghibliImage: "/images/projects/drone-sar-ghibli.png",
+      video: "/videos/mlh-2017-drone-bbc.mp4"
     },
     {
       id: 25,
@@ -619,21 +601,21 @@ export const portfolioData = {
       { name: "SwiftUI", icon: "swiftui.svg", level: 95, tags: ["Core", "iOS"] },
       { name: "Objective-C", icon: "objective-c.svg", level: 90, tags: ["Core", "Legacy"] },
       { name: "UIKit", icon: "uikit.svg", level: 95, tags: ["Core", "iOS"] },
-      { name: "SwiftData", icon: "swiftdata.svg", level: 90, tags: ["iOS", "Data"] },
-      { name: "Core Data", icon: "database.svg", level: 90, tags: ["iOS", "Data"] },
-      { name: "Combine", icon: "combine.svg", level: 90, tags: ["iOS", "Reactive"] },
+      { name: "SwiftData", icon: "swiftdata.png", level: 90, tags: ["iOS", "Data"] },
+      { name: "Core Data", icon: "nosql.svg", level: 90, tags: ["iOS", "Data"] },
+      { name: "Combine", icon: "rxswift.svg", level: 90, tags: ["iOS", "Reactive"] },
       { name: "RxSwift", icon: "rxswift.svg", level: 85, tags: ["iOS", "Reactive"] },
       { name: "ARKit / RoomPlan", icon: "arkit.svg", level: 85, tags: ["Spatial", "Hardware"] },
-      { name: "CoreML / MLX", icon: "core-ml.svg", level: 90, tags: ["AI", "On-Device"] },
-      { name: "Metal / Vision", icon: "metal.svg", level: 80, tags: ["Graphics", "Vision"] },
-      { name: "BLE / NFC", icon: "bluetooth.svg", level: 90, tags: ["Hardware", "Connectivity"] },
-      { name: "MapKit / CoreLocation", icon: "map.svg", level: 90, tags: ["iOS"] },
-      { name: "APNS / Notifications", icon: "bell.svg", level: 95, tags: ["Infrastructure"] },
-      { name: "Dynamic Island", icon: "activity.svg", level: 95, tags: ["iOS", "UI"] },
-      { name: "Live Activities", icon: "clock.svg", level: 95, tags: ["iOS", "UI"] },
-      { name: "App Clips", icon: "scissors.svg", level: 90, tags: ["iOS"] },
-      { name: "XCTest / Snapshot", icon: "test-tube.svg", level: 90, tags: ["Testing"] },
-      { name: "Design Systems", icon: "layers.svg", level: 90, tags: ["UI/UX"] },
+      { name: "CoreML / MLX", icon: "coreml.svg", level: 90, tags: ["AI", "On-Device"] },
+      { name: "Metal / Vision", icon: "computer-vision.svg", level: 80, tags: ["Graphics", "Vision"] },
+      { name: "BLE / NFC", icon: "ble.svg", level: 90, tags: ["Hardware", "Connectivity"] },
+      { name: "MapKit / CoreLocation", icon: "mapkit.svg", level: 90, tags: ["iOS"] },
+      { name: "APNS / Notifications", icon: "activitykit.svg", level: 95, tags: ["Infrastructure"] },
+      { name: "Dynamic Island", icon: "activitykit.svg", level: 95, tags: ["iOS", "UI"] },
+      { name: "Live Activities", icon: "activitykit.svg", level: 95, tags: ["iOS", "UI"] },
+      { name: "App Clips", icon: "activitykit.svg", level: 90, tags: ["iOS"] },
+      { name: "XCTest / Snapshot", icon: "tdd.svg", level: 90, tags: ["Testing"] },
+      { name: "Design Systems", icon: "figma.svg", level: 90, tags: ["UI/UX"] },
       { name: "Flutter & Dart", icon: "flutter.svg", level: 85, tags: ["Cross-Platform"] },
       { name: "Cordova / Hybrid", icon: "smartphone.svg", level: 80, tags: ["Web-to-Native"] }
     ],
@@ -642,26 +624,26 @@ export const portfolioData = {
       { name: "PyTorch", icon: "pytorch.svg", level: 85, tags: ["ML", "Research"] },
       { name: "OpenAI / GPT-4o", icon: "openai.svg", level: 95, tags: ["LLM", "API"] },
       { name: "Anthropic / Claude", icon: "anthropic.svg", level: 95, tags: ["LLM", "API"] },
-      { name: "Gemini 2.0 / 1.5", icon: "gemini.svg", level: 95, tags: ["LLM", "Google"] },
-      { name: "Llama 3 / Mistral", icon: "meta.svg", level: 90, tags: ["LLM", "OSS"] },
+      { name: "Gemini 2.0 / 1.5", icon: "gemini-icon.png", level: 95, tags: ["LLM", "Google"] },
+      { name: "Llama 3 / Mistral", icon: "ollama.svg", level: 90, tags: ["LLM", "OSS"] },
       { name: "LangChain", icon: "langchain.svg", level: 95, tags: ["Orchestration"] },
-      { name: "LlamaIndex", icon: "llamaindex.svg", level: 90, tags: ["RAG", "Data"] },
+      { name: "LlamaIndex", icon: "llamaindex.png", level: 90, tags: ["RAG", "Data"] },
       { name: "CrewAI / AutoGPT", icon: "crewai.svg", level: 90, tags: ["Agents"] },
-      { name: "Agent Zero", icon: "agent0.svg", level: 95, tags: ["Agents", "OSS"] },
-      { name: "OpenManus", icon: "manus.svg", level: 95, tags: ["Agents", "Automation"] },
+      { name: "Agent Zero", icon: "ollama.svg", level: 95, tags: ["Agents", "OSS"] },
+      { name: "OpenManus", icon: "manus.png", level: 95, tags: ["Agents", "Automation"] },
       { name: "N8N Automation", icon: "n8n.svg", level: 90, tags: ["Workflow"] },
       { name: "MCP Servers", icon: "mcp.svg", level: 95, tags: ["Orchestration"] },
-      { name: "Cognee", icon: "cognee.svg", level: 90, tags: ["Knowledge Graph"] },
-      { name: "OpenViking", icon: "viking.svg", level: 85, tags: ["Context Tiering"] },
-      { name: "RAG Pipelines", icon: "rag.svg", level: 95, tags: ["RAG"] },
-      { name: "Vector Search", icon: "search.svg", level: 95, tags: ["RAG"] },
-      { name: "GraphRAG", icon: "graph.svg", level: 90, tags: ["Advanced RAG"] },
+      { name: "Cognee", icon: "langgraph.svg", level: 90, tags: ["Knowledge Graph"] },
+      { name: "OpenViking", icon: "langflow.svg", level: 85, tags: ["Context Tiering"] },
+      { name: "RAG Pipelines", icon: "rag-pipelines.svg", level: 95, tags: ["RAG"] },
+      { name: "Vector Search", icon: "chromadb.svg", level: 95, tags: ["RAG"] },
+      { name: "GraphRAG", icon: "neo4j.svg", level: 90, tags: ["Advanced RAG"] },
       { name: "Stable Diffusion / SDXL", icon: "stable-diffusion.svg", level: 85, tags: ["Generative Media"] },
-      { name: "SDXL LoRA Training", icon: "settings-2.svg", level: 90, tags: ["Fine-Tuning"] },
-      { name: "YOLO / OpenCV", icon: "eye.svg", level: 85, tags: ["Vision"] },
-      { name: "Whisper / STT", icon: "mic.svg", level: 90, tags: ["Audio"] },
-      { name: "ElevenLabs / TTS", icon: "speaker.svg", level: 90, tags: ["Audio"] },
-      { name: "Prompt Engineering", icon: "terminal.svg", level: 98, tags: ["Core"] }
+      { name: "SDXL LoRA Training", icon: "stable-diffusion.svg", level: 90, tags: ["Fine-Tuning"] },
+      { name: "YOLO / OpenCV", icon: "opencv.svg", level: 85, tags: ["Vision"] },
+      { name: "Whisper / STT", icon: "tts-stt.svg", level: 90, tags: ["Audio"] },
+      { name: "ElevenLabs / TTS", icon: "elevenlabs.svg", level: 90, tags: ["Audio"] },
+      { name: "Prompt Engineering", icon: "cursor.svg", level: 98, tags: ["Core"] }
     ],
     cloud_devops: [
       { name: "AWS (Lambda/EC2)", icon: "aws.svg", level: 90, tags: ["Cloud", "Infra"] },
@@ -684,13 +666,13 @@ export const portfolioData = {
       { name: "GraphQL / Apollo", icon: "graphql.svg", level: 85, tags: ["API"] },
       { name: "Next.js / React", icon: "nextjs.svg", level: 95, tags: ["Frontend"] },
       { name: "Tailwind CSS", icon: "palette.svg", level: 95, tags: ["Styling"] },
-      { name: "Three.js / WebGL", icon: "box.svg", level: 80, tags: ["Graphics"] },
-      { name: "Framer Motion", icon: "activity.svg", level: 90, tags: ["Animations"] },
-      { name: "Obsidian / Zettelkasten", icon: "book.svg", level: 95, tags: ["Knowledge Management"] },
+      { name: "Three.js / WebGL", icon: "comfyui.svg", level: 80, tags: ["Graphics"] },
+      { name: "Framer Motion", icon: "activitykit.svg", level: 90, tags: ["Animations"] },
+      { name: "Obsidian / Zettelkasten", icon: "confluence.svg", level: 95, tags: ["Knowledge Management"] },
       { name: "Figma", icon: "figma.svg", level: 90, tags: ["Design"] },
       { name: "Xcode Instruments", icon: "xcode.svg", level: 95, tags: ["Profiling", "Performance"] },
       { name: "Git / GitHub", icon: "github.svg", level: 98, tags: ["Core"] },
-      { name: "TDD / Agile", icon: "clipboard-check.svg", level: 95, tags: ["Process"] },
+      { name: "TDD / Agile", icon: "tdd.svg", level: 95, tags: ["Process"] },
       { name: "Cursor / AI IDE", icon: "cursor.svg", level: 98, tags: ["Productivity"] }
     ]
   }

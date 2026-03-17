@@ -8,6 +8,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip.jsx";
+import { Brain, Cpu, Globe, Database, Smartphone, Layout, Workflow, Terminal, Layers } from 'lucide-react';
 
 const SkillGraph = () => {
   const { skills } = portfolioData;
@@ -130,13 +131,22 @@ const SkillGraph = () => {
                       }`}
                       whileHover={{ scale: 1.5 }}
                     >
-                      <div className="w-8 h-8 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+                      <div className="w-8 h-8 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all relative">
                         <img 
                           src={`/assets/icons/${skill.icon}`} 
                           alt={skill.name}
-                          className="max-w-full max-h-full object-contain drop-shadow-[0_0_8px_rgba(var(--primary),0.3)]"
-                          onError={(e) => { e.target.src = '/favicon.ico'; }}
+                          className="max-w-full max-h-full object-contain drop-shadow-[0_0_8px_rgba(var(--primary),0.3)] relative z-10"
+                          onError={(e) => { 
+                            e.target.style.display = 'none';
+                            e.target.nextSibling.style.display = 'flex';
+                          }}
                         />
+                        <div className="hidden absolute inset-0 items-center justify-center z-0">
+                          {skill.category === 'mobile' && <Smartphone className="w-4 h-4 text-blue-400" />}
+                          {skill.category === 'ai_ml' && <Brain className="w-4 h-4 text-purple-400" />}
+                          {skill.category === 'cloud_devops' && <Cpu className="w-4 h-4 text-orange-400" />}
+                          {skill.category === 'data_tools' && <Database className="w-4 h-4 text-green-400" />}
+                        </div>
                       </div>
                     </motion.div>
                   </TooltipTrigger>
