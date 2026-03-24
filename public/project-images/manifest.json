@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "slug": "flow",
+    "status": "success",
+    "path": "/home/ubuntu/guriboycodes-portfolio/public/project-images/flow.jpg"
+  },
+  {
+    "id": 2,
+    "slug": "ethereal-dimension",
+    "status": "success",
+    "path": "/home/ubuntu/guriboycodes-portfolio/public/project-images/ethereal-dimension.jpg"
+  },
+  {
+    "id": 3,
+    "slug": "zai-vision-suite",
+    "status": "success",
+    "path": "/home/ubuntu/guriboycodes-portfolio/public/project-images/zai-vision-suite.jpg"
+  },
+  {
+    "id": 4,
+    "slug": "ai-ide-setup",
+    "status": "success",
+    "path": "/home/ubuntu/guriboycodes-portfolio/public/project-images/ai-ide-setup.jpg"
+  },
+  {
+    "id": 5,
+    "slug": "rosicrucian-knowledge-explorer",
+    "status": "success",
+    "path": "/home/ubuntu/guriboycodes-portfolio/public/project-images/rosicrucian-knowledge-explorer.jpg"
+  },
+  {
+    "id": 6,
+    "slug": "agentic-news-transformer",
+    "status": "success",
+    "path": "/home/ubuntu/guriboycodes-portfolio/public/project-images/agentic-news-transformer.jpg"
+  },
+  {
+    "id": 7,
+    "slug": "gurduwara-langar-game",
+    "status": "success",
+    "path": "/home/ubuntu/guriboycodes-portfolio/public/project-images/gurduwara-langar-game.jpg"
+  },
+  {
+    "id": 8,
+    "slug": "ethereal-search-showcase",
+    "status": "success",
+    "path": "/home/ubuntu/guriboycodes-portfolio/public/project-images/ethereal-search-showcase.jpg"
+  },
+  {
+    "id": 9,
+    "slug": "artful-archives",
+    "status": "success",
+    "path": "/home/ubuntu/guriboycodes-portfolio/public/project-images/artful-archives.jpg"
+  },
+  {
+    "id": 10,
+    "slug": "ethereal-explorer",
+    "status": "success",
+    "path": "/home/ubuntu/guriboycodes-portfolio/public/project-images/ethereal-explorer.jpg"
+  },
+  {
+    "id": 11,
+    "slug": "rosicrucian-parenting",
+    "status": "success",
+    "path": "/home/ubuntu/guriboycodes-portfolio/public/project-images/rosicrucian-parenting.jpg"
+  },
+  {
+    "id": 12,
+    "slug": "rosicrucian-vowel-sounds",
+    "status": "success",
+    "path": "/home/ubuntu/guriboycodes-portfolio/public/project-images/rosicrucian-vowel-sounds.jpg"
+  },
+  {
+    "id": 13,
+    "slug": "hylios",
+    "status": "success",
+    "path": "/home/ubuntu/guriboycodes-portfolio/public/project-images/hylios.jpg"
+  },
+  {
+    "id": 14,
+    "slug": "barricades-austin",
+    "status": "success",
+    "path": "/home/ubuntu/guriboycodes-portfolio/public/project-images/barricades-austin.jpg"
+  },
+  {
+    "id": 15,
+    "slug": "cycles-of-fate",
+    "status": "success",
+    "path": "/home/ubuntu/guriboycodes-portfolio/public/project-images/cycles-of-fate.jpg"
+  },
+  {
+    "id": 16,
+    "slug": "geometric-graph-design",
+    "status": "success",
+    "path": "/home/ubuntu/guriboycodes-portfolio/public/project-images/geometric-graph-design.jpg"
+  },
+  {
+    "id": 17,
+    "slug": "voice-practice-hub",
+    "status": "success",
+    "path": "/home/ubuntu/guriboycodes-portfolio/public/project-images/voice-practice-hub.jpg"
+  },
+  {
+    "id": 18,
+    "slug": "audio-dialogues",
+    "status": "success",
+    "path": "/home/ubuntu/guriboycodes-portfolio/public/project-images/audio-dialogues.jpg"
+  },
+  {
+    "id": 19,
+    "slug": "my4blocks",
+    "status": "success",
+    "path": "/home/ubuntu/guriboycodes-portfolio/public/project-images/my4blocks.jpg"
+  },
+  {
+    "id": 20,
+    "slug": "blog-layouts-artful",
+    "status": "success",
+    "path": "/home/ubuntu/guriboycodes-portfolio/public/project-images/blog-layouts-artful.jpg"
+  }
+]
