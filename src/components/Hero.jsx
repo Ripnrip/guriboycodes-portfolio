@@ -25,6 +25,7 @@ const Hero = () => {
           <div className="hidden md:flex space-x-8 items-center">
             <a href="#about" className="text-foreground/80 hover:text-foreground transition-colors">About</a>
             <a href="#projects" className="text-foreground/80 hover:text-foreground transition-colors">Projects</a>
+            <a href="#knowledge-graph" className="text-foreground/80 hover:text-foreground transition-colors">Knowledge Graph</a>
             <a href="#hackathons" className="text-foreground/80 hover:text-foreground transition-colors">Hackathons</a>
             <a href="#leadership" className="text-foreground/80 hover:text-foreground transition-colors">Leadership</a>
             <a href="#contact" className="text-foreground/80 hover:text-foreground transition-colors">Contact</a>
