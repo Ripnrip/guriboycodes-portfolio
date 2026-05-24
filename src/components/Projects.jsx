@@ -6,7 +6,8 @@ import { Spotlight } from '@/components/ui/spotlight.jsx';
 import { 
   ExternalLink, Github, Play, Smartphone, Brain, Search, Heart, 
   GraduationCap, Globe, Music, Palette, BarChart3, Mic, BookOpen, 
-  Gamepad2, X, ChevronRight, Sparkles, Star, ArrowUpRight
+  Gamepad2, X, ChevronRight, Sparkles, Star, ArrowUpRight,
+  Zap, GitBranch, Cpu, Network, Leaf
 } from 'lucide-react';
 
 /* ─── Image slug map for Ghibli-generated project art ─── */
@@ -31,6 +32,11 @@ const IMAGE_SLUGS = {
   18: 'audio-dialogues',
   19: 'my4blocks',
   20: 'blog-layouts-artful',
+  21: 'maia-venmo',
+  22: 'vireo',
+  23: 'darwin-evolution',
+  24: 'mac-in-a-mac',
+  25: 'claude-cosmos',
 };
 
 const getProjectImage = (id) => `/project-images/${IMAGE_SLUGS[id]}.jpg`;
@@ -42,6 +48,7 @@ const CATEGORY_COLORS = {
   'Creative': { bg: 'bg-rose-500/15', text: 'text-rose-400', border: 'border-rose-500/30', glow: 'shadow-rose-500/20' },
   'Community': { bg: 'bg-amber-500/15', text: 'text-amber-400', border: 'border-amber-500/30', glow: 'shadow-amber-500/20' },
   'Tools': { bg: 'bg-emerald-500/15', text: 'text-emerald-400', border: 'border-emerald-500/30', glow: 'shadow-emerald-500/20' },
+  'PayPal AI': { bg: 'bg-orange-500/15', text: 'text-orange-400', border: 'border-orange-500/30', glow: 'shadow-orange-500/20' },
 };
 
 const Projects = () => {
@@ -292,10 +299,65 @@ const Projects = () => {
       featured: false,
       link: "https://v0-blog-layouts.vercel.app/",
       highlight: "Typography-first design system"
+    },
+    {
+      id: 21,
+      title: "MAIA — Merchant AI Assistant",
+      description: "Agentic AI that onboards Venmo merchants from scratch to live in under 20 minutes",
+      longDescription: "MAIA (Merchant AI Assistant) is an autonomous agentic system built at PayPal/Venmo that takes a merchant from zero to fully onboarded in under 20 minutes. It orchestrates multi-step workflows — business verification, payment setup, compliance checks, and storefront configuration — using LLM-driven decision trees and self-correcting retry loops. Deployed to production serving Venmo's merchant ecosystem.",
+      icon: <Zap className="h-5 w-5" />,
+      technologies: ["Python", "LangChain", "OpenAI", "Agentic AI", "PayPal APIs", "FastAPI"],
+      category: "PayPal AI",
+      featured: true,
+      highlight: "0 → live merchant in < 20 min"
+    },
+    {
+      id: 22,
+      title: "Vireo — AI Observability Platform",
+      description: "Production-grade LLM observability with MCP server integration and memory management",
+      longDescription: "Vireo is a comprehensive AI observability and monitoring platform built for PayPal's LLM infrastructure. It provides real-time telemetry, prompt/response logging, token usage analytics, latency tracking, and memory management for all AI agents in production. Features a custom MCP server integration that enables CLI-driven inspection of live agent sessions.",
+      icon: <Network className="h-5 w-5" />,
+      technologies: ["Python", "MCP", "TypeScript", "Observability", "LLM Telemetry", "React"],
+      category: "PayPal AI",
+      featured: true,
+      highlight: "Full-stack LLM observability in production"
+    },
+    {
+      id: 23,
+      title: "Darwin — Evolutionary AI Skill Engine",
+      description: "Self-improving AI skill library with evolutionary selection — Blooms survive, Fossils are preserved",
+      longDescription: "Darwin is an evolutionary AI skill management system that treats AI capabilities like organisms — skills that perform well become 'Blooms' (promoted and replicated), while deprecated but historically valuable skills become 'Fossils' (preserved for reference). The system continuously benchmarks, selects, and evolves the best-performing skills for PayPal's AI agent fleet, enabling autonomous capability improvement over time.",
+      icon: <Leaf className="h-5 w-5" />,
+      technologies: ["Python", "Evolutionary Algorithms", "LLM Eval", "FastAPI", "PostgreSQL"],
+      category: "PayPal AI",
+      featured: true,
+      highlight: "Self-evolving AI skill selection system"
+    },
+    {
+      id: 24,
+      title: "Mac-in-a-Mac — Nested iOS CI",
+      description: "Virtualized macOS-in-macOS environment that runs iOS test suites 3× faster",
+      longDescription: "Mac-in-a-Mac is a virtualization infrastructure project that nests macOS environments inside macOS hosts using Apple's Virtualization framework. This enables fully isolated, parallelized iOS CI/CD pipelines that run test suites 3× faster than traditional single-machine setups. Deployed across PayPal's mobile engineering infrastructure to dramatically reduce build times for the Venmo iOS app.",
+      icon: <Cpu className="h-5 w-5" />,
+      technologies: ["Swift", "Apple Virtualization.framework", "Xcode Cloud", "CI/CD", "macOS"],
+      category: "PayPal AI",
+      featured: false,
+      highlight: "3× faster iOS CI via nested macOS VMs"
+    },
+    {
+      id: 25,
+      title: "claude-cosmos — LLM Gateway Proxy",
+      description: "Unified AI gateway with PII scrubbing, telemetry, and multi-model routing for PayPal engineering",
+      longDescription: "claude-cosmos is PayPal's internal LLM gateway proxy that routes requests from all internal AI agents and developer tools to multiple LLM providers (Claude, GPT-4, Gemini). It handles PII detection and scrubbing before prompts leave the network, unified telemetry and cost attribution, rate limiting, and fallback routing. Serves as the single secure entry point for all AI traffic across PayPal engineering.",
+      icon: <GitBranch className="h-5 w-5" />,
+      technologies: ["Python", "FastAPI", "Claude API", "OpenAI", "PII Detection", "Proxy"],
+      category: "PayPal AI",
+      featured: false,
+      highlight: "Secure LLM gateway for all PayPal AI traffic"
     }
   ];
 
-  const categories = ["All", "AI/ML", "Mobile", "Creative", "Community", "Tools"];
+  const categories = ["All", "PayPal AI", "AI/ML", "Mobile", "Creative", "Community", "Tools"];
 
   const filteredProjects = activeCategory === "All" 
     ? projects 

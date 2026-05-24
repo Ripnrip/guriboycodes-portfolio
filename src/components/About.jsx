@@ -9,21 +9,24 @@ const About = () => {
 
   const careerData = [
     {
-      company: "PayPal",
-      role: "Staff iOS Engineer",
+      company: "PayPal / Venmo",
+      role: "Sr. Staff Applied AI Engineer",
       period: "2019 - Present",
-      location: "Tampa, FL",
+      location: "Tampa, FL (Remote)",
       icon: <Building2 className="h-6 w-6" />,
       highlights: [
-        "Built and scaled Venmo iOS features for 92M active users",
-        "Led AI initiatives (2023-2025) with patent applications",
-        "Closed $60M enterprise contract in year one",
-        "Designed High-Level Designs (HLD) for cross-org architecture",
-        "Launched Venmo Gift Cards with internal org-wide trailer",
-        "Spearheaded Pay With Venmo with JetBlue partner engineering",
-        "Conducted 400+ interviews and ERG leadership (Sikh Faith Group)"
+        "Deployed autonomous AI agent framework (Agent0) to Venmo & PayPal engineering teams for self-correcting workflows",
+        "Built MAIA — agentic merchant onboarding AI that takes merchants from 0 to live in < 20 minutes",
+        "Built Vireo — production LLM observability platform with MCP server integration and memory management",
+        "Built Darwin — evolutionary AI skill engine with Bloom/Fossil selection for self-improving agent capabilities",
+        "Built Mac-in-a-Mac — nested macOS virtualization that runs iOS test suites 3× faster",
+        "Built claude-cosmos — unified LLM gateway proxy with PII scrubbing and multi-model routing",
+        "Scaled Venmo iOS features for 92M+ active users; closed $60M enterprise contract in year one",
+        "Led Project Mercury — AI-powered agentic e-commerce platform (patent applications filed)",
+        "Launched Venmo Gift Cards, Pay With Venmo (JetBlue), and QRC Widget (patent holder)",
+        "Conducted 500+ technical interviews; ERG Leadership (Sikh Faith Group)"
       ],
-      technologies: ["Swift", "SwiftUI", "CoreML", "AI/ML", "iOS", "Venmo APIs"]
+      technologies: ["Swift", "SwiftUI", "Python", "LangChain", "MCP", "LLM", "Agentic AI", "CoreML", "iOS", "FastAPI"]
     },
     {
       company: "Google Stadia",

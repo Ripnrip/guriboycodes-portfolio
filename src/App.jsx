@@ -4,7 +4,6 @@ import About from './components/About.jsx';
 import Projects from './components/Projects.jsx';
 import Hackathons from './components/Hackathons.jsx';
 import Contact from './components/Contact.jsx';
-import KnowledgeGraph from './components/KnowledgeGraph.jsx';
 import './App.css';
 
 function App() {
@@ -13,7 +12,6 @@ function App() {
       <Hero />
       <About />
       <Projects />
-      <KnowledgeGraph />
       <Hackathons />
       <Contact />
     </div>

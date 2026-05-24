@@ -25,7 +25,6 @@ const Hero = () => {
           <div className="hidden md:flex space-x-8 items-center">
             <a href="#about" className="text-foreground/80 hover:text-foreground transition-colors">About</a>
             <a href="#projects" className="text-foreground/80 hover:text-foreground transition-colors">Projects</a>
-            <a href="#knowledge-graph" className="text-foreground/80 hover:text-foreground transition-colors">Knowledge Graph</a>
             <a href="#hackathons" className="text-foreground/80 hover:text-foreground transition-colors">Hackathons</a>
             <a href="#leadership" className="text-foreground/80 hover:text-foreground transition-colors">Leadership</a>
             <a href="#contact" className="text-foreground/80 hover:text-foreground transition-colors">Contact</a>
@@ -46,8 +45,8 @@ const Hero = () => {
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
-                  Staff iOS & AI/ML Engineer with over a decade of experience scaling apps for 90M+ users. 
-                  Patent-holder, technical leader, and hackathon veteran building legendary apps at global scale.
+                  Sr. Staff Applied AI Engineer building autonomous agents, LLM infrastructure, and iOS apps at PayPal/Venmo scale.
+                  Patent-holder, hackathon veteran, and technical leader shipping AI systems for 92M+ users.
                 </p>
 
                 {/* CTA Buttons */}
@@ -94,7 +93,7 @@ const Hero = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
               <div className="glass rounded-lg p-6">
                 <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
-                  <AnimatedCounter end={90} suffix="M+" />
+                  <AnimatedCounter end={92} suffix="M+" />
                 </div>
                 <div className="text-sm text-foreground/60">Venmo Users</div>
               </div>
@@ -112,9 +111,9 @@ const Hero = () => {
               </div>
               <div className="glass rounded-lg p-6">
                 <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
-                  <AnimatedCounter end={10} suffix="+" />
+                  <AnimatedCounter end={5} suffix="" />
                 </div>
-                <div className="text-sm text-foreground/60">Years Exp</div>
+                <div className="text-sm text-foreground/60">AI Systems Shipped in 2026</div>
               </div>
             </div>
           </div>
@@ -122,17 +121,21 @@ const Hero = () => {
 
         {/* Marquee Ticker */}
         <div className="py-8 border-t border-border/20">
-          <Marquee className="text-foreground/60" speed={30}>
-            <span className="mx-8">🚀 PayPal Staff Engineer</span>
-            <span className="mx-8">📱 90M Venmo Users</span>
-            <span className="mx-8">🤖 Project Mercury - AI Agentic Platform</span>
+          <Marquee className="text-foreground/60" speed={60}>
+            <span className="mx-8">🚀 Sr. Staff Applied AI Engineer (Mobile & AI)</span>
+            <span className="mx-8">📱 92M Venmo Users</span>
+            <span className="mx-8">🤖 Agent0 — Autonomous AI Agent Framework</span>
+            <span className="mx-8">🛒 MAIA — Merchant AI: 0 → Live in 20 min</span>
+            <span className="mx-8">🔭 Vireo — LLM Observability Platform</span>
+            <span className="mx-8">🌱 Darwin — Evolutionary AI Skill Engine</span>
+            <span className="mx-8">💻 Mac-in-a-Mac — 3× Faster iOS CI</span>
+            <span className="mx-8">🌐 claude-cosmos — LLM Gateway Proxy</span>
             <span className="mx-8">🏆 $60M Contract Closed</span>
             <span className="mx-8">🎯 500+ Interviews Conducted</span>
             <span className="mx-8">🌟 28+ Hackathons</span>
             <span className="mx-8">🏅 2× 1st Place Wins</span>
             <span className="mx-8">📺 BBC Documentary Featured</span>
-            <span className="mx-8">🔬 AI/ML Patents</span>
-            <span className="mx-8">👨‍🏫 CTE Advisory Board</span>
+            <span className="mx-8">🔬 QRC Widget Patent Holder</span>
             <span className="mx-8">🎪 ERG Leadership</span>
           </Marquee>
         </div>
