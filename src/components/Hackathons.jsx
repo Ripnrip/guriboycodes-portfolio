@@ -271,7 +271,7 @@ const DetailModal = ({ hackathon, onClose, onPlayVideo }) => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
             <div className="absolute bottom-4 left-4 flex items-center gap-2">
               <span className="text-3xl">{hackathon.flag}</span>
-              <span className={`text-xs px-3 py-1 rounded-full border font-bold ${getAwardStyle(hackathon.award)}`}>
+              <span className={`text-xs px-3 py-1 rounded-full border font-bold badge-shiny ${getAwardStyle(hackathon.award)}`}>
                 {hackathon.awardIcon} {hackathon.award}
               </span>
             </div>
@@ -358,7 +358,7 @@ const FeaturedCard = ({ hackathon, onSelect, onPlayVideo }) => (
 
         {/* Award badge */}
         <div className="absolute top-3 right-3">
-          <span className={`text-xs px-2.5 py-1 rounded-full border font-bold backdrop-blur-sm ${getAwardStyle(hackathon.award)}`}>
+          <span className={`text-xs px-2.5 py-1 rounded-full border font-bold backdrop-blur-sm badge-shiny ${getAwardStyle(hackathon.award)}`}>
             {hackathon.awardIcon} {hackathon.award}
           </span>
         </div>
@@ -417,7 +417,7 @@ const VideoReel = ({ onPlayVideo }) => {
   const videos = hackathons.filter(h => h.videoUrl && h.thumbnail);
   return (
     <div className="mb-16">
-      <h3 className="text-2xl font-bold text-center mb-2 text-gradient">Featured Media</h3>
+      <h3 className="text-2xl font-bold text-center mb-2"><span className="text-shimmer-slow">Featured Media</span></h3>
       <p className="text-center text-foreground/50 text-sm mb-8">Click any card to watch the video</p>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {videos.map(h => (
@@ -505,8 +505,8 @@ const Hackathons = () => {
 
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-4">
-            Hackathon Journey
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-gradient-animated">Hackathon Journey</span>
           </h2>
           <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
             28+ hackathons across the globe — from NYC to Barcelona, London to Zurich.
@@ -522,7 +522,7 @@ const Hackathons = () => {
                 <div className="text-primary mb-2 flex justify-center">
                   {stat.icon}
                 </div>
-                <div className="text-3xl font-bold text-gradient mb-1">
+                <div className="text-3xl font-bold text-shimmer mb-1">
                   <AnimatedCounter end={stat.value} suffix={stat.suffix} />
                 </div>
                 <div className="text-xs text-foreground/50">{stat.label}</div>
@@ -533,7 +533,7 @@ const Hackathons = () => {
 
         {/* Featured Hackathon Cards with Ghibli Art */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-2 text-gradient">Featured Achievements</h3>
+          <h3 className="text-2xl font-bold text-center mb-2"><span className="text-shimmer-slow">Featured Achievements</span></h3>
           <p className="text-center text-foreground/50 text-sm mb-8">Click any card for details · hover for video preview</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {featured.map(h => (
@@ -552,7 +552,7 @@ const Hackathons = () => {
 
         {/* Other Hackathons */}
         <div>
-          <h3 className="text-2xl font-bold text-center mb-8 text-gradient">More Hackathons</h3>
+          <h3 className="text-2xl font-bold text-center mb-8"><span className="text-shimmer-slow">More Hackathons</span></h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {others.map(h => (
               <Spotlight key={h.id}>

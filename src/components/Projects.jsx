@@ -383,8 +383,8 @@ const Projects = () => {
             <Sparkles className="h-4 w-4 text-primary" />
             <span className="text-sm text-primary font-medium">20 Projects & Counting</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-gradient mb-6">
-            Featured Projects
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            <span className="text-gradient-animated">Featured Projects</span>
           </h2>
           <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
             From AI agents and RAG pipelines to published App Store games and cross-platform mobile apps — 

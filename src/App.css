@@ -258,3 +258,181 @@
 ::-webkit-scrollbar-thumb:hover {
   background: oklch(0.8 0.25 270);
 }
+
+/* ─── Text Animation System ──────────────────────────────────────────────── */
+
+/* Shimmer sweep — like Claude's "thinking" glow panning across text */
+@keyframes shimmer-sweep {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Gradient text animation — smooth hue rotation */
+@keyframes gradient-text-flow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Highlight draw — marker stroke growing from left to right */
+@keyframes highlight-draw {
+  from { width: 0%; opacity: 0.6; }
+  to   { width: 100%; opacity: 0.35; }
+}
+
+/* Underline draw */
+@keyframes underline-draw {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Pulse glow — subtle breathing glow on key words */
+@keyframes word-glow {
+  0%, 100% { text-shadow: 0 0 8px oklch(0.7 0.25 270 / 0.3); }
+  50%       { text-shadow: 0 0 20px oklch(0.7 0.25 270 / 0.7), 0 0 40px oklch(0.8 0.2 300 / 0.3); }
+}
+
+/* Typing cursor blink */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Fade in up */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Shimmer Text ────────────────────────────────────────────────────────── */
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    oklch(0.7 0.25 270) 0%,
+    oklch(0.95 0.15 300) 30%,
+    oklch(0.9 0.3 330) 50%,
+    oklch(0.95 0.15 300) 70%,
+    oklch(0.7 0.25 270) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer-sweep 3s linear infinite;
+}
+
+.text-shimmer-slow {
+  background: linear-gradient(
+    90deg,
+    oklch(0.7 0.25 270) 0%,
+    oklch(0.95 0.15 300) 30%,
+    oklch(0.9 0.3 330) 50%,
+    oklch(0.95 0.15 300) 70%,
+    oklch(0.7 0.25 270) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer-sweep 5s linear infinite;
+}
+
+/* ─── Animated Gradient Text ─────────────────────────────────────────────── */
+.text-gradient-animated {
+  background: linear-gradient(
+    135deg,
+    oklch(0.8 0.25 270),
+    oklch(0.9 0.2 300),
+    oklch(0.85 0.3 330),
+    oklch(0.75 0.25 250),
+    oklch(0.8 0.25 270)
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-text-flow 6s ease infinite;
+}
+
+/* ─── Highlight Underline ────────────────────────────────────────────────── */
+.text-highlight-underline {
+  position: relative;
+  display: inline;
+}
+.text-highlight-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, oklch(0.7 0.25 270), oklch(0.85 0.3 330));
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: underline-draw 0.8s ease 0.5s forwards;
+}
+
+/* ─── Marker Highlight ───────────────────────────────────────────────────── */
+.text-marker {
+  position: relative;
+  display: inline;
+  background: none;
+  color: inherit;
+  padding: 0 3px;
+}
+.text-marker::before {
+  content: '';
+  position: absolute;
+  inset: 0px -3px;
+  background: oklch(0.7 0.25 270 / 0.18);
+  border-radius: 3px;
+  z-index: -1;
+  width: 0%;
+  animation: highlight-draw 0.6s ease 0.3s forwards;
+}
+
+/* ─── Word Glow ──────────────────────────────────────────────────────────── */
+.text-word-glow {
+  color: oklch(0.85 0.25 270);
+  animation: word-glow 3s ease-in-out infinite;
+}
+
+/* ─── Typing Cursor ──────────────────────────────────────────────────────── */
+.typing-cursor::after {
+  content: '|';
+  color: oklch(0.7 0.25 270);
+  animation: cursor-blink 1s step-end infinite;
+  margin-left: 1px;
+}
+
+/* ─── Fade In Up ─────────────────────────────────────────────────────────── */
+.animate-fade-in-up   { animation: fade-in-up 0.6s ease forwards; opacity: 0; }
+.animate-fade-in-up-1 { animation: fade-in-up 0.6s ease 0.1s forwards; opacity: 0; }
+.animate-fade-in-up-2 { animation: fade-in-up 0.6s ease 0.2s forwards; opacity: 0; }
+.animate-fade-in-up-3 { animation: fade-in-up 0.6s ease 0.3s forwards; opacity: 0; }
+.animate-fade-in-up-4 { animation: fade-in-up 0.6s ease 0.4s forwards; opacity: 0; }
+.animate-fade-in-up-5 { animation: fade-in-up 0.6s ease 0.5s forwards; opacity: 0; }
+
+/* ─── Shiny Badge ────────────────────────────────────────────────────────── */
+.badge-shiny {
+  position: relative;
+  overflow: hidden;
+}
+.badge-shiny::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    oklch(1 0 0 / 0.25) 50%,
+    transparent 100%
+  );
+  transform: skewX(-15deg);
+  animation: shimmer-sweep 2.5s ease-in-out infinite;
+  animation-delay: 1s;
+}

@@ -54,8 +54,8 @@ const Contact = () => {
     <section id="contact" className="py-20 px-6 md:px-8 bg-background">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
-            Let's Connect
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="text-gradient-animated">Let's Connect</span>
           </h2>
           <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Ready to build something legendary together? Whether it's discussing iOS development, 
@@ -69,7 +69,7 @@ const Contact = () => {
             <Spotlight>
               <Card className="bg-card-gradient border-primary/20">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-gradient">Get In Touch</CardTitle>
+                  <CardTitle className="text-2xl"><span className="text-shimmer-slow">Get In Touch</span></CardTitle>
                   <CardDescription className="text-foreground/80">
                     Available for consulting, speaking engagements, and exciting opportunities.
                   </CardDescription>

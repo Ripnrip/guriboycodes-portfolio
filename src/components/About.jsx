@@ -15,14 +15,14 @@ const About = () => {
       location: "Tampa, FL (Remote)",
       icon: <Building2 className="h-6 w-6" />,
       highlights: [
-        "Deployed autonomous AI agent framework (Agent0) to Venmo & PayPal engineering teams for self-correcting workflows",
+        "Deployed autonomous AI agent framework (Agent0) to Venmo & PayPal engineering teams for self-correcting workflows [ANIMATE_AGENT0]",
         "Built MAIA — agentic merchant onboarding AI that takes merchants from 0 to live in < 20 minutes",
         "Built Vireo — production LLM observability platform with MCP server integration and memory management",
         "Built Darwin — evolutionary AI skill engine with Bloom/Fossil selection for self-improving agent capabilities",
         "Built Mac-in-a-Mac — nested macOS virtualization that runs iOS test suites 3× faster",
         "Built claude-cosmos — unified LLM gateway proxy with PII scrubbing and multi-model routing",
-        "Scaled Venmo iOS features for 92M+ active users; closed $60M enterprise contract in year one",
-        "Led Project Mercury — AI-powered agentic e-commerce platform (patent applications filed)",
+        "Scaled Venmo iOS features for 92M+ active users; closed $60M enterprise contract in year one [ANIMATE_SCALE]",
+        "Led Project Mercury — AI-powered agentic e-commerce platform (patent applications filed) [ANIMATE_MERCURY]",
         "Launched Venmo Gift Cards, Pay With Venmo (JetBlue), and QRC Widget (patent holder)",
         "Conducted 500+ technical interviews; ERG Leadership (Sikh Faith Group)"
       ],
@@ -79,8 +79,8 @@ const About = () => {
     <section id="about" className="py-20 px-6 md:px-8 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
-            Career Journey
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="text-gradient-animated">Career Journey</span>
           </h2>
           <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             A decade of building legendary apps at global scale, from startup innovation 
@@ -131,8 +131,8 @@ const About = () => {
                       {careerData[selectedJob].icon}
                     </div>
                     <div>
-                      <CardTitle className="text-2xl text-gradient">
-                        {careerData[selectedJob].role}
+                      <CardTitle className="text-2xl">
+                        <span className="text-gradient-animated">{careerData[selectedJob].role}</span>
                       </CardTitle>
                       <CardDescription className="text-lg">
                         {careerData[selectedJob].company} • {careerData[selectedJob].period}
@@ -149,12 +149,26 @@ const About = () => {
                   <div>
                     <h4 className="text-lg font-semibold mb-3 text-foreground">Key Achievements</h4>
                     <ul className="space-y-2">
-                      {careerData[selectedJob].highlights.map((highlight, index) => (
-                        <li key={index} className="flex items-start space-x-2">
-                          <span className="text-primary mt-1">•</span>
-                          <span className="text-foreground/80">{highlight}</span>
-                        </li>
-                      ))}
+                      {careerData[selectedJob].highlights.map((highlight, index) => {
+                        const isAnimAgent0 = highlight.includes('[ANIMATE_AGENT0]');
+                        const isAnimScale = highlight.includes('[ANIMATE_SCALE]');
+                        const isAnimMercury = highlight.includes('[ANIMATE_MERCURY]');
+                        const cleanText = highlight.replace(/ \[ANIMATE_\w+\]/g, '');
+                        return (
+                          <li key={index} className="flex items-start space-x-2">
+                            <span className="text-primary mt-1">•</span>
+                            <span className="text-foreground/80">
+                              {isAnimAgent0 ? (
+                                <><mark className="text-marker">Agent0</mark> deployed to Venmo &amp; PayPal engineering teams — <span className="text-word-glow">self-correcting agentic workflows</span></>
+                              ) : isAnimScale ? (
+                                <>Scaled Venmo iOS features for <span className="text-shimmer">92M+ active users</span>; closed <mark className="text-marker">$60M enterprise contract</mark> in year one</>
+                              ) : isAnimMercury ? (
+                                <>Led <span className="text-word-glow">Project Mercury</span> — AI-powered agentic e-commerce platform (<mark className="text-marker">patent applications filed</mark>)</>
+                              ) : cleanText}
+                            </span>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
 
@@ -180,8 +194,8 @@ const About = () => {
           <Spotlight>
             <Card className="bg-card-gradient border-primary/20">
               <CardHeader>
-                <CardTitle className="text-2xl text-gradient text-center">
-                  Engineering Philosophy
+                <CardTitle className="text-2xl text-center">
+                  <span className="text-shimmer-slow">Engineering Philosophy</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>

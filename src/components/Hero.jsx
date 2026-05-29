@@ -38,15 +38,15 @@ const Hero = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left side - Text content */}
               <div className="text-center lg:text-left">
-                <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gradient leading-tight">
-                  Building Legendary Apps
+                <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                  <span className="text-shimmer-slow">Building Legendary Apps</span>
                   <br />
-                  <span className="text-4xl md:text-6xl">at the Edge of iOS & AI</span>
+                  <span className="text-4xl md:text-6xl text-gradient-animated">at the Edge of iOS & AI</span>
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
-                  Sr. Staff Applied AI Engineer building autonomous agents, LLM infrastructure, and iOS apps at PayPal/Venmo scale.
-                  Patent-holder, hackathon veteran, and technical leader shipping AI systems for 92M+ users.
+                  <mark className="text-marker">Sr. Staff Applied AI Engineer</mark> building <span className="text-word-glow">autonomous agents</span>, LLM infrastructure, and iOS apps at PayPal/Venmo scale.
+                  Patent-holder, hackathon veteran, and technical leader shipping AI systems for <span className="text-shimmer">92M+ users</span>.
                 </p>
 
                 {/* CTA Buttons */}
@@ -91,26 +91,26 @@ const Hero = () => {
 
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
-              <div className="glass rounded-lg p-6">
-                <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
+              <div className="glass rounded-lg p-6 badge-shiny animate-fade-in-up-1">
+                <div className="text-3xl md:text-4xl font-bold text-shimmer mb-2">
                   <AnimatedCounter end={92} suffix="M+" />
                 </div>
                 <div className="text-sm text-foreground/60">Venmo Users</div>
               </div>
-              <div className="glass rounded-lg p-6">
-                <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
+              <div className="glass rounded-lg p-6 badge-shiny animate-fade-in-up-2">
+                <div className="text-3xl md:text-4xl font-bold text-shimmer mb-2">
                   <AnimatedCounter end={500} suffix="+" />
                 </div>
                 <div className="text-sm text-foreground/60">Interviews</div>
               </div>
-              <div className="glass rounded-lg p-6">
-                <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
+              <div className="glass rounded-lg p-6 badge-shiny animate-fade-in-up-3">
+                <div className="text-3xl md:text-4xl font-bold text-shimmer mb-2">
                   <AnimatedCounter end={28} suffix="+" />
                 </div>
                 <div className="text-sm text-foreground/60">Hackathons</div>
               </div>
-              <div className="glass rounded-lg p-6">
-                <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
+              <div className="glass rounded-lg p-6 badge-shiny animate-fade-in-up-4">
+                <div className="text-3xl md:text-4xl font-bold text-shimmer mb-2">
                   <AnimatedCounter end={5} suffix="" />
                 </div>
                 <div className="text-sm text-foreground/60">AI Systems Shipped in 2026</div>

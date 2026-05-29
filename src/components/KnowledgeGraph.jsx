@@ -321,8 +321,8 @@ const KnowledgeGraph = () => {
               <Network className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-primary">Interactive Knowledge Graph</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-4">
-              My Digital Brain
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-gradient-animated">My Digital Brain</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Explore the connections between my projects, skills, and experience. 
@@ -340,15 +340,15 @@ const KnowledgeGraph = () => {
             className="flex justify-center gap-8 mb-6"
           >
             <div className="text-center">
-              <div className="text-2xl font-bold text-gradient">{nodes.length}</div>
+              <div className="text-2xl font-bold text-shimmer">{nodes.length}</div>
               <div className="text-xs text-muted-foreground">Nodes</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-gradient">{links.length}</div>
+              <div className="text-2xl font-bold text-shimmer">{links.length}</div>
               <div className="text-xs text-muted-foreground">Connections</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-gradient">{Object.keys(CATEGORY_COLORS).length}</div>
+              <div className="text-2xl font-bold text-shimmer">{Object.keys(CATEGORY_COLORS).length}</div>
               <div className="text-xs text-muted-foreground">Categories</div>
             </div>
           </motion.div>
