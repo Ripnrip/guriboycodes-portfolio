@@ -78,7 +78,7 @@ const Contact = () => {
                 <CardContent className="space-y-6">
                   <div className="flex items-center space-x-3">
                     <MapPin className="h-5 w-5 text-primary" />
-                    <span className="text-foreground/80">Tampa, FL</span>
+                    <span className="text-foreground/80">Tampa, FL <span className="text-foreground/40">(Open Remote + Hybrid NYC)</span></span>
                   </div>
                   
                   <div className="flex items-center space-x-3">
@@ -236,7 +236,7 @@ const Contact = () => {
         {/* Footer */}
         <div className="mt-20 pt-8 border-t border-border/20 text-center">
           <p className="text-foreground/60">
-            © 2024 GuriboyCodes. Built with React, Tailwind CSS, and lots of ☕
+            © 2026 GuriboyCodes. Built with React, Tailwind CSS, and lots of ☕
           </p>
           <p className="text-foreground/40 text-sm mt-2">
             "Building legendary apps at the edge of iOS & AI"

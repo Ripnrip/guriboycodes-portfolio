@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AnimatedCounter } from '@/components/ui/animated-counter.jsx';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx';
 import { Badge } from '@/components/ui/badge.jsx';
 import { Spotlight } from '@/components/ui/spotlight.jsx';
@@ -110,7 +111,15 @@ const About = () => {
                           {job.icon}
                         </div>
                         <div>
-                          <CardTitle className="text-lg">{job.company}</CardTitle>
+                          <CardTitle className="text-lg flex items-center gap-2">
+                            {job.company}
+                            {index === 0 && (
+                              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-green-500/15 border border-green-500/30 text-green-400 text-[10px] font-medium">
+                                <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+                                Now
+                              </span>
+                            )}
+                          </CardTitle>
                           <CardDescription className="text-sm">{job.period}</CardDescription>
                         </div>
                       </div>
@@ -204,22 +213,37 @@ const About = () => {
                     <Users className="h-12 w-12 text-primary mx-auto mb-4" />
                     <h3 className="text-lg font-semibold mb-2">Scale & Impact</h3>
                     <p className="text-foreground/80">
-                      Building systems that serve millions while maintaining performance and reliability.
+                      Building systems that serve <span className="text-shimmer">millions</span> while maintaining performance and reliability.
                     </p>
                   </div>
                   <div>
                     <Code className="h-12 w-12 text-primary mx-auto mb-4" />
                     <h3 className="text-lg font-semibold mb-2">Innovation</h3>
                     <p className="text-foreground/80">
-                      Bridging cutting-edge AI/ML with practical mobile solutions for real-world problems.
+                      Bridging cutting-edge <span className="text-word-glow">AI/ML</span> with practical mobile solutions for real-world problems.
                     </p>
                   </div>
                   <div>
                     <Award className="h-12 w-12 text-primary mx-auto mb-4" />
                     <h3 className="text-lg font-semibold mb-2">Leadership</h3>
                     <p className="text-foreground/80">
-                      Mentoring engineers, conducting interviews, and fostering inclusive tech communities.
+                      Mentoring engineers, conducting <mark className="text-marker">500+ interviews</mark>, and fostering inclusive tech communities.
                     </p>
+                  </div>
+                </div>
+                {/* Leadership stats with animated counters */}
+                <div className="grid grid-cols-3 gap-4 mt-8 pt-8 border-t border-border/20">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-shimmer mb-1"><AnimatedCounter end={500} suffix="+" /></div>
+                    <div className="text-xs text-foreground/50">Technical Interviews</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-shimmer mb-1"><AnimatedCounter end={200} suffix="+" /></div>
+                    <div className="text-xs text-foreground/50">Students Reached</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-shimmer mb-1"><AnimatedCounter end={150} suffix="+" /></div>
+                    <div className="text-xs text-foreground/50">ERG Members</div>
                   </div>
                 </div>
               </CardContent>

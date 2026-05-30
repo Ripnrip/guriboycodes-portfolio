@@ -41,6 +41,56 @@ const IMAGE_SLUGS = {
 
 const getProjectImage = (id) => `/project-images/${IMAGE_SLUGS[id]}.jpg`;
 
+/* ─── Keyword highlighter — wraps key terms in animated spans ─── */
+const HIGHLIGHT_KEYWORDS = [
+  { word: 'AI-powered', cls: 'text-word-glow' },
+  { word: 'agentic', cls: 'text-word-glow' },
+  { word: 'Agentic', cls: 'text-word-glow' },
+  { word: 'autonomous', cls: 'text-word-glow' },
+  { word: 'Autonomous', cls: 'text-word-glow' },
+  { word: 'LLM', cls: 'text-shimmer' },
+  { word: 'AI', cls: 'text-shimmer' },
+  { word: '92M', cls: 'text-shimmer' },
+  { word: '3×', cls: 'text-shimmer' },
+  { word: '< 20 min', cls: 'text-shimmer' },
+  { word: 'under 20 minutes', cls: 'text-shimmer' },
+  { word: 'patent', cls: 'text-marker' },
+  { word: 'Patent', cls: 'text-marker' },
+  { word: 'published', cls: 'text-marker' },
+  { word: 'Published', cls: 'text-marker' },
+  { word: 'App Store', cls: 'text-marker' },
+  { word: 'production', cls: 'text-marker' },
+  { word: 'Production', cls: 'text-marker' },
+  { word: 'RAG', cls: 'text-highlight-underline' },
+  { word: 'spatial computing', cls: 'text-highlight-underline' },
+  { word: 'computer vision', cls: 'text-highlight-underline' },
+  { word: 'Computer vision', cls: 'text-highlight-underline' },
+  { word: 'evolutionary', cls: 'text-highlight-underline' },
+  { word: 'Evolutionary', cls: 'text-highlight-underline' },
+  { word: 'self-improving', cls: 'text-word-glow' },
+  { word: 'PII scrubbing', cls: 'text-marker' },
+  { word: 'observability', cls: 'text-highlight-underline' },
+];
+
+const highlightWords = (text) => {
+  if (!text) return text;
+  const parts = [];
+  let remaining = text;
+  let keyIdx = 0;
+  // Build a combined regex from all keywords (longest first to avoid partial matches)
+  const sorted = [...HIGHLIGHT_KEYWORDS].sort((a, b) => b.word.length - a.word.length);
+  const pattern = sorted.map(k => k.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+  const regex = new RegExp(`(${pattern})`, 'g');
+  const segments = text.split(regex);
+  return segments.map((seg, i) => {
+    const match = sorted.find(k => k.word === seg);
+    if (match) {
+      return <span key={i} className={match.cls}>{seg}</span>;
+    }
+    return seg;
+  });
+};
+
 /* ─── Category color mapping ─── */
 const CATEGORY_COLORS = {
   'AI/ML': { bg: 'bg-violet-500/15', text: 'text-violet-400', border: 'border-violet-500/30', glow: 'shadow-violet-500/20' },
@@ -445,6 +495,16 @@ const Projects = () => {
                           loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent z-20" />
+                        {/* Hover reveal — tech stack overlay */}
+                        <div className="absolute inset-0 z-25 flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                          <div className="flex flex-wrap gap-1.5 justify-center px-4">
+                            {project.technologies.slice(0, 5).map((tech, i) => (
+                              <span key={i} className="px-2 py-0.5 rounded-md bg-black/60 backdrop-blur-sm text-white/90 text-[10px] border border-white/20 font-medium" style={{ animationDelay: `${i * 60}ms` }}>
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
                         
                         {/* Featured badge */}
                         <div className="absolute top-4 right-4 z-30">
@@ -481,7 +541,7 @@ const Projects = () => {
                         </div>
 
                         <p className="text-sm text-foreground/70 mb-4 leading-relaxed line-clamp-2">
-                          {project.description}
+                          {highlightWords(project.description)}
                         </p>
 
                         <div className="flex flex-wrap gap-1.5 mb-4">
@@ -580,7 +640,7 @@ const Projects = () => {
                       )}
 
                       <p className="text-xs text-foreground/60 mb-3 leading-relaxed line-clamp-2">
-                        {project.description}
+                        {highlightWords(project.description)}
                       </p>
 
                       <div className="flex flex-wrap gap-1 mb-3">

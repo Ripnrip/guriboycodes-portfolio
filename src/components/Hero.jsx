@@ -4,9 +4,42 @@ import { Spotlight } from '@/components/ui/spotlight.jsx';
 import { AnimatedCounter } from '@/components/ui/animated-counter.jsx';
 import { Marquee } from '@/components/ui/marquee.jsx';
 import ThemeToggle from '@/components/ui/theme-toggle.jsx';
-import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, Download, Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
+import { useState, useEffect } from 'react';
+
+const TYPEWRITER_PHRASES = [
+  'autonomous agents',
+  'LLM infrastructure',
+  'iOS apps at scale',
+  'AI systems for 92M+',
+];
 
 const Hero = () => {
+  const [phraseIdx, setPhraseIdx] = useState(0);
+  const [displayed, setDisplayed] = useState('');
+  const [typing, setTyping] = useState(true);
+
+  useEffect(() => {
+    const phrase = TYPEWRITER_PHRASES[phraseIdx];
+    if (typing) {
+      if (displayed.length < phrase.length) {
+        const t = setTimeout(() => setDisplayed(phrase.slice(0, displayed.length + 1)), 60);
+        return () => clearTimeout(t);
+      } else {
+        const t = setTimeout(() => setTyping(false), 1800);
+        return () => clearTimeout(t);
+      }
+    } else {
+      if (displayed.length > 0) {
+        const t = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 35);
+        return () => clearTimeout(t);
+      } else {
+        setPhraseIdx((phraseIdx + 1) % TYPEWRITER_PHRASES.length);
+        setTyping(true);
+      }
+    }
+  }, [displayed, typing, phraseIdx]);
+
   return (
     <section className="min-h-screen bg-hero-gradient relative overflow-hidden">
       {/* Background Elements */}
@@ -45,7 +78,9 @@ const Hero = () => {
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
-                  <mark className="text-marker">Sr. Staff Applied AI Engineer</mark> building <span className="text-word-glow">autonomous agents</span>, LLM infrastructure, and iOS apps at PayPal/Venmo scale.
+                  <mark className="text-marker">Sr. Staff Applied AI Engineer</mark> building{' '}
+                  <span className="text-word-glow typing-cursor">{displayed}</span>,
+                  and iOS apps at PayPal/Venmo scale.
                   Patent-holder, hackathon veteran, and technical leader shipping AI systems for <span className="text-shimmer">92M+ users</span>.
                 </p>
 
@@ -90,30 +125,30 @@ const Hero = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
-              <div className="glass rounded-lg p-6 badge-shiny animate-fade-in-up-1">
-                <div className="text-3xl md:text-4xl font-bold text-shimmer mb-2">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-16">
+              <div className="glass rounded-lg p-4 md:p-6 badge-shiny animate-fade-in-up-1 text-center">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-shimmer mb-1 md:mb-2 whitespace-nowrap">
                   <AnimatedCounter end={92} suffix="M+" />
                 </div>
-                <div className="text-sm text-foreground/60">Venmo Users</div>
+                <div className="text-xs sm:text-sm text-foreground/60 leading-tight">Venmo Users</div>
               </div>
-              <div className="glass rounded-lg p-6 badge-shiny animate-fade-in-up-2">
-                <div className="text-3xl md:text-4xl font-bold text-shimmer mb-2">
+              <div className="glass rounded-lg p-4 md:p-6 badge-shiny animate-fade-in-up-2 text-center">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-shimmer mb-1 md:mb-2 whitespace-nowrap">
                   <AnimatedCounter end={500} suffix="+" />
                 </div>
-                <div className="text-sm text-foreground/60">Interviews</div>
+                <div className="text-xs sm:text-sm text-foreground/60 leading-tight">Interviews</div>
               </div>
-              <div className="glass rounded-lg p-6 badge-shiny animate-fade-in-up-3">
-                <div className="text-3xl md:text-4xl font-bold text-shimmer mb-2">
+              <div className="glass rounded-lg p-4 md:p-6 badge-shiny animate-fade-in-up-3 text-center">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-shimmer mb-1 md:mb-2 whitespace-nowrap">
                   <AnimatedCounter end={28} suffix="+" />
                 </div>
-                <div className="text-sm text-foreground/60">Hackathons</div>
+                <div className="text-xs sm:text-sm text-foreground/60 leading-tight">Hackathons</div>
               </div>
-              <div className="glass rounded-lg p-6 badge-shiny animate-fade-in-up-4">
-                <div className="text-3xl md:text-4xl font-bold text-shimmer mb-2">
+              <div className="glass rounded-lg p-4 md:p-6 badge-shiny animate-fade-in-up-4 text-center">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-shimmer mb-1 md:mb-2 whitespace-nowrap">
                   <AnimatedCounter end={5} suffix="" />
                 </div>
-                <div className="text-sm text-foreground/60">AI Systems Shipped in 2026</div>
+                <div className="text-xs sm:text-sm text-foreground/60 leading-tight">AI Systems<br className="sm:hidden" /> in 2026</div>
               </div>
             </div>
           </div>
@@ -140,6 +175,12 @@ const Hero = () => {
           </Marquee>
         </div>
       </Spotlight>
+
+      {/* Scroll hint arrow */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 opacity-50 hover:opacity-80 transition-opacity cursor-pointer" onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>
+        <span className="text-[10px] text-foreground/40 tracking-widest uppercase">Scroll</span>
+        <ChevronDown className="h-5 w-5 text-primary animate-bounce" />
+      </div>
     </section>
   );
 };

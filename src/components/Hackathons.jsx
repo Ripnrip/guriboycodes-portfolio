@@ -514,21 +514,49 @@ const Hackathons = () => {
           </p>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-6 mb-16 max-w-2xl mx-auto">
-          {stats.map((stat, index) => (
-            <Spotlight key={index}>
-              <div className="glass rounded-2xl p-6 text-center border border-primary/20 hover:border-primary/40 transition-all duration-300">
-                <div className="text-primary mb-2 flex justify-center">
-                  {stat.icon}
+        {/* Stats — world map backdrop */}
+        <div className="relative mb-16">
+          {/* Subtle world map SVG watermark */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-[0.04] pointer-events-none select-none overflow-hidden">
+            <svg viewBox="0 0 1000 500" className="w-full max-w-3xl" fill="currentColor">
+              {/* Simplified world map dots for 6 hackathon countries */}
+              {/* USA */}
+              <ellipse cx="200" cy="200" rx="90" ry="55" opacity="0.8" />
+              {/* UK */}
+              <ellipse cx="470" cy="150" rx="18" ry="22" opacity="0.8" />
+              {/* Switzerland */}
+              <ellipse cx="495" cy="165" rx="12" ry="10" opacity="0.8" />
+              {/* Spain */}
+              <ellipse cx="470" cy="185" rx="20" ry="14" opacity="0.8" />
+              {/* Denmark */}
+              <ellipse cx="493" cy="140" rx="10" ry="12" opacity="0.8" />
+              {/* Barcelona dot */}
+              <circle cx="480" cy="183" r="5" opacity="1" />
+              {/* NYC dot */}
+              <circle cx="240" cy="185" r="5" opacity="1" />
+              {/* London dot */}
+              <circle cx="468" cy="152" r="5" opacity="1" />
+              {/* Zurich dot */}
+              <circle cx="496" cy="163" r="5" opacity="1" />
+              {/* Copenhagen dot */}
+              <circle cx="492" cy="138" r="4" opacity="1" />
+            </svg>
+          </div>
+          <div className="grid grid-cols-3 gap-3 sm:gap-6 max-w-2xl mx-auto relative z-10">
+            {stats.map((stat, index) => (
+              <Spotlight key={index}>
+                <div className="glass rounded-2xl p-3 sm:p-6 text-center border border-primary/20 hover:border-primary/40 transition-all duration-300">
+                  <div className="text-primary mb-1 sm:mb-2 flex justify-center">
+                    {stat.icon}
+                  </div>
+                  <div className="text-2xl sm:text-3xl font-bold text-shimmer mb-0.5 sm:mb-1 whitespace-nowrap">
+                    <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                  </div>
+                  <div className="text-[10px] sm:text-xs text-foreground/50 leading-tight">{stat.label}</div>
                 </div>
-                <div className="text-3xl font-bold text-shimmer mb-1">
-                  <AnimatedCounter end={stat.value} suffix={stat.suffix} />
-                </div>
-                <div className="text-xs text-foreground/50">{stat.label}</div>
-              </div>
-            </Spotlight>
-          ))}
+              </Spotlight>
+            ))}
+          </div>
         </div>
 
         {/* Featured Hackathon Cards with Ghibli Art */}
