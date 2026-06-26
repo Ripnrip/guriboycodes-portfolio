@@ -9,21 +9,22 @@ const About = () => {
 
   const careerData = [
     {
-      company: "PayPal",
-      role: "Staff iOS Engineer",
-      period: "2019 - Present",
+      company: "PayPal / Venmo",
+      role: "Staff Software Engineer — Pay With Venmo / Bazaar / DTVZ",
+      period: "2020 - Present",
       location: "Tampa, FL",
       icon: <Building2 className="h-6 w-6" />,
       highlights: [
-        "Built and scaled Venmo iOS features for 92M active users",
-        "Led AI initiatives (2023-2025) with patent applications",
-        "Closed $60M enterprise contract in year one",
-        "Designed High-Level Designs (HLD) for cross-org architecture",
-        "Launched Venmo Gift Cards with internal org-wide trailer",
-        "Spearheaded Pay With Venmo with JetBlue partner engineering",
-        "Conducted 400+ interviews and ERG leadership (Sikh Faith Group)"
+        "H1 2026: Evolved from iOS Sandbox DRI to cross-BU AI platform infrastructure across Venmo, SMB-FS, and LE/GSA",
+        "MAIA x Venmo — drove merchant corpus from 332 to 9,513 scored merchants in one weekend; live exec demo with 14 senior leaders converted track into unified PayPal Migration & Upgrade Program",
+        "Darwin evolution framework — 71 PRs shipped across 2 milestones; 1,020 fossil candidates, 19 judges, 678 eval examples in graph DB; now productionized and invokable from any repo 3 ways",
+        "Vireo v2 — owner of Devmo Workstreams 7 (Telemetry) + 8 (Memory); RAG, per-sub-agent telemetry, OTel/OpenInference export, cross-language Python + Swift memory; cited in Devmo HLD",
+        "Mac-in-a-Mac — first macOS-in-macOS substrate at PayPal using Apple Virtualization.framework; 3x iOS UI test speedup (22m 38s to 7m 23s); now hosts Livery and Agent-0",
+        "claude-cosmos proxy — Anthropic-shape proxy to Cosmos LLM with PII scrubbing; powers Osaurus, Hermes Agent, Agent-0, Cosmos-IDE, Devmo, and MAIA telemetry",
+        "Named to MAIA build core by MAIA PM (Jun 8); Venmo track folded into single Migration & Upgrade Program (Jun 26)",
+        "DX Sounds MCP server merged into PayPal AI Hub; video-toolkit (Remotion + Veo) open-sourced internally; Prompt Enhancer + Guard Rails migrated to canonical Devmo repo"
       ],
-      technologies: ["Swift", "SwiftUI", "CoreML", "AI/ML", "iOS", "Venmo APIs"]
+      technologies: ["Swift", "SwiftUI", "Python", "AI Agents", "LangChain", "DSPy", "RAG", "OpenTelemetry", "Cosmos LLM", "MCP", "Remotion"]
     },
     {
       company: "Google Stadia",
@@ -185,23 +186,23 @@ const About = () => {
                 <div className="grid md:grid-cols-3 gap-8 text-center">
                   <div>
                     <Users className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <h3 className="text-lg font-semibold mb-2">Scale & Impact</h3>
+                    <h3 className="text-lg font-semibold mb-2">Platform Thinking</h3>
                     <p className="text-foreground/80">
-                      Building systems that serve millions while maintaining performance and reliability.
+                      Building AI infrastructure that becomes the substrate for entire programs — telemetry, evolution loops, CI/CD, and proxy layers that other teams build on top of.
                     </p>
                   </div>
                   <div>
                     <Code className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <h3 className="text-lg font-semibold mb-2">Innovation</h3>
+                    <h3 className="text-lg font-semibold mb-2">Agentic AI Systems</h3>
                     <p className="text-foreground/80">
-                      Bridging cutting-edge AI/ML with practical mobile solutions for real-world problems.
+                      Architecting autonomous loops (Darwin GEPA, MAIA pipelines, Vireo memory) that improve themselves over time — regressions are scientific signal, not failure.
                     </p>
                   </div>
                   <div>
                     <Award className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <h3 className="text-lg font-semibold mb-2">Leadership</h3>
+                    <h3 className="text-lg font-semibold mb-2">Cross-BU Execution</h3>
                     <p className="text-foreground/80">
-                      Mentoring engineers, conducting interviews, and fostering inclusive tech communities.
+                      Spanning Venmo, SMB-FS, and LE/GSA with executive-sponsored work, named to build cores, and handing off ownership sustainably while staying on the frontier.
                     </p>
                   </div>
                 </div>

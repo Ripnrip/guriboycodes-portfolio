@@ -40,14 +40,14 @@ const Hero = () => {
               {/* Left side - Text content */}
               <div className="text-center lg:text-left">
                 <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gradient leading-tight">
-                  Building Legendary Apps
+                  Building AI Infrastructure
                   <br />
-                  <span className="text-4xl md:text-6xl">at the Edge of iOS & AI</span>
+                  <span className="text-4xl md:text-6xl">for Autonomous Programs</span>
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
-                  Staff iOS & AI/ML Engineer with over a decade of experience scaling apps for 90M+ users. 
-                  Patent-holder, technical leader, and hackathon veteran building legendary apps at global scale.
+                  Staff Software Engineer at PayPal — architect of Vireo, Darwin, MAIA&nbsp;&times;&nbsp;Venmo, and Mac-in-a-Mac.
+                  Evolved from iOS Sandbox DRI to cross-BU AI platform infrastructure in H1&nbsp;2026.
                 </p>
 
                 {/* CTA Buttons */}
@@ -94,27 +94,27 @@ const Hero = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
               <div className="glass rounded-lg p-6">
                 <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
-                  <AnimatedCounter end={90} suffix="M+" />
+                  <AnimatedCounter end={9513} suffix="" />
                 </div>
-                <div className="text-sm text-foreground/60">Venmo Users</div>
+                <div className="text-sm text-foreground/60">Merchants Scored</div>
               </div>
               <div className="glass rounded-lg p-6">
                 <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
-                  <AnimatedCounter end={500} suffix="+" />
+                  <AnimatedCounter end={71} suffix="" />
                 </div>
-                <div className="text-sm text-foreground/60">Interviews</div>
+                <div className="text-sm text-foreground/60">Darwin PRs Shipped</div>
               </div>
               <div className="glass rounded-lg p-6">
                 <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
-                  <AnimatedCounter end={28} suffix="+" />
+                  <AnimatedCounter end={3} suffix="x" />
                 </div>
-                <div className="text-sm text-foreground/60">Hackathons</div>
+                <div className="text-sm text-foreground/60">iOS Test Speedup</div>
               </div>
               <div className="glass rounded-lg p-6">
                 <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
-                  <AnimatedCounter end={10} suffix="+" />
+                  <AnimatedCounter end={8} suffix="" />
                 </div>
-                <div className="text-sm text-foreground/60">Years Exp</div>
+                <div className="text-sm text-foreground/60">PayPal Repos Authored</div>
               </div>
             </div>
           </div>
@@ -123,17 +123,17 @@ const Hero = () => {
         {/* Marquee Ticker */}
         <div className="py-8 border-t border-border/20">
           <Marquee className="text-foreground/60" speed={30}>
-            <span className="mx-8">🚀 PayPal Staff Engineer</span>
-            <span className="mx-8">📱 90M Venmo Users</span>
-            <span className="mx-8">🤖 Project Mercury - AI Agentic Platform</span>
-            <span className="mx-8">🏆 $60M Contract Closed</span>
-            <span className="mx-8">🎯 500+ Interviews Conducted</span>
-            <span className="mx-8">🌟 28+ Hackathons</span>
-            <span className="mx-8">🏅 2× 1st Place Wins</span>
-            <span className="mx-8">📺 BBC Documentary Featured</span>
-            <span className="mx-8">🔬 AI/ML Patents</span>
-            <span className="mx-8">👨‍🏫 CTE Advisory Board</span>
-            <span className="mx-8">🎪 ERG Leadership</span>
+            <span className="mx-8">PayPal Staff SE — iOS Sandbox DRI to cross-BU AI Platform</span>
+            <span className="mx-8">MAIA — 332 to 9,513 merchants in one weekend</span>
+            <span className="mx-8">Darwin — 71 PRs, 1,020 fossils, 19 judges</span>
+            <span className="mx-8">Vireo v2 — RAG + OTel + cross-language memory</span>
+            <span className="mx-8">Mac-in-a-Mac — 3x iOS test speedup, no new hardware</span>
+            <span className="mx-8">MAIA exec demo — 14 senior leaders, unified Migration Program</span>
+            <span className="mx-8">Named to MAIA build core by MAIA PM</span>
+            <span className="mx-8">DX Sounds MCP — merged into PayPal AI Hub</span>
+            <span className="mx-8">video-toolkit — Remotion + Veo open-sourced internally</span>
+            <span className="mx-8">BBC Documentary Featured</span>
+            <span className="mx-8">28+ Hackathons</span>
           </Marquee>
         </div>
       </Spotlight>

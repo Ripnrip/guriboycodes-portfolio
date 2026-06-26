@@ -6,7 +6,7 @@ import { Spotlight } from '@/components/ui/spotlight.jsx';
 import { 
   ExternalLink, Github, Play, Smartphone, Brain, Search, Heart, 
   GraduationCap, Globe, Music, Palette, BarChart3, Mic, BookOpen, 
-  Gamepad2, X, ChevronRight, Sparkles, Star, ArrowUpRight
+  Gamepad2, X, ChevronRight, Sparkles, Star, ArrowUpRight, Code, Video, Volume2
 } from 'lucide-react';
 
 /* ─── Image slug map for Ghibli-generated project art ─── */
@@ -31,9 +31,21 @@ const IMAGE_SLUGS = {
   18: 'audio-dialogues',
   19: 'my4blocks',
   20: 'blog-layouts-artful',
+  // 2026 AI Platform Projects
+  21: 'maia-venmo',
+  22: 'darwin-evolution',
+  23: 'vireo-telemetry',
+  24: 'mac-in-a-mac',
+  25: 'claude-cosmos',
+  26: 'scarf-hermes',
+  27: 'video-toolkit',
+  28: 'dx-sounds',
 };
 
-const getProjectImage = (id) => `/project-images/${IMAGE_SLUGS[id]}.jpg`;
+/* IDs 21+ were generated as .png; everything else is .jpg */
+const PNG_IDS = new Set([21, 22, 23, 24, 25, 26, 27, 28]);
+const getProjectImage = (id) =>
+  `/project-images/${IMAGE_SLUGS[id]}.${PNG_IDS.has(id) ? 'png' : 'jpg'}`;
 
 /* ─── Category color mapping ─── */
 const CATEGORY_COLORS = {
@@ -292,6 +304,96 @@ const Projects = () => {
       featured: false,
       link: "https://v0-blog-layouts.vercel.app/",
       highlight: "Typography-first design system"
+    },
+
+    // ─── H1 FY2026 — AI Platform Infrastructure ───────────────────────────
+    {
+      id: 21,
+      title: "MAIA x Venmo",
+      description: "Merchant discovery + live exec demo that unified PayPal's Migration & Upgrade Program",
+      longDescription: "Drove the Venmo track of PayPal's MAIA (Merchant AI Integration Agent) from cold-start to executive demo in under three weeks. Built the merchant discovery layer that expanded the corpus from 332 to 9,513 scored US merchants across 18 independent harvest campaigns in one weekend. Authored the injection script that took MAIA from fixture-only to real merchant markup. Ran the live demo (two parallel V4/V5 → JS SDK V6 + Venmo migrations in ~20 minutes) in front of 14 senior leaders. The MAIA PM unified the Venmo track into the single PayPal Migration & Upgrade Program on May 4. Named to the MAIA build core on Jun 8.",
+      icon: <Brain className="h-5 w-5" />,
+      technologies: ["Python", "Claude Code", "RAG", "AWS Athena", "CommonCrawl", "D3.js", "Remotion", "Vireo"],
+      category: "AI/ML",
+      featured: true,
+      highlight: "332 → 9,513 merchants in one weekend; unified PayPal Migration Program"
+    },
+    {
+      id: 22,
+      title: "Darwin Evolution Framework",
+      description: "GEPA-powered prompt evolution framework — invokable from any repo, three ways",
+      longDescription: "Authored the Evolve → Evaluate → Preserve → Explain → Open PR loop for systematically improving AI artifacts. Introduced the Seed / Zephyr / Polaris / Compass / Bloom / Fossil / Garden vocabulary now used across the AI Toolkit. Shipped 71 PRs across two milestones (m1: 37, m2: 34) on ai-toolkit-registry-evolved with 1,020 candidates, 19 judges, and 678 eval examples stored in a graph DB with full lineage. Productionized mid-year: invokable from any repo three ways (reusable workflow, composite action, repository_dispatch), CI-gated with a score-delta PR comment, and ~120 real-repo evolution runs against the Pay-with-Venmo skill registry. Lives in the PayPal-Venmo org (DPEIR-4171).",
+      icon: <Brain className="h-5 w-5" />,
+      technologies: ["Python", "DSPy", "GEPA", "Graph DB", "Remotion", "GitHub Actions", "AI Toolkit"],
+      category: "AI/ML",
+      featured: true,
+      highlight: "71 PRs, 1,020 fossils, 19 judges — productionized & invokable from any repo"
+    },
+    {
+      id: 23,
+      title: "Vireo v2",
+      description: "Agent-agnostic telemetry + memory layer — Devmo standard, OTel-native",
+      longDescription: "Owner of Devmo Workstreams 7 (Telemetry) and 8 (Memory). Four capture surfaces: MCP server, CLI vireo-send, shell hooks, and skill instructions. 33-field schema with n8n ingestion → events table → daily GitHub archive → hourly distillation into five memory kinds (procedural, failure, preference, semantic, episodic). v2 shipped RAG, per-sub-agent telemetry, a unified OpenInference + Vireo V2 → OpenTelemetry span-attribute conversion layer (so Livery, Datadog, and Langtrace can consume events), and a cross-language Python + Swift memory-stack with MemFS-style markdown export. Instrumented a full MAIA run end-to-end: 53 events, 45 traces, 40 tool calls, 10 skill events, 100% success in ~8 min.",
+      icon: <BarChart3 className="h-5 w-5" />,
+      technologies: ["Python", "Swift", "n8n", "MCP", "OpenTelemetry", "OpenInference", "RAG", "Memory Systems"],
+      category: "Tools",
+      featured: true,
+      highlight: "Devmo standard — OTel-native, RAG, cross-language Python + Swift memory"
+    },
+    {
+      id: 24,
+      title: "Mac-in-a-Mac CI/CD",
+      description: "First macOS-in-macOS substrate at PayPal — 3x iOS test speedup, hosts Livery + Agent-0",
+      longDescription: "First engineer at PayPal to run a macOS guest VM inside a macOS host using Apple's Virtualization.framework and cirruslabs/tart. Primary result: PayWithVenmo UI test plan 22m 38s → 7m 23s (3.0x speedup) on existing hardware with three full xcresult-bundle proof runs. What it became: a CI substrate letting any iOS team shard 120-test suites across host + 1–2 child VMs per Mac mini, an agent runtime giving Agent-0 hardware acceleration and always-on mode, and Livery's runtime primitive. A peer engineer picked up the lume integration; iOS leadership sponsor committed on May 5. Draft HLD on Confluence (VAC 2860853837); operational handoff in progress.",
+      icon: <Code className="h-5 w-5" />,
+      technologies: ["Swift", "Apple Virtualization.framework", "tart", "lume", "XCTest", "CI/CD", "macOS"],
+      category: "Tools",
+      featured: true,
+      highlight: "3x iOS test speedup on existing hardware — no new minis, no test changes"
+    },
+    {
+      id: 25,
+      title: "claude-cosmos Proxy",
+      description: "Universal Anthropic-shape proxy to Cosmos LLM with PII scrubbing + telemetry",
+      longDescription: "A Claude-flavored proxy that routes any Anthropic-shaped request to PayPal's Cosmos LLM endpoints with sanitization, PII scrubbing, and telemetry baked in. The capture surface Vireo cannot reach: hosted, ephemeral, and third-party agents. In production use by Osaurus (Mac Studio local inference), NousResearch Hermes Agent (self-evolving), Agent-0 (always-on autonomous loop), Cosmos-IDE, the Devmo agent webapp, and MAIA's network-layer telemetry path. Together with Vireo: intent + ground truth across local, hosted, ephemeral, and untrusted environments.",
+      icon: <Brain className="h-5 w-5" />,
+      technologies: ["Python", "Anthropic API", "Cosmos LLM", "PII Scrubbing", "Telemetry", "MCP"],
+      category: "AI/ML",
+      featured: false,
+      highlight: "Everywhere an LLM call can't hide — sanitization + PII scrub + telemetry in-proxy"
+    },
+    {
+      id: 26,
+      title: "Scarf — Hermes AI Agent GUI",
+      description: "Native macOS + iOS app for managing Hermes AI agents with multi-server support",
+      longDescription: "A native macOS and iOS application for interacting with Hermes AI agents. Features multi-window and multi-server support (local + remote over SSH), full chat interface, dashboard, sessions, memory management, cron scheduling, and MCP integration. Built with SwiftUI for a truly native Apple experience that mirrors a real developer workflow.",
+      icon: <Smartphone className="h-5 w-5" />,
+      technologies: ["Swift", "SwiftUI", "macOS", "iOS", "SSH", "MCP", "AI Agents"],
+      category: "Mobile",
+      featured: false,
+      highlight: "Native Apple GUI for autonomous Hermes agent management"
+    },
+    {
+      id: 27,
+      title: "video-toolkit",
+      description: "Remotion 4.0 + Google Veo / Chirp3-TTS pipeline for per-PR narrated videos",
+      longDescription: "Open-sourced internally (PayPal-Venmo/video-toolkit) after a May 12 team demo. A Remotion 4.0 + Google Veo + Chirp3-TTS pipeline for producing explainer videos, podcasts, PR-demo clips, and Darwin evolution videos — runnable from GitHub Actions with no local setup required. Every Darwin PR ships with a narrated video built by this pipeline. Announced to the team as 'a tool anyone on the team can use.'",
+      icon: <Video className="h-5 w-5" />,
+      technologies: ["Remotion 4.0", "Google Veo", "Chirp3-TTS", "GitHub Actions", "Node.js", "TypeScript"],
+      category: "Tools",
+      featured: false,
+      highlight: "Per-PR narrated videos from GitHub Actions — no local setup"
+    },
+    {
+      id: 28,
+      title: "DX Sounds MCP Server",
+      description: "8 audio themes, 14 tools — merged into the PayPal AI Hub",
+      longDescription: "An MCP (Model Context Protocol) server that brings ambient developer-experience sounds into AI-powered workflows. 8 audio themes and 14 tools for signaling build states, errors, successes, and focus modes — merged into the official PayPal AI Hub. A joy-and-polish contribution that shipped alongside the serious infrastructure work of H1 2026.",
+      icon: <Volume2 className="h-5 w-5" />,
+      technologies: ["MCP", "Node.js", "Audio", "Developer Experience", "PayPal AI Hub"],
+      category: "Tools",
+      featured: false,
+      highlight: "Merged into PayPal AI Hub — 8 themes, 14 MCP tools"
     }
   ];
 
@@ -319,7 +421,7 @@ const Projects = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-6">
             <Sparkles className="h-4 w-4 text-primary" />
-            <span className="text-sm text-primary font-medium">20 Projects & Counting</span>
+            <span className="text-sm text-primary font-medium">28 Projects & Counting</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-bold text-gradient mb-6">
             Featured Projects
