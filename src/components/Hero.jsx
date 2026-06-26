@@ -27,7 +27,7 @@ const Hero = () => {
             <a href="#projects" className="text-foreground/80 hover:text-foreground transition-colors">Projects</a>
             <a href="#knowledge-graph" className="text-foreground/80 hover:text-foreground transition-colors">Knowledge Graph</a>
             <a href="#hackathons" className="text-foreground/80 hover:text-foreground transition-colors">Hackathons</a>
-            <a href="#leadership" className="text-foreground/80 hover:text-foreground transition-colors">Leadership</a>
+            <a href="#newsletter" className="text-foreground/80 hover:text-foreground transition-colors">Newsletter</a>
             <a href="#contact" className="text-foreground/80 hover:text-foreground transition-colors">Contact</a>
             <ThemeToggle />
           </div>
