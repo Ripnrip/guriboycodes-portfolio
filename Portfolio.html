@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gurinder Singh — Staff Software Engineer · Applied AI/ML</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="brain.css" />
+<link rel="stylesheet" href="gallery.css" />
+<script>try{var m=localStorage.getItem('gs-mode');if(m)document.documentElement.setAttribute('data-mode',m);}catch(e){}</script>
+<script type="module">
+  import("https://cdn.jsdelivr.net/npm/cobe@0.6.3/+esm")
+    .then(function(mod){ window.__createGlobe = mod.default; window.dispatchEvent(new Event("cobe-ready")); })
+    .catch(function(){ window.dispatchEvent(new Event("cobe-failed")); });
+</script>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="image-slot.js"></script>
+
+<script src="data.js"></script>
+<script type="text/babel" src="components/GhibliCovers.jsx"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="components.jsx"></script>
+<script type="text/babel" src="components/MagicUI.jsx"></script>
+<script type="text/babel" src="components/SideProjects.jsx"></script>
+<script type="text/babel" src="components/Media.jsx"></script>
+<script type="text/babel" src="brain.jsx"></script>
+<script type="text/babel" src="app.jsx"></script>
+<template id="__bundler_thumbnail" data-bg-color="#07090c">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#07090c"/>
+    <circle cx="600" cy="330" r="120" fill="none" stroke="#5fe3c8" stroke-width="3" opacity="0.5"/>
+    <circle cx="600" cy="330" r="14" fill="#5fe3c8"/>
+    <g stroke="#5fe3c8" stroke-width="2" opacity="0.55">
+      <line x1="600" y1="330" x2="430" y2="240"/>
+      <line x1="600" y1="330" x2="780" y2="250"/>
+      <line x1="600" y1="330" x2="470" y2="450"/>
+      <line x1="600" y1="330" x2="740" y2="440"/>
+    </g>
+    <g fill="#7cd4ff">
+      <circle cx="430" cy="240" r="9"/><circle cx="780" cy="250" r="9"/>
+      <circle cx="470" cy="450" r="9"/><circle cx="740" cy="440" r="9"/>
+    </g>
+    <text x="600" y="600" font-family="Georgia, serif" font-style="italic" font-size="64" fill="#e7ecf3" text-anchor="middle">Gurinder Singh</text>
+    <text x="600" y="660" font-family="monospace" font-size="24" letter-spacing="6" fill="#6a7585" text-anchor="middle">APPLIED AI / ML · H1 2026</text>
+  </svg>
+</template>
+</body>
+</html>

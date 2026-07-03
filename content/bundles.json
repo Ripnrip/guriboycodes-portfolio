@@ -1,0 +1,418 @@
+[
+  {
+    "id": "maia",
+    "rank": 1,
+    "tier": "augment",
+    "kind": "employer",
+    "title": "Cold-start to a unified PayPal program",
+    "codename": "MAIA × Venmo",
+    "readiness": "case-study",
+    "why": "The highest-business-impact AI system in the portfolio — merchant onboarding taken from months to about 20 minutes, demoed live to leadership.",
+    "links": { "demo": null, "github": null, "appstore": null },
+    "punchlist": {
+      "screenshot": "need",
+      "diagram": "need",
+      "gifVideo": "need",
+      "logoIcon": "have",
+      "publicUrl": "n/a",
+      "githubUrl": "n/a"
+    },
+    "accent": "cyan",
+    "foldsIn": [],
+    "sanitizationNote": "Employer case study — selected details redacted. Copy stays within the public-safe numbers already on the live portfolio; any visuals must be sanitized (no merchant names, internal tool UIs, or dashboards) before publishing."
+  },
+  {
+    "id": "darwin",
+    "rank": 2,
+    "tier": "augment",
+    "kind": "employer",
+    "title": "Evolution framework, now productionized",
+    "codename": "Darwin",
+    "readiness": "case-study",
+    "why": "The strongest autonomous-systems story: a self-improving skill engine with a PR-gated evolution loop — a clear agentic-engineering differentiator.",
+    "links": { "demo": null, "github": null, "appstore": null },
+    "punchlist": {
+      "screenshot": "need",
+      "diagram": "need",
+      "gifVideo": "need",
+      "logoIcon": "have",
+      "publicUrl": "n/a",
+      "githubUrl": "n/a"
+    },
+    "accent": "amber",
+    "foldsIn": [],
+    "sanitizationNote": "Employer case study — selected details redacted. Any evolution-loop demo or GIF must be recorded against a sanitized example repo, never the internal skill registry."
+  },
+  {
+    "id": "vireo",
+    "rank": 3,
+    "tier": "augment",
+    "kind": "employer",
+    "title": "Telemetry + memory for AI dev workflows",
+    "codename": "Vireo",
+    "readiness": "needs-media",
+    "why": "The infrastructure-backbone story: LLM observability and memory built as platform work, with public-adjacent observability repos to show for it.",
+    "links": { "demo": null, "github": "https://github.com/artfularchivesstudio-spec/observability-swift-client", "appstore": null },
+    "punchlist": {
+      "screenshot": "need",
+      "diagram": "need",
+      "gifVideo": "need",
+      "logoIcon": "have",
+      "publicUrl": "need",
+      "githubUrl": "have"
+    },
+    "accent": "emerald",
+    "foldsIn": [],
+    "sanitizationNote": "Employer case study — selected details redacted. Public surface is limited to the observability-* companion repos; internal pipeline and program names stay at the level already public on the site."
+  },
+  {
+    "id": "agent0",
+    "rank": 4,
+    "tier": "full",
+    "kind": "personal",
+    "title": "An AI agent with its own computer",
+    "codename": "Agent Zero",
+    "readiness": "needs-media",
+    "one": "An agent with its own Mac.",
+    "tagline": "An open-source agent running inside its own macOS virtual machine — it does real work on a real computer, and messages me on WhatsApp.",
+    "story": "I gave an AI agent its own computer: the open-source Agent Zero framework running inside a dedicated macOS VM (Tart, 8 cores, 8 GB), safely walled off from my machine. It reaches me over WhatsApp, and I put it to work on the least fun job I know — the career pipeline: a multi-user job-search system with contact enrichment and outreach automation. It's the personal twin of the agent-isolation work I do professionally.",
+    "why": "Shows I can stand up, isolate, and operate autonomous agents on real machines — the same discipline as my platform work, on my own hardware.",
+    "stack": ["Agent Zero", "Python", "Tart VM", "macOS", "WhatsApp"],
+    "metrics": [
+      { "k": "Runs in", "v": "its own macOS VM" },
+      { "k": "VM spec", "v": "8 cores · 8 GB" },
+      { "k": "Reaches me via", "v": "WhatsApp" }
+    ],
+    "links": { "demo": null, "github": "https://github.com/Ripnrip/agent-zero-macOS", "appstore": null },
+    "punchlist": {
+      "screenshot": "need",
+      "diagram": "need",
+      "gifVideo": "need",
+      "logoIcon": "need",
+      "publicUrl": "n/a",
+      "githubUrl": "have"
+    },
+    "accent": "teal",
+    "foldsIn": [],
+    "sanitizationNote": null
+  },
+  {
+    "id": "miam",
+    "rank": 5,
+    "tier": "augment",
+    "kind": "employer",
+    "title": "PayPal's first macOS-in-macOS substrate",
+    "codename": "Nested Silicon",
+    "readiness": "case-study",
+    "why": "A memorable Staff-level systems story: nested macOS virtualization delivering a measured 3× iOS test speedup on existing hardware.",
+    "links": { "demo": null, "github": null, "appstore": null },
+    "punchlist": {
+      "screenshot": "need",
+      "diagram": "need",
+      "gifVideo": "need",
+      "logoIcon": "have",
+      "publicUrl": "n/a",
+      "githubUrl": "n/a"
+    },
+    "accent": "rose",
+    "foldsIn": [],
+    "sanitizationNote": "Employer case study — selected details redacted. Diagram should show the VM topology and the measured before/after workflow only — no internal CI project names."
+  },
+  {
+    "id": "cosmos",
+    "rank": 6,
+    "tier": "augment",
+    "kind": "employer",
+    "title": "The universal LLM capture layer",
+    "codename": "claude-cosmos",
+    "readiness": "needs-media",
+    "why": "The connective tissue of the whole portfolio: one safe gateway — routing, PII scrubbing, telemetry — that every other AI system passes through.",
+    "links": { "demo": null, "github": null, "appstore": null },
+    "punchlist": {
+      "screenshot": "have",
+      "diagram": "need",
+      "gifVideo": "need",
+      "logoIcon": "have",
+      "publicUrl": "need",
+      "githubUrl": "need"
+    },
+    "accent": "violet",
+    "foldsIn": ["AI IDE Setup & Workflows"],
+    "sanitizationNote": "Employer case study — selected details redacted. A public-safe repo/README (the ai-config / AI-IDE-setup side of the story) must be scrubbed of internal endpoints and program names beyond what the site already discloses."
+  },
+  {
+    "id": "rosicrucian",
+    "rank": 7,
+    "tier": "full",
+    "kind": "personal",
+    "title": "Centuries-old texts, answering with citations",
+    "codename": "Knowledge Explorer",
+    "readiness": "public-demo",
+    "one": "Ask centuries-old texts anything.",
+    "tagline": "A RAG search engine over 73K+ vectors of books, digests, podcasts, and video — with answers that cite their sources down to the page and the timestamp.",
+    "story": "I built a full-stack search engine for a community's library of esoteric texts and recordings: 73K+ vectors from books, digests, symposiums, podcasts, and YouTube. Ask a question and it answers with receipts — the PDF viewer jumps to the exact page and highlights it; the audio and video players seek to the exact moment. Around it I've shipped App Store apps for the same community, including a guided vowel-practice app and a parenting platform. It's my favorite proof that retrieval is only half the product — the other half is trust.",
+    "why": "A complete, public, end-to-end RAG product — retrieval, citation UX, a test suite, analytics — not a demo notebook.",
+    "stack": ["Python", "RAG", "Qdrant", "OpenAI", "Next.js", "Cloudflare R2"],
+    "metrics": [
+      { "k": "Corpus", "v": "73K+ vectors" },
+      { "k": "Sources", "v": "books · digests · podcasts · video" },
+      { "k": "Tests", "v": "60-test suite" },
+      { "k": "Citations", "v": "page-jump + timestamp seek" }
+    ],
+    "links": { "demo": "https://rosicrucian-knowledge-explorer.vercel.app", "github": null, "appstore": "https://apps.apple.com/us/app/rosicrucian-vowel-sounds/id6529521816" },
+    "punchlist": {
+      "screenshot": "have",
+      "diagram": "need",
+      "gifVideo": "need",
+      "logoIcon": "need",
+      "publicUrl": "have",
+      "githubUrl": "need"
+    },
+    "accent": "amber",
+    "foldsIn": ["Rosicrucian Knowledge Explorer", "Rosicrucian Vowel Sounds", "Rosicrucian Parenting", "Voice Practice Hub"],
+    "sanitizationNote": null
+  },
+  {
+    "id": "ethereal",
+    "rank": 8,
+    "tier": "full",
+    "kind": "personal",
+    "title": "One universe: stories, a game, an AR scanner",
+    "codename": "Ethereal Dimension",
+    "readiness": "needs-media",
+    "one": "An AI-built storytelling universe.",
+    "tagline": "A storytelling universe spanning a 3D web world, a published iOS game, and an AR room scanner that a city transportation department put to work.",
+    "story": "Ethereal Dimension started as an AI storytelling platform — interactive narratives inside Three.js worlds — and grew a real-world arm: an AR scanner built on RoomPlan and ARKit that captures spaces in 3D, plus a computer-vision system for real-time barricade detection built with the Austin Department of Transportation. The same universe shipped Hylios, a hand-crafted SpriteKit game on the App Store. It's where my creative work and my spatial-computing work live in one place.",
+    "why": "Proves range for an AI+iOS portfolio: ARKit/RoomPlan spatial computing, shipped App Store products, and a distinctive creative brand in one coherent world.",
+    "stack": ["Three.js", "React", "ARKit", "RoomPlan", "YOLO", "CoreML", "SpriteKit"],
+    "metrics": [
+      { "k": "Partner", "v": "Austin DoT" },
+      { "k": "Scanner", "v": "RoomPlan + ARKit" },
+      { "k": "On the App Store", "v": "Hylios" }
+    ],
+    "links": { "demo": "https://etherealdimension.io", "github": null, "appstore": "https://apps.apple.com/us/app/hylios/id6474466548" },
+    "punchlist": {
+      "screenshot": "have",
+      "diagram": "need",
+      "gifVideo": "need",
+      "logoIcon": "need",
+      "publicUrl": "have",
+      "githubUrl": "need"
+    },
+    "accent": "violet",
+    "foldsIn": ["Ethereal Dimension", "Hylios", "Ethereal Search Showcase"],
+    "sanitizationNote": null
+  },
+  {
+    "id": "flow",
+    "rank": 9,
+    "tier": "full",
+    "kind": "personal",
+    "title": "Dynamic Island as a real product",
+    "codename": "Flow",
+    "readiness": "needs-media",
+    "one": "Dynamic Island, done beautifully.",
+    "tagline": "A productivity app that lives in the Dynamic Island — state-driven animation and deep system integration, with the code public.",
+    "story": "Flow is my love letter to the Dynamic Island: a productivity app whose whole interface lives up there, driven by state animations and deep system integration. At work I built Dynamic Island and Live Activities infrastructure for Venmo; Flow is where I push the same surface as far as it will go, in public, on my own terms.",
+    "why": "iOS product craft in its purest form — the system surface everyone has seen, executed with care, with public code to read.",
+    "stack": ["Swift", "SwiftUI", "Dynamic Island", "ActivityKit", "WidgetKit"],
+    "metrics": [
+      { "k": "Surface", "v": "Dynamic Island + Live Activities" },
+      { "k": "Code", "v": "public on GitHub" }
+    ],
+    "links": { "demo": null, "github": "https://github.com/Ripnrip/Flow", "appstore": null },
+    "punchlist": {
+      "screenshot": "have",
+      "diagram": "need",
+      "gifVideo": "need",
+      "logoIcon": "need",
+      "publicUrl": "need",
+      "githubUrl": "have"
+    },
+    "accent": "cyan",
+    "foldsIn": ["Flow"],
+    "sanitizationNote": null
+  },
+  {
+    "id": "scrolltracker",
+    "rank": 10,
+    "tier": "full",
+    "kind": "personal",
+    "title": "Automation that checks its own work",
+    "codename": "ScrollTracker",
+    "readiness": "needs-sanitization",
+    "one": "Real surfaces, verified runs.",
+    "tagline": "A Swift automation system that drives real mobile and browser surfaces — and validates every run against what actually happened on screen.",
+    "story": "ScrollTracker is a private automation rig I keep sharpening: it operates real mobile and browser surfaces end to end, then verifies each run against the live surface instead of trusting its own logs. Building it has taught me more about real-world automation — timing, state drift, recovery — than any test suite, and that reliability discipline feeds straight back into my agent work. The code stays private; the case study is the capability.",
+    "why": "Hard-won, real-world automation and validation engineering — the unglamorous reliability work that trustworthy agent systems are made of.",
+    "stack": ["Swift", "Automation", "Claude", "Validation harness"],
+    "metrics": [
+      { "k": "Status", "v": "active — June 2026" },
+      { "k": "Validation", "v": "against the live surface" }
+    ],
+    "links": { "demo": null, "github": null, "appstore": null },
+    "punchlist": {
+      "screenshot": "need",
+      "diagram": "need",
+      "gifVideo": "need",
+      "logoIcon": "need",
+      "publicUrl": "n/a",
+      "githubUrl": "need"
+    },
+    "accent": "emerald",
+    "foldsIn": [],
+    "sanitizationNote": "Held back on purpose: the repo stays private, and the public card names no automation targets, employers, platforms, or volumes — capability-level description only. Any demo media must be abstracted (blurred or mock surfaces) before publishing."
+  },
+  {
+    "id": "papervault",
+    "rank": 11,
+    "tier": "full",
+    "kind": "personal",
+    "title": "The newest build on the bench",
+    "codename": "PaperVault",
+    "readiness": "needs-media",
+    "one": "A brand-new Swift app, mid-forge.",
+    "tagline": "An early-stage native Swift app — the most recently active repo in my workshop, still being shaped into a product.",
+    "story": "PaperVault is the freshest thing I'm building: a native Swift app early enough that the product framing is still in motion. It's where my commits are landing right now — July 2026 — and it gets its public unveiling once the README, screenshots, and story are worthy of it. Watch this space.",
+    "why": "Signals a live personal build cadence — still shipping greenfield Swift on my own time, a decade in.",
+    "stack": ["Swift"],
+    "metrics": [
+      { "k": "Status", "v": "in active development" },
+      { "k": "Latest commit", "v": "July 2026" }
+    ],
+    "links": { "demo": null, "github": null, "appstore": null },
+    "punchlist": {
+      "screenshot": "need",
+      "diagram": "need",
+      "gifVideo": "need",
+      "logoIcon": "need",
+      "publicUrl": "n/a",
+      "githubUrl": "need"
+    },
+    "accent": "amber",
+    "foldsIn": [],
+    "sanitizationNote": null
+  },
+  {
+    "id": "my4blocks",
+    "rank": 12,
+    "tier": "full",
+    "kind": "personal",
+    "title": "Emotional skills, taught in blocks",
+    "codename": "My4Blocks",
+    "readiness": "needs-sanitization",
+    "one": "Feelings, taught like building blocks.",
+    "tagline": "An emotional-education platform — the 'four blocks' — spanning a web app, a mobile app, and retrieval that answers from the actual curriculum.",
+    "story": "My4Blocks teaches emotional skills the way you'd teach anything else: in small, buildable blocks. It spans a web app, a mobile app, and a RAG layer so answers come from the source material rather than a model's vibes — including experiments with PageIndex-style retrieval that navigates a document's structure the way a person would. It's the project where my AI work gets to serve something soft.",
+    "why": "AI applied to human development — curriculum-grounded RAG across web and mobile, with the judgment to keep private things private.",
+    "stack": ["Next.js", "Flutter", "RAG", "PageIndex"],
+    "metrics": [
+      { "k": "Surfaces", "v": "web · mobile · RAG" },
+      { "k": "Retrieval", "v": "PageIndex experiments" }
+    ],
+    "links": { "demo": "https://my4blocks.vercel.app", "github": null, "appstore": null },
+    "punchlist": {
+      "screenshot": "need",
+      "diagram": "need",
+      "gifVideo": "need",
+      "logoIcon": "need",
+      "publicUrl": "have",
+      "githubUrl": "need"
+    },
+    "accent": "teal",
+    "foldsIn": [],
+    "sanitizationNote": "Repo stays private pending the privacy check the audit calls for — content and data must be confirmed public-safe before any repo link ships. The Vercel demo is the curated public route."
+  },
+  {
+    "id": "artful",
+    "rank": 13,
+    "tier": "full",
+    "kind": "personal",
+    "title": "A studio brand run like a product",
+    "codename": "Artful Archives",
+    "readiness": "needs-media",
+    "one": "A gallery that loads beautifully.",
+    "tagline": "An art-studio brand with real infrastructure behind it: a performance-tuned gallery site, a Swift-based CMS, and its own VPS backend.",
+    "story": "Artful Archives Studio is a creative brand I run like a real product: a performance-optimized gallery site with fluid animations and lazy loading, a Swift-based CMS, and a VPS backend doing the unglamorous work underneath. It's also my sandbox for agentic content tooling — where publishing pipelines get tried before I trust them anywhere else.",
+    "why": "Full-stack ownership of a live brand — design, web performance, CMS, and server ops — built and operated outside employer scaffolding.",
+    "stack": ["React", "Next.js", "Swift", "Strapi", "VPS"],
+    "metrics": [
+      { "k": "Surfaces", "v": "site · CMS · VPS" },
+      { "k": "Craft", "v": "lazy loading · fluid animation" }
+    ],
+    "links": { "demo": "https://artful-archives-website.vercel.app", "github": null, "appstore": null },
+    "punchlist": {
+      "screenshot": "have",
+      "diagram": "need",
+      "gifVideo": "need",
+      "logoIcon": "need",
+      "publicUrl": "have",
+      "githubUrl": "need"
+    },
+    "accent": "rose",
+    "foldsIn": ["Artful Archives"],
+    "sanitizationNote": null
+  },
+  {
+    "id": "ant-zai",
+    "rank": 14,
+    "tier": "full",
+    "kind": "personal",
+    "title": "Two public repos, zero redactions",
+    "codename": "ANT + ZAI",
+    "readiness": "needs-media",
+    "one": "Public code: news agents + machine vision.",
+    "tagline": "A pair of public repos — autonomous agents that collect and transform AI news, and a multi-platform vision suite built on GLM-4.6V.",
+    "story": "These are the repos I point people at when they want to read actual code. Agentic News Transformer is a multi-agent ecosystem (LangChain + CrewAI) that collects, processes, and analyzes AI news. Zai Vision Suite is a multi-platform computer-vision toolkit on GLM-4.6V — real-time analysis, detection, scene understanding. No NDA, no sanitization — just the work.",
+    "why": "Public, inspectable applied-LLM and vision code — the open receipts behind the employer case studies.",
+    "stack": ["Python", "LangChain", "CrewAI", "TypeScript", "GLM-4.6V"],
+    "metrics": [
+      { "k": "Repos", "v": "2 — both public" },
+      { "k": "Vision model", "v": "GLM-4.6V" }
+    ],
+    "links": { "demo": null, "github": "https://github.com/Ripnrip/Agentic-News-Transformer", "appstore": null },
+    "punchlist": {
+      "screenshot": "have",
+      "diagram": "need",
+      "gifVideo": "need",
+      "logoIcon": "need",
+      "publicUrl": "need",
+      "githubUrl": "have"
+    },
+    "accent": "cyan",
+    "foldsIn": ["Agentic News Transformer", "Zai Vision Suite"],
+    "sanitizationNote": null
+  },
+  {
+    "id": "hackathons",
+    "rank": 15,
+    "tier": "full",
+    "kind": "proof-rail",
+    "title": "The proof rail: 28+ hackathons, 2 firsts",
+    "codename": "Hackathon Reel",
+    "readiness": "ship-ready",
+    "one": "A decade of weekend builds.",
+    "tagline": "The proof section: hackathons across six-plus countries, two first-place wins, and one build that ended up in a BBC documentary.",
+    "story": "Hackathons are where I check that I can still go zero-to-demo in a weekend. The reel: a drone search-and-rescue system that won MLH at Bloomberg London and was featured in a BBC documentary; ARon, a solo-built AR fitness coach at HackZurich; Carly, a voice-controlled AR car configurator that finished top of 400+; and Elate, a first-place win with a five-person crew at HackZurich 2022. Between builds I've judged Hack Yale twice and mentored at PennApps — and turned the same energy toward community with a game that teaches Sikh langar traditions.",
+    "why": "A durable, documented pattern of fast prototyping, winning under constraints, and giving back as judge and mentor — the origin story of the applied-AI work.",
+    "stack": ["ARKit", "CreateML", "CoreML", "DJI SDK", "IBM Watson", "React Native"],
+    "metrics": [
+      { "k": "Hackathons", "v": "28+" },
+      { "k": "Countries", "v": "6+" },
+      { "k": "First-place wins", "v": "2" },
+      { "k": "Featured in", "v": "a BBC documentary" }
+    ],
+    "links": { "demo": "https://devpost.com/software/automated-search-rescue-system", "github": "https://github.com/Ripnrip/ARon", "appstore": null },
+    "punchlist": {
+      "screenshot": "have",
+      "diagram": "need",
+      "gifVideo": "have",
+      "logoIcon": "need",
+      "publicUrl": "have",
+      "githubUrl": "have"
+    },
+    "accent": "violet",
+    "foldsIn": ["Gurduwara Langar Game"],
+    "sanitizationNote": null
+  }
+]

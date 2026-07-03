@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gurinder Singh - Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #1b1f25;
+    --ink-2: #4b5563;
+    --ink-3: #8a929e;
+    --accent: #0e7a6b;
+    --line: #e3e7ec;
+    --bg: #ffffff;
+    --panel: #f6f8f8;
+    --serif: "Instrument Serif", Georgia, serif;
+    --sans: "Geist", -apple-system, system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #eceef0; color: var(--ink); font-family: var(--sans); font-size: 14.5px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .doc { box-sizing: border-box; max-width: 8.5in; margin: 0 auto; background: var(--bg); padding: 50px clamp(24px, 5vw, 0.72in) 86px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+  .doc-frame { width: 100%; border-collapse: collapse; }
+  .doc-frame td { padding: 0; }
+  .hdr-space, .ftr-space { display: none; }
+
+  /* masthead */
+  .masthead { display: grid; grid-template-columns: minmax(0, 1fr) 118px; gap: 22px; align-items: start; }
+  .name { font-family: var(--serif); font-size: 52px; line-height: 0.98; letter-spacing: -0.01em; margin: 0; font-weight: 400; }
+  .role { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin: 10px 0 4px; }
+  .tag { font-size: 14px; color: var(--ink-2); margin: 0; }
+  .contact { display: flex; flex-wrap: wrap; gap: 7px 14px; margin-top: 14px; font-family: var(--mono); font-size: 11.2px; color: var(--ink-2); letter-spacing: 0.02em; }
+  .contact a, .contact span { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 1px; }
+  .contact a:hover { color: var(--accent); border-color: var(--accent); }
+  .mini-icon { width: 13px; height: 13px; object-fit: contain; display: inline-block; }
+  .text-icon { width: 15px; height: 15px; border: 1px solid var(--line); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: var(--accent); font-family: var(--mono); font-size: 8px; font-weight: 500; line-height: 1; }
+  .portrait-card { justify-self: end; width: 104px; }
+  .portrait { width: 104px; height: 104px; display: block; object-fit: cover; object-position: 35% 40%; border-radius: 16px; border: 1px solid var(--line); box-shadow: 0 12px 30px rgba(14,122,107,0.16); }
+  .qr-hint { margin-top: 8px; font-family: var(--mono); font-size: 8.5px; text-align: center; color: var(--ink-3); letter-spacing: 0.08em; text-transform: uppercase; }
+
+  /* stat band */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); margin: 20px 0 6px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .stat { padding: 11px 12px; border-right: 1px solid var(--line); display: grid; grid-template-columns: 24px 1fr; gap: 9px; align-items: center; }
+  .stat:last-child { border-right: none; }
+  .stat-badge { width: 26px; height: 26px; border: 1px solid var(--line); border-radius: 9px; background: var(--panel); display: flex; align-items: center; justify-content: center; }
+  .stat-badge img { width: 16px; height: 16px; object-fit: contain; }
+  .stat .v { font-family: var(--serif); font-style: italic; font-size: 26px; line-height: 1; color: var(--accent); }
+  .stat .l { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3); margin-top: 7px; }
+
+  /* sections */
+  section { margin-top: 24px; }
+  h2 { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 12px; padding-bottom: 7px; border-bottom: 1px solid var(--line); font-weight: 500; }
+  p { margin: 0 0 10px; }
+  .summary { color: var(--ink-2); max-width: 70ch; }
+
+  /* experience */
+  .job { margin-bottom: 18px; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .job-title { display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .job-logo { width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 10px; background: #fff; display: flex; align-items: center; justify-content: center; padding: 6px; flex: 0 0 auto; }
+  .job-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .job-logo.duo { gap: 2px; padding: 5px; }
+  .job-logo.duo img { width: 18px; height: 18px; }
+  .job-co { font-family: var(--serif); font-size: 23px; line-height: 1.1; }
+  .job-role { font-family: var(--mono); font-size: 11.5px; color: var(--ink-2); letter-spacing: 0.03em; margin-top: 2px; }
+  .job-when { font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); letter-spacing: 0.03em; white-space: nowrap; }
+  .sub { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 11px 0 6px; }
+  ul { margin: 0 0 4px; padding: 0; list-style: none; }
+  li { position: relative; padding-left: 18px; color: var(--ink-2); margin-bottom: 5px; }
+  li::before { content: ">"; position: absolute; left: 2px; color: var(--accent); font-family: var(--mono); }
+  li b, li strong { color: var(--ink); font-weight: 600; }
+
+  /* flagship systems */
+  .sys-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; }
+  .sys { min-height: 68px; display: grid; grid-template-columns: 50px minmax(0, 1fr); gap: 9px; align-items: start; padding: 7px 8px; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 8px; background: #fff; }
+  .sys-img { width: 50px; height: 46px; border-radius: 6px; object-fit: cover; align-self: start; margin-top: 2px; }
+  .sys .n { font-family: var(--serif); font-size: 16px; line-height: 1.05; }
+  .sys .d { font-size: 10.8px; color: var(--ink-2); margin-top: 1px; line-height: 1.32; }
+  .sys-icons { display: flex; gap: 4px; margin-top: 3px; }
+  .sys-icons img { width: 12px; height: 12px; object-fit: contain; }
+
+  /* hackathons */
+  .hk { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .hk-card { overflow: hidden; background: var(--panel); border-radius: 10px; }
+  .hk-shot { width: 100%; height: 50px; object-fit: cover; display: block; border-bottom: 1px solid var(--line); }
+  .hk-copy { padding: 10px 12px 12px; }
+  .hk-place { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
+  .hk-name { font-family: var(--serif); font-size: 16px; margin: 6px 0 4px; line-height: 1.15; }
+  .hk-desc { font-size: 12px; color: var(--ink-2); }
+
+  /* skills */
+  .skill-row { display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .skill-row:last-child { border-bottom: none; }
+  .skill-cat { font-family: var(--mono); font-size: 11px; letter-spacing: 0.05em; color: var(--ink); display: flex; align-items: center; gap: 8px; }
+  .skill-cat img { width: 17px; height: 17px; object-fit: contain; }
+  .skill-list { font-size: 13px; color: var(--ink-2); }
+  .skill-icons { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+  .skill-icons img { width: 16px; height: 16px; object-fit: contain; }
+
+  /* two-col footer rows */
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  .meta-item .t { font-family: var(--serif); font-size: 17px; }
+  .meta-item .s { font-size: 12.5px; color: var(--ink-2); }
+  .meta-item .w { font-family: var(--mono); font-size: 11px; color: var(--ink-3); }
+  .foot-note { margin-top: 18px; padding: 12px 14px; background: var(--panel); border-radius: 10px; font-size: 12.5px; color: var(--ink-2); }
+  .foot-note b { color: var(--ink); }
+
+  @page { size: letter; margin: 0; }
+  @media print {
+    html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    html, body { margin: 0; padding: 0; background: #fff; }
+    .doc { max-width: none !important; margin: 0 !important; padding: 0 0.62in !important; box-shadow: none !important; }
+    .hdr-space, .ftr-space { display: table-cell; height: 0.48in; }
+    h2 { break-after: avoid; }
+    .job, .sys, .hk-card, .skill-row, li, .foot-note { break-inside: avoid; }
+    p, li { orphans: 3; widows: 3; }
+  }
+  @media (max-width: 640px) {
+    .sys-grid, .hk, .two { grid-template-columns: 1fr; }
+    .masthead { grid-template-columns: 1fr; }
+    .portrait-card { justify-self: start; }
+    .name { font-size: 40px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+<main class="doc">
+  <table class="doc-frame" role="presentation">
+    <thead><tr><td class="hdr-space"></td></tr></thead>
+    <tbody><tr><td>
+
+      <div class="masthead">
+        <div>
+          <h1 class="name">Gurinder Singh</h1>
+          <div class="role">Staff Software Engineer | Mobile &amp; Applied AI</div>
+          <p class="tag">LLM agents | RAG pipelines | iOS at scale | automation</p>
+          <div class="contact">
+            <a href="https://github.com/Ripnrip" target="_blank" rel="noopener"><img class="mini-icon" src="assets/tech/github.svg" alt="" />github.com/Ripnrip</a>
+            <a href="https://guriboycodes.com" target="_blank" rel="noopener"><span class="text-icon">P</span>guriboycodes.com</a>
+            <a href="https://www.linkedin.com/in/gurinder-singh-a30a1a48" target="_blank" rel="noopener"><span class="text-icon">in</span>LinkedIn</a>
+            <a href="mailto:gsingh622@yahoo.com"><span class="text-icon">@</span>gsingh622@yahoo.com</a>
+            <span><span class="text-icon">NY</span>New York, NY</span>
+          </div>
+        </div>
+        <div class="portrait-card">
+          <img class="portrait" src="assets/resume-pdf/me-paragliding.jpg" alt="Gurinder Singh" />
+          <div class="qr-hint">Portfolio</div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><div class="stat-badge"><img src="assets/tech/react-native.svg" alt="" /></div><div><div class="v">90M+</div><div class="l">Users impacted</div></div></div>
+        <div class="stat"><div class="stat-badge"><img src="assets/logos/venmo.png" alt="" /></div><div><div class="v">$60M</div><div class="l">CVS contract (QRC)</div></div></div>
+        <div class="stat"><div class="stat-badge"><img src="assets/tech/arkit.svg" alt="" /></div><div><div class="v">28+</div><div class="l">Hackathons | 2 firsts</div></div></div>
+        <div class="stat"><div class="stat-badge"><img src="assets/tech/widgetkit.png" alt="" /></div><div><div class="v">1</div><div class="l">Patent holder</div></div></div>
+      </div>
+
+      <section>
+        <h2>Summary</h2>
+        <p class="summary">Staff iOS / Mobile &amp; Applied AI engineer with over a decade architecting and scaling production consumer platforms and AI-powered systems used by millions. Patent holder and technical leader with deep expertise in iOS platform architecture, distributed client systems, and AI-enabled product development - focused on translating emerging AI capabilities into reliable, real-world products.</p>
+        <p class="summary">Proven track record taking ideas from prototype to globally deployed product, from startup innovation through enterprise systems serving 90M+ users at PayPal/Venmo. I bring a human-centered perspective to applied AI - elevating human skill, judgment, and ethos through careful system design - and stay invested in mentoring engineers and shaping technical culture.</p>
+      </section>
+
+      <section>
+        <h2>Selected 2026 Systems - Applied AI Platform</h2>
+        <div class="sys-grid">
+          <div class="sys"><img class="sys-img" src="assets/resume-pdf/maia.jpg" alt="" /><div><div class="n">MAIA x Venmo</div><div class="d">Agentic migration assistant that took merchant onboarding from ~85 days to a 20-minute live executive demo; scaled the test corpus to 9,513 scored merchants.</div><div class="sys-icons"><img src="assets/tech/mcp.svg" alt="" /><img src="assets/tech/openai.svg" alt="" /><img src="assets/tech/qdrant.svg" alt="" /></div></div></div>
+          <div class="sys"><img class="sys-img" src="assets/resume-pdf/vireo.jpg" alt="" /><div><div class="n">Vireo</div><div class="d">Agent-agnostic telemetry + memory layer across four capture surfaces - now the internal Devmo standard, cited by name in the HLD.</div><div class="sys-icons"><img src="assets/tech/datadog.svg" alt="" /><img src="assets/tech/mcp.svg" alt="" /><img src="assets/tech/python.svg" alt="" /></div></div></div>
+          <div class="sys"><img class="sys-img" src="assets/resume-pdf/cosmos.jpg" alt="" /><div><div class="n">claude-cosmos</div><div class="d">Universal LLM gateway proxy with PII scrubbing and telemetry baked in - the capture surface for hosted and third-party agents.</div><div class="sys-icons"><img src="assets/tech/claude.svg" alt="" /><img src="assets/tech/llms.svg" alt="" /><img src="assets/tech/openrouter.svg" alt="" /></div></div></div>
+          <div class="sys"><img class="sys-img" src="assets/resume-pdf/darwin.jpg" alt="" /><div><div class="n">Darwin</div><div class="d">GEPA + DSPy skill-evolution framework: evolve -> evaluate -> preserve -> open PR. 71 PRs, 1,020 candidates with full lineage.</div><div class="sys-icons"><img src="assets/tech/langgraph.svg" alt="" /><img src="assets/tech/github-actions.svg" alt="" /><img src="assets/tech/python.svg" alt="" /></div></div></div>
+          <div class="sys"><img class="sys-img" src="assets/resume-pdf/nested-silicon.jpg" alt="" /><div><div class="n">Nested Silicon</div><div class="d">First macOS-in-macOS VM substrate at the company - 3x iOS UI-test speedup (22:38 -> 7:23) on existing hardware.</div><div class="sys-icons"><img src="assets/tech/swift.svg" alt="" /><img src="assets/tech/xcode.svg" alt="" /><img src="assets/tech/docker.svg" alt="" /></div></div></div>
+          <div class="sys"><img class="sys-img" src="assets/covers/bundles/ant-zai.svg" alt="" /><div><div class="n">Supporting work</div><div class="d">SDXL LoRA training (23% loss reduction, 109&nbsp;MB production models); RAG crash-detection with Datadog monitors, adopted team-wide.</div><div class="sys-icons"><img src="assets/tech/stable-diffusion.svg" alt="" /><img src="assets/tech/datadog.svg" alt="" /><img src="assets/tech/pytorch.svg" alt="" /></div></div></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Professional Experience</h2>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="job-title">
+              <div class="job-logo duo"><img src="assets/logos/paypal.svg" alt="" /><img src="assets/logos/venmo.png" alt="" /></div>
+              <div>
+                <div class="job-co">PayPal / Venmo</div>
+                <div class="job-role">Staff iOS Engineer -> Applied AI/ML Engineer</div>
+              </div>
+            </div>
+            <div class="job-when">2020 - Present</div>
+          </div>
+          <div class="sub">Applied AI/ML | 2023 - Present</div>
+          <ul>
+            <li>Authored five productionized, cross-business AI-platform systems - <b>MAIA, Vireo, claude-cosmos, Darwin, and Nested Silicon</b> - each with named senior sponsorship and adopted by other teams.</li>
+            <li>Championed AI coding assistants across teams; built <b>AI-powered automation tools driving 10%+ productivity gains</b> and trained colleagues on leveraging them.</li>
+          </ul>
+          <div class="sub">iOS Engineering &amp; Business Impact</div>
+          <ul>
+            <li><b>QRC Touch-Free Payments (2021)</b> - led the moonshot that won a <b>$60M CVS contract</b>; <b>Amex partnership (2020)</b> payment-splitting integration for a <b>$400M</b> deal.</li>
+            <li><b>Venmo Gift Cards (2023)</b> - led iOS architecture for major merchants incl. Amazon &amp; Starbucks; <b>Venmo x Amazon (2022)</b> sandbox built in two days for launch.</li>
+            <li><b>Pay With Venmo Checkout</b> - cut end-to-end pay-sheet render latency by ~2 seconds.</li>
+            <li><b>QRC Widget Patent (2022)</b> - first team to use SwiftUI for iOS widgets at Venmo; reduced user friction by <b>66%</b>. Built Dynamic Island / Live Activities / App Clip infrastructure (HLDs, LLDs, APNS).</li>
+            <li>Built a SwiftUI component library with Design Systems that <b>cut feature dev time 30%</b>; comprehensive XCTest visual-snapshot regression suite.</li>
+          </ul>
+          <div class="sub">Technical Leadership</div>
+          <ul>
+            <li><b>Official Bar Raiser</b> - 500+ technical interviews across iOS, system design, and AI/ML; mentored 20+ engineers to promotion.</li>
+            <li>Founded and grew the <b>Interfaith (Sikh) ERG to 150+ members</b>; judge at Hack Yale (2x) and mentor at PennApps.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="job-title">
+              <div class="job-logo"><img src="assets/logos/stadia.png" alt="" /></div>
+              <div>
+                <div class="job-co">Google Stadia</div>
+                <div class="job-role">iOS Developer / Consultant</div>
+              </div>
+            </div>
+            <div class="job-when">2019 - 2020</div>
+          </div>
+          <ul>
+            <li>Mobile-platform work for the Stadia controller using Flutter/Dart and native iOS plugins.</li>
+            <li>Implemented low-latency Core Bluetooth communication; profiled CPU/GPU with Xcode Instruments.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="job-title">
+              <div class="job-logo"><img src="assets/logos/morgan-stanley.png" alt="" /></div>
+              <div>
+                <div class="job-co">Morgan Stanley</div>
+                <div class="job-role">iOS Developer / Consultant</div>
+              </div>
+            </div>
+            <div class="job-when">2018 - 2019</div>
+          </div>
+          <ul>
+            <li>Hybrid (Cordova + native) banking and wealth-management apps; check-deposit, biometric auth, certificate-pinning, jailbreak detection.</li>
+            <li>Migrated codebase from 98% Objective-C to 80% Objective-C / 20% Swift.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Hackathons - 28+ across 6+ countries | 2 first-place wins</h2>
+        <div class="hk">
+          <div class="hk-card"><img class="hk-shot" src="assets/resume-pdf/drone-sar.jpg" alt="" /><div class="hk-copy"><div class="hk-place">UK | 1st place</div><div class="hk-name">MLH @ Bloomberg London</div><div class="hk-desc">2017 | Automated Search &amp; Rescue. Featured in a BBC documentary.</div></div></div>
+          <div class="hk-card"><img class="hk-shot" src="assets/resume-pdf/carly.jpg" alt="" /><div class="hk-copy"><div class="hk-place">US | 1st place</div><div class="hk-name">Devcamp NYC</div><div class="hk-desc">2016 | Talent Management App - won among 300+ at Google NYC.</div></div></div>
+          <div class="hk-card"><img class="hk-shot" src="assets/resume-pdf/aron.jpg" alt="" /><div class="hk-copy"><div class="hk-place">CH | Finalist</div><div class="hk-name">HackZurich</div><div class="hk-desc">2018 | AR Car Buying Tool - finalist among 400+.</div></div></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Technical Skills</h2>
+        <div class="skill-row"><div class="skill-cat"><img src="assets/tech/swift.svg" alt="" />Mobile / iOS</div><div class="skill-list">Swift, SwiftUI, Objective-C, UIKit, SwiftData, ARKit, RoomPlan, CoreML, MLX, BLE / NFC, MapKit, Combine, Flutter &amp; Dart, Xcode<div class="skill-icons"><img src="assets/tech/swiftui.svg" alt="" /><img src="assets/tech/objective-c.svg" alt="" /><img src="assets/tech/arkit.svg" alt="" /><img src="assets/tech/roomplan.png" alt="" /><img src="assets/tech/coreml.svg" alt="" /><img src="assets/tech/xcode.svg" alt="" /></div></div></div>
+        <div class="skill-row"><div class="skill-cat"><img src="assets/tech/openai.svg" alt="" />AI / ML</div><div class="skill-list">Python, PyTorch, OpenAI, Anthropic / Claude, Gemini, Llama, LangChain, LlamaIndex, CrewAI, MCP, DSPy / GEPA, RAG, Stable Diffusion, YOLO, OpenCV, Whisper, ElevenLabs<div class="skill-icons"><img src="assets/tech/python.svg" alt="" /><img src="assets/tech/pytorch.svg" alt="" /><img src="assets/tech/anthropic.svg" alt="" /><img src="assets/tech/gemini.png" alt="" /><img src="assets/tech/langchain.svg" alt="" /><img src="assets/tech/mcp.svg" alt="" /><img src="assets/tech/stable-diffusion.svg" alt="" /></div></div></div>
+        <div class="skill-row"><div class="skill-cat"><img src="assets/tech/docker.svg" alt="" />Cloud &amp; DevOps</div><div class="skill-list">AWS (Lambda / EC2), GCP (Vertex AI), Azure, Docker, Firebase, GitHub Actions, Jenkins, Fastlane, Vercel, n8n<div class="skill-icons"><img src="assets/tech/aws.svg" alt="" /><img src="assets/tech/googlecloud.svg" alt="" /><img src="assets/tech/azure.svg" alt="" /><img src="assets/tech/firebase.svg" alt="" /><img src="assets/tech/github-actions.svg" alt="" /><img src="assets/tech/vercel.svg" alt="" /><img src="assets/tech/n8n.svg" alt="" /></div></div></div>
+        <div class="skill-row"><div class="skill-cat"><img src="assets/tech/postgresql.svg" alt="" />Data &amp; Tools</div><div class="skill-list">PostgreSQL, MongoDB, Redis, Pinecone, ChromaDB, Qdrant, Neo4j, GraphQL, Next.js, React, TypeScript, Figma, TDD, Agile, Cursor<div class="skill-icons"><img src="assets/tech/mongodb.svg" alt="" /><img src="assets/tech/redis.svg" alt="" /><img src="assets/tech/pinecone.png" alt="" /><img src="assets/tech/qdrant.svg" alt="" /><img src="assets/tech/graphql.svg" alt="" /><img src="assets/tech/nextjs.svg" alt="" /><img src="assets/tech/figma.svg" alt="" /></div></div></div>
+      </section>
+
+      <section>
+        <h2>Education &amp; Patent</h2>
+        <div class="two">
+          <div class="meta-item">
+            <div class="t">BS, Computer &amp; Information Systems</div>
+            <div class="s">New York City College of Technology</div>
+            <div class="w">2012 - 2016 | Coalition for Queens, Python Bootcamp (2014)</div>
+          </div>
+          <div class="meta-item">
+            <div class="t">Interface Widget Tool for QR Code Generation</div>
+            <div class="s">US Patent Application 17/687,505 | PayPal / Venmo</div>
+            <div class="w">2022 | First SwiftUI iOS widget at Venmo</div>
+          </div>
+        </div>
+        <div class="foot-note"><b>Project Mercury</b> (2025 hackathon) - the autonomous-merchant blueprint, built in 72 hours and presented to the SVP of AI, that seeded the 2026 platform work above.</div>
+      </section>
+
+    </td></tr></tbody>
+    <tfoot><tr><td class="ftr-space"></td></tr></tfoot>
+  </table>
+</main>
+</body>
+</html>
