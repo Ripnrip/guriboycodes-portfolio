@@ -129,11 +129,11 @@ function Flagship() {
       <div className="wrap">
         <div className="eyebrow">Flagship work · 2026</div>
         <h2 className="section-title">
-          Seven systems I <em>authored</em><br/>
-          this year.
+          Five systems.<br/>
+          <em>One loop.</em>
         </h2>
         <p style={{ color: "var(--text-2)", maxWidth: "62ch", fontSize: 16, lineHeight: 1.7 }}>
-          One connected learning loop — not seven disconnected projects. Vireo <em>observes</em> agent and product signals (20%). Cerebro <em>understands</em> and reconciles evidence across memory stores (6%). Darwin <em>decides</em> — evaluating change, readiness, and reusable lessons (24%). Devmo and MAIA <em>execute</em> the intelligence in real workflows (17% + 11%). Merchant Sandbox outcomes <em>validate</em> it back into memory (18%). 408 PRs. 7 programs. VP-adjacent sponsorship across 3 BUs.
+          Vireo <em>observes</em> every agent action. Darwin runs the <em>inner loop</em> (GEPA prompt evolution) and the <em>outer loop</em> (Council review, lesson gates) — the decision engine that makes the whole system self-improving. MAIA is the <em>agentic solution at scale</em>: it executes Darwin-refined intelligence on real merchant workflows and gets measurably better with every Vireo-observed cycle. The Nested macOS Runtime provides the <em>safe, fully-agentic substrate</em> — parallelized, isolated, 3× faster. Devmo is where the telemetry and intelligence meet <em>real developer workflows</em>. 408 PRs. VP-adjacent sponsorship across 3 BUs.
         </p>
 
         <div className="flagship-list">
