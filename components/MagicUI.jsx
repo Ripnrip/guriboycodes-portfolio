@@ -119,7 +119,9 @@ function HackGlobe({ markers }) {
       if (!createGlobe) { setOk(false); return; }
       if (destroyed) return;
       try {
-        const light = document.documentElement.getAttribute("data-mode") === "light";
+        const theme = document.documentElement.getAttribute("data-theme") || "";
+        const brut = theme.indexOf("brut") === 0 && theme !== "brut-noir";
+        const light = brut || document.documentElement.getAttribute("data-mode") === "light";
         globe = createGlobe(canvas, {
           devicePixelRatio: 2,
           width: size() * 2,
@@ -130,9 +132,9 @@ function HackGlobe({ markers }) {
           diffuse: 1.2,
           mapSamples: 16000,
           mapBrightness: light ? 8 : 5.4,
-          baseColor: light ? [0.82, 0.85, 0.88] : [0.32, 0.34, 0.4],
-          markerColor: [0.37, 0.89, 0.78],
-          glowColor: light ? [0.9, 0.92, 0.95] : [0.1, 0.12, 0.16],
+          baseColor: brut ? [0.88, 0.86, 0.8] : light ? [0.82, 0.85, 0.88] : [0.32, 0.34, 0.4],
+          markerColor: brut ? [1, 0.29, 0.07] : [0.37, 0.89, 0.78],
+          glowColor: brut ? [0.96, 0.94, 0.9] : light ? [0.9, 0.92, 0.95] : [0.1, 0.12, 0.16],
           markers: markers.map((m) => ({ location: m.location, size: m.size })),
           onRender: (state) => {
             state.phi = phi;
@@ -143,15 +145,20 @@ function HackGlobe({ markers }) {
         });
       } catch (e) { setOk(false); }
     };
+    const restart = () => { if (globe && globe.destroy) { globe.destroy(); globe = null; } start(); };
+    const mo = new MutationObserver((muts) => {
+      for (const m of muts) if (m.attributeName === "data-theme" || m.attributeName === "data-mode") { restart(); break; }
+    });
+    mo.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme", "data-mode"] });
     if (window.__createGlobe) start();
     else {
       const onReady = () => start();
       window.addEventListener("cobe-ready", onReady, { once: true });
       window.addEventListener("cobe-failed", () => setOk(false), { once: true });
       timer = setTimeout(() => { if (!window.__createGlobe) setOk(false); }, 7000);
-      return () => { destroyed = true; clearTimeout(timer); window.removeEventListener("cobe-ready", onReady); if (globe && globe.destroy) globe.destroy(); };
+      return () => { destroyed = true; clearTimeout(timer); mo.disconnect(); window.removeEventListener("cobe-ready", onReady); if (globe && globe.destroy) globe.destroy(); };
     }
-    return () => { destroyed = true; if (globe && globe.destroy) globe.destroy(); };
+    return () => { destroyed = true; mo.disconnect(); if (globe && globe.destroy) globe.destroy(); };
   }, []);
   if (!ok) return null;
   return (

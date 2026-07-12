@@ -1,5 +1,5 @@
 // Ask My Brain — RAG-style chat over Gurinder's corpus +
-// a d3 force-directed knowledge graph: 5 systems + every skill as an icon node.
+// a d3 force-directed knowledge graph: 7 systems + every skill as an icon node.
 // Retrieved sources light up the relevant systems and their connected skills.
 
 const { useState: useState_b, useEffect: useEffect_b, useRef: useRef_b, useMemo: useMemo_b } = React;
@@ -37,6 +37,13 @@ const TOPIC_NODES = {
   "Vireo": ["sys:vireo"],
   "claude-cosmos": ["sys:cosmos"],
   "Mac-in-a-Mac": ["sys:miam"],
+  "Cerebro": ["sys:cerebro"],
+  "Devmo": ["sys:devmo"],
+  "Merchant Sandbox": ["sys:miam"],
+  "AI Enablement": ["sys:cosmos", "sys:devmo"],
+  "The loop": ["sys:vireo", "sys:cerebro", "sys:darwin", "sys:devmo", "sys:maia", "sys:miam"],
+  "July 2026": ["sys:darwin", "sys:vireo", "sys:cerebro"],
+  "Roadmap": ["sys:darwin", "sys:devmo", "sys:maia", "sys:miam"],
   "Venmo": ["sys:maia"],
   "Mid-year": [],
   "Scope": [],
@@ -59,10 +66,12 @@ const SYSTEM_SKILLS = {
   "sys:cosmos": ["Claude", "MCP", "Python", "OpenAI"],
   "sys:darwin": ["Python", "DSPy / GEPA", "Neo4j", "GitHub Actions"],
   "sys:miam": ["Swift", "Xcode", "Docker", "Fastlane"],
+  "sys:cerebro": ["Python", "Qdrant", "Neo4j", "n8n"],
+  "sys:devmo": ["Python", "GitHub Actions", "Datadog", "n8n"],
 };
 
 const CAT_ACCENT = { ai: "var(--violet)", mobile: "var(--cyan)", cloud: "var(--emerald)", data: "var(--amber)" };
-const SYS_ACCENT = { maia: "var(--cyan)", darwin: "var(--amber)", vireo: "var(--emerald)", cosmos: "var(--violet)", miam: "var(--rose)" };
+const SYS_ACCENT = { maia: "var(--cyan)", darwin: "var(--amber)", vireo: "var(--emerald)", cosmos: "var(--violet)", miam: "var(--rose)", cerebro: "var(--violet)", devmo: "var(--cyan)" };
 
 /* build nodes + links */
 function buildGraph() {
@@ -332,11 +341,24 @@ ANSWER (concise, first-person as Gurinder, no headers, no markdown):`;
 
     let answer = "";
     try {
-      answer = await window.claude.complete(prompt);
+      // Try /api/claude serverless proxy first, then window.claude (local dev), then corpus fallback
+      const resp = await fetch('/api/claude', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt }),
+      });
+      if (resp.ok) {
+        const data = await resp.json();
+        answer = data.text || '';
+      } else if (window.claude) {
+        answer = await window.claude.complete(prompt);
+      } else {
+        throw new Error('No LLM available');
+      }
     } catch (e) {
       answer = sources.length
         ? `Quick take: ${sources[0].text}`
-        : "Hmm — that's outside my corpus. Try asking about MAIA, Vireo, claude-cosmos, Darwin, Mac-in-a-Mac, the hackathon wins, or what it's like to work with me.";
+        : "Hmm — that's outside my corpus. Try asking about MAIA, Vireo, claude-cosmos, Darwin, Cerebro, Devmo, the connected learning loop, the roadmap, or what it's like to work with me.";
     }
     setThinking(false);
     setMessages(prev => [...prev, { role: "brain", text: (answer || "").trim(), sources }]);
@@ -419,7 +441,7 @@ ANSWER (concise, first-person as Gurinder, no headers, no markdown):`;
             <div className="brain-input-row">
               <input
                 className="brain-input"
-                placeholder="Ask about MAIA, Darwin, hackathons, working with me…"
+                placeholder="Ask about MAIA, Darwin, Vireo, Cerebro, Devmo, the loop…"
                 value={input}
                 onChange={e => setInput(e.target.value)}
                 onKeyDown={e => { if (e.key === "Enter") ask(input); }}
@@ -437,7 +459,7 @@ ANSWER (concise, first-person as Gurinder, no headers, no markdown):`;
                 <span className="dot" style={{ background: "var(--violet)", boxShadow: "0 0 8px var(--violet)" }}></span>
                 <span>knowledge_graph.v3</span>
               </div>
-              <div className="brain-head-r">5 systems · {SKILLS.reduce((n, g) => n + g.items.length, 0)} skills</div>
+              <div className="brain-head-r">7 systems · {SKILLS.reduce((n, g) => n + g.items.length, 0)} skills</div>
             </div>
             <div style={{ flex: 1, position: "relative", minHeight: 0 }}>
               <KnowledgeGraph activeIds={activeIds} />

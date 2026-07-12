@@ -38,6 +38,49 @@ function Nav() {
 }
 
 /* ---------- Hero ---------- */
+function HeroPortrait({ h }) {
+  const frames = [
+    { src: h.portrait, cap: "Studio Ghibli · 2026" },
+    { src: h.portraitAlt, cap: "Paragliding · off the clock" },
+    h.portraitExtra ? { src: h.portraitExtra, cap: "COMPILING…" } : null,
+  ].filter(Boolean);
+  const [i, setI] = useState(0);
+  const next = () => setI((v) => (v + 1) % frames.length);
+  return (
+    <div
+      className="hero-portrait"
+      onClick={next}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); next(); } }}
+      style={{ cursor: "pointer" }}
+    >
+      {frames.map((f, idx) => (
+        <img
+          key={idx}
+          src={f.src}
+          alt={f.cap}
+          loading={idx === 0 ? "eager" : "lazy"}
+          style={{
+            position: idx === 0 ? "relative" : "absolute",
+            inset: idx === 0 ? "auto" : 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            opacity: i === idx ? 1 : 0,
+            transition: "opacity 0.45s ease",
+            zIndex: i === idx ? 2 : 1,
+          }}
+        />
+      ))}
+      <div className="hero-portrait-meta" style={{ zIndex: 3 }}>
+        <span>{frames[i].cap}</span>
+        <span>{frames.length > 1 ? "click →" : ""}</span>
+      </div>
+    </div>
+  );
+}
+
 function Hero() {
   const h = D.hero;
   return (
@@ -52,19 +95,12 @@ function Hero() {
           <p className="hero-pitch"><TypingText phrases={h.typed || [h.pitch]} /></p>
           <p className="hero-pitch-alt">{h.pitchAlt}</p>
           <div className="hero-meta">
-            <span><span className="live-dot"></span>Available · NYC</span>
+            <span><span className="live-dot"></span>Available</span>
             <span>·</span>
             <span>Portfolio · {h.period}</span>
           </div>
         </div>
-        <div className="hero-portrait">
-          <img src={h.portrait} className="ghibli" alt="Gurinder Singh, Ghibli style" />
-          <img src={h.portraitAlt} className="alt" alt="Gurinder paragliding" />
-          <div className="hero-portrait-meta">
-            <span>Studio Ghibli · 2026</span>
-            <span>hover →</span>
-          </div>
-        </div>
+        <HeroPortrait h={h} />
       </div>
     </section>
   );
@@ -93,11 +129,11 @@ function Flagship() {
       <div className="wrap">
         <div className="eyebrow">Flagship work · 2026</div>
         <h2 className="section-title">
-          Five systems I <em>authored</em><br/>
+          Seven systems I <em>authored</em><br/>
           this year.
         </h2>
         <p style={{ color: "var(--text-2)", maxWidth: "62ch", fontSize: 16, lineHeight: 1.7 }}>
-          Productionized, cross-business platform work — from an agent that took merchant onboarding from ~85 days to a 20-minute live demo, to a macOS-in-macOS substrate that runs the iOS test suite 3× faster. Each one sponsored at the senior level and adopted by other teams.
+          One connected learning loop — not seven disconnected projects. Vireo <em>observes</em> agent and product signals (20%). Cerebro <em>understands</em> and reconciles evidence across memory stores (6%). Darwin <em>decides</em> — evaluating change, readiness, and reusable lessons (24%). Devmo and MAIA <em>execute</em> the intelligence in real workflows (17% + 11%). Merchant Sandbox outcomes <em>validate</em> it back into memory (18%). 408 PRs. 7 programs. VP-adjacent sponsorship across 3 BUs.
         </p>
 
         <div className="flagship-list">
@@ -134,18 +170,8 @@ function Flagship() {
   );
 }
 
-const READINESS_META = {
-  "ship-ready": { label: "Ship-ready", c: "var(--emerald)" },
-  "public-demo": { label: "Public demo", c: "var(--cyan)" },
-  "case-study": { label: "Case study", c: "var(--violet)" },
-  "needs-media": { label: "Needs media", c: "var(--amber)" },
-  "needs-sanitization": { label: "Needs sanitization", c: "var(--rose)" },
-};
-
 function FlagshipCard({ f, idx }) {
   const accent = ACCENT_COLORS[f.accent] || "var(--cyan)";
-  const cur = (D.bundles || []).find((b) => b.id === f.id);
-  const r = cur && READINESS_META[cur.readiness];
   return (
     <article
       className="flagship"
@@ -159,11 +185,6 @@ function FlagshipCard({ f, idx }) {
             <span style={{ color: accent, letterSpacing: "0.1em" }}>{f.codename}</span>
             <span className="pill live">{f.status}</span>
             {f.stamp && <span className="pill">{f.stamp}</span>}
-            {r && (
-              <span className="pill curation-only" style={{ color: r.c, borderColor: r.c }}>
-                {r.label}
-              </span>
-            )}
           </div>
           <h3 className="flagship-title">
             {f.title}
@@ -190,6 +211,12 @@ function FlagshipCard({ f, idx }) {
         <div>
           <p className="flagship-tagline">"{f.tagline}"</p>
           <p className="flagship-story">{f.story}</p>
+          {f.midyear && (
+            <div className="flagship-midyear">
+              <span className="flagship-midyear-label">2026 update</span>
+              <p className="flagship-midyear-text">{f.midyear}</p>
+            </div>
+          )}
           <div className="flagship-stack">
             {f.stack.map((s, k) => <span className="chip" key={k}>{s}</span>)}
           </div>
@@ -308,7 +335,6 @@ function Footer() {
           <div className="footer-col">
             <h4>Contact</h4>
             <a href="mailto:gsingh622@yahoo.com">gsingh622@yahoo.com</a>
-            <a href="mailto:gurisingh@paypal.com">gurisingh@paypal.com</a>
           </div>
           <div className="footer-col">
             <h4>Elsewhere</h4>
@@ -334,7 +360,7 @@ function Shipped() {
       <div className="wrap">
         <div className="eyebrow">Also shipped · joy, polish & platform</div>
         <h2 className="section-title">
-          The <em>rest</em> of the half-year.
+          The <em>rest</em> of the year so far.
         </h2>
         <div className="shipped-grid">
           {D.shipped.map((s, i) => (

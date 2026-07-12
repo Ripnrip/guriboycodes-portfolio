@@ -218,7 +218,7 @@ section.bay + section.bay { border-top: 1px solid var(--border); }
 }
 
 /* ---------- hero ---------- */
-.hero { padding: 100px 0 80px; }
+.hero { padding: 100px clamp(24px, 5vw, 64px) 80px; }
 .hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -417,6 +417,28 @@ section.bay + section.bay { border-top: 1px solid var(--border); }
 .flagship-story {
   font-size: 14.5px; color: var(--text-2); margin: 0 0 18px;
   line-height: 1.65; max-width: 60ch;
+}
+.flagship-midyear {
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border-left: 2px solid var(--accent-c, var(--cyan));
+  background: rgba(255,255,255,0.025);
+  border-radius: 0 6px 6px 0;
+}
+.flagship-midyear-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-c, var(--cyan));
+  margin-bottom: 5px;
+}
+.flagship-midyear-text {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin: 0;
 }
 .flagship-sponsor {
   font-family: var(--font-mono); font-size: 11px;
@@ -683,28 +705,6 @@ section.bay + section.bay { border-top: 1px solid var(--border); }
 }
 @media (max-width: 820px) {
   .flagship-cover { min-height: 160px; }
-}
-
-.flagship-midyear {
-  margin: 0 0 18px;
-  padding: 14px 16px;
-  border-radius: 10px;
-  background: color-mix(in oklab, var(--accent-c, var(--cyan)) 9%, transparent);
-  border: 1px solid color-mix(in oklab, var(--accent-c, var(--cyan)) 28%, transparent);
-}
-.flagship-midyear .my-label {
-  font-family: var(--font-mono); font-size: 10px;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--accent-c, var(--cyan)); margin-bottom: 6px;
-  display: flex; align-items: center; gap: 7px;
-}
-.flagship-midyear .my-label::before {
-  content: ""; width: 6px; height: 6px; border-radius: 50%;
-  background: var(--accent-c, var(--cyan));
-  box-shadow: 0 0 6px var(--accent-c, var(--cyan));
-}
-.flagship-midyear p {
-  margin: 0; font-size: 13.5px; color: var(--text-2); line-height: 1.6;
 }
 
 /* ---------- mid-year shipped grid ---------- */

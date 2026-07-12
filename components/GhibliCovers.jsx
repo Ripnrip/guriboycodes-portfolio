@@ -254,6 +254,50 @@ const GhibliCovers = {
     </svg>
   ),
 
+  "ghibli-cerebro": (
+    // Cerebro — constellation hive mind above a quiet valley, threads converging
+    <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g-cer" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#2b2545"/>
+          <stop offset="0.55" stopColor="#4a3f6e"/>
+          <stop offset="1" stopColor="#8577a8"/>
+        </linearGradient>
+      </defs>
+      <rect width="400" height="500" fill="url(#g-cer)"/>
+      {/* stars */}
+      <g fill="#fff8e0" opacity="0.8">
+        <circle cx="60" cy="70" r="1.6"/><circle cx="150" cy="45" r="1.2"/>
+        <circle cx="250" cy="80" r="1.5"/><circle cx="340" cy="55" r="1.2"/>
+        <circle cx="310" cy="140" r="1.3"/><circle cx="90" cy="150" r="1.2"/>
+      </g>
+      {/* hive-mind constellation */}
+      <g stroke="#ffe9a8" strokeWidth="1.3" opacity="0.75" fill="none">
+        <path d="M200 190 L 120 130 M200 190 L 280 125 M200 190 L 95 235 M200 190 L 305 230 M120 130 L 280 125 M95 235 L 305 230"/>
+      </g>
+      <g fill="#ffe9a8">
+        <circle cx="200" cy="190" r="10" opacity="0.95"/>
+        <circle cx="120" cy="130" r="6"/><circle cx="280" cy="125" r="6"/>
+        <circle cx="95" cy="235" r="6"/><circle cx="305" cy="230" r="6"/>
+      </g>
+      {/* glow around center */}
+      <circle cx="200" cy="190" r="24" fill="#ffe9a8" opacity="0.18"/>
+      {/* threads descending into the valley */}
+      <g stroke="#d9cff0" strokeWidth="1" fill="none" opacity="0.5">
+        <path d="M200 200 Q 190 300 150 380"/>
+        <path d="M200 200 Q 210 300 250 380"/>
+        <path d="M200 200 Q 200 310 200 385"/>
+      </g>
+      {/* valley hills */}
+      <path d="M0 400 Q 100 370 200 395 T 400 385 L 400 500 L 0 500 Z" fill="#3a3158"/>
+      <path d="M0 445 Q 130 425 260 445 T 400 440 L 400 500 L 0 500 Z" fill="#2a2342"/>
+      {/* tiny lit windows in the valley */}
+      <g fill="#ffd27a">
+        <rect x="148" y="408" width="4" height="5"/><rect x="248" y="404" width="4" height="5"/><rect x="198" y="412" width="4" height="5"/>
+      </g>
+    </svg>
+  ),
+
   "ghibli-agent": (
     // Agent Zero — a small wanderer with a backpack walking a hillpath
     <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">

@@ -12,11 +12,14 @@ function VideoModal({ media, onClose }) {
   return (
     <div className="vid-modal" onClick={onClose}>
       <div className="vid-modal-card" onClick={(e) => e.stopPropagation()}>
-        <video src={media.file} controls autoPlay playsInline />
+        {media.posterOnly
+          ? <img src={media.poster} alt={media.title} style={{ display: "block", width: "100%", height: "auto" }} />
+          : <video src={media.file} controls autoPlay playsInline />}
         <button className="vid-modal-close" onClick={onClose}>✕</button>
         <div className="vid-modal-cap">
           <span className="vid-modal-title">{media.title}</span>
           {media.event && <span className="vid-modal-event">{media.event}</span>}
+          {media.posterOnly && <span className="vid-modal-event" style={{ opacity: .7 }}>▶ Full clip in the online portfolio</span>}
         </div>
       </div>
     </div>
@@ -25,26 +28,17 @@ function VideoModal({ media, onClose }) {
 
 function ReelCard({ clip, onOpen }) {
   const ref = useMd_ref(null);
-  const stills = clip.stills || [];
-  const frames = 1 + stills.length; // frame 0 = the video; 1..n = still photos
-  const [frame, setFrame] = useMd_state(0);
-  useMd_effect(() => {
-    if (frames < 2) return;
-    const id = setInterval(() => setFrame((f) => (f + 1) % frames), 4200);
-    return () => clearInterval(id);
-  }, [frames]);
-  const showVideo = frame === 0;
+  const posterOnly = clip.posterOnly;
   return (
     <div className="reel-card" onClick={() => onOpen(clip)}>
       <div
         className="reel-thumb"
-        onMouseEnter={() => { const v = ref.current; if (showVideo && v) { v.play().catch(() => {}); } }}
+        onMouseEnter={() => { const v = ref.current; if (v) { v.play().catch(() => {}); } }}
         onMouseLeave={() => { const v = ref.current; if (v) { v.pause(); v.currentTime = 0; } }}
       >
-        <video ref={ref} src={clip.file} muted loop playsInline preload="metadata" style={{ opacity: showVideo ? undefined : 0 }} />
-        {stills.map((s, i) => (
-          <img key={i} className="reel-still" src={s} alt="" loading="lazy" style={{ opacity: frame === i + 1 ? 1 : 0 }} />
-        ))}
+        {posterOnly
+          ? <img src={clip.poster} alt={clip.title} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          : <video ref={ref} src={clip.file} muted loop playsInline preload="metadata" />}
         <div className="reel-play"><span>▶</span></div>
         <div className="reel-thumb-grad"></div>
         <span className="reel-place">{clip.place}</span>
@@ -57,22 +51,6 @@ function ReelCard({ clip, onOpen }) {
         <div className="reel-event">{clip.event}</div>
         <p className="reel-note">{clip.note}</p>
       </div>
-    </div>
-  );
-}
-
-function HkThumb({ imgs }) {
-  const [f, setF] = useMd_state(0);
-  useMd_effect(() => {
-    if (imgs.length < 2) return;
-    const id = setInterval(() => setF((x) => (x + 1) % imgs.length), 4200);
-    return () => clearInterval(id);
-  }, [imgs.length]);
-  return (
-    <div className={`hk-thumb ${imgs.length > 1 ? "cycle" : ""}`}>
-      {imgs.map((s, i) => (
-        <img key={i} src={s} alt="" loading="lazy" style={imgs.length > 1 ? { opacity: f === i ? 1 : 0 } : undefined} />
-      ))}
     </div>
   );
 }
@@ -112,11 +90,9 @@ function HackathonReel() {
 
         <div className="hk-reel-label">Every stamp in the passport</div>
         <div className="hk-grid">
-          {D.hackathons.map((h, i) => {
-            const imgs = h.imgs || (h.img ? [h.img] : []);
-            return (
-            <div className={`hk-card ${h.win ? "win" : ""} ${imgs.length ? "has-img" : ""}`} key={i}>
-              {imgs.length > 0 && <HkThumb imgs={imgs} />}
+          {D.hackathons.map((h, i) => (
+            <div className={`hk-card ${h.win ? "win" : ""} ${h.img ? "has-img" : ""}`} key={i}>
+              {h.img && <div className="hk-thumb"><img src={h.img} alt="" loading="lazy" /></div>}
               <div className="hk-card-top">
                 <span className="hk-place">{h.place}</span>
                 <span className="hk-flag">{h.flag}</span>
@@ -125,8 +101,7 @@ function HackathonReel() {
               <div className="hk-year">{h.year}</div>
               <p className="hk-desc">{h.desc}</p>
             </div>
-          );
-          })}
+          ))}
         </div>
       </div>
       {open && <VideoModal media={open} onClose={() => setOpen(null)} />}
