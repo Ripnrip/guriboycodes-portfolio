@@ -6750,7 +6750,7 @@ Object.assign(window, {
 </script>
 <script>
 // Ask My Brain — RAG-style chat over Gurinder's corpus +
-// a d3 force-directed knowledge graph: 7 systems + every skill as an icon node.
+// a d3 force-directed knowledge graph: 5 systems + every skill as an icon node.
 // Retrieved sources light up the relevant systems and their connected skills.
 
 const {
@@ -7249,7 +7249,7 @@ ANSWER (concise, first-person as Gurinder, no headers, no markdown):`;
     className: "brain-input-row"
   }, /*#__PURE__*/React.createElement("input", {
     className: "brain-input",
-    placeholder: "Ask about MAIA, Darwin, Vireo, Cerebro, Devmo, the loop\u2026",
+    placeholder: "Ask about MAIA, Darwin, Vireo, Nested macOS, Devmo, the loop\u2026",
     value: input,
     onChange: e => setInput(e.target.value),
     onKeyDown: e => {
@@ -7274,7 +7274,7 @@ ANSWER (concise, first-person as Gurinder, no headers, no markdown):`;
     }
   }), /*#__PURE__*/React.createElement("span", null, "knowledge_graph.v3")), /*#__PURE__*/React.createElement("div", {
     className: "brain-head-r"
-  }, "7 systems \xB7 ", SKILLS.reduce((n, g) => n + g.items.length, 0), " skills")), /*#__PURE__*/React.createElement("div", {
+  }, "5 systems \xB7 ", SKILLS.reduce((n, g) => n + g.items.length, 0), " skills")), /*#__PURE__*/React.createElement("div", {
     style: {
       flex: 1,
       position: "relative",

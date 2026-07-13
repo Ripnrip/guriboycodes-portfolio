@@ -1,5 +1,5 @@
 // Ask My Brain — RAG-style chat over Gurinder's corpus +
-// a d3 force-directed knowledge graph: 7 systems + every skill as an icon node.
+// a d3 force-directed knowledge graph: 5 systems + every skill as an icon node.
 // Retrieved sources light up the relevant systems and their connected skills.
 
 const { useState: useState_b, useEffect: useEffect_b, useRef: useRef_b, useMemo: useMemo_b } = React;
@@ -426,7 +426,7 @@ ANSWER (concise, first-person as Gurinder, no headers, no markdown):`;
             <div className="brain-input-row">
               <input
                 className="brain-input"
-                placeholder="Ask about MAIA, Darwin, Vireo, Cerebro, Devmo, the loop…"
+                placeholder="Ask about MAIA, Darwin, Vireo, Nested macOS, Devmo, the loop…"
                 value={input}
                 onChange={e => setInput(e.target.value)}
                 onKeyDown={e => { if (e.key === "Enter") ask(input); }}
@@ -444,7 +444,7 @@ ANSWER (concise, first-person as Gurinder, no headers, no markdown):`;
                 <span className="dot" style={{ background: "var(--violet)", boxShadow: "0 0 8px var(--violet)" }}></span>
                 <span>knowledge_graph.v3</span>
               </div>
-              <div className="brain-head-r">7 systems · {SKILLS.reduce((n, g) => n + g.items.length, 0)} skills</div>
+              <div className="brain-head-r">5 systems · {SKILLS.reduce((n, g) => n + g.items.length, 0)} skills</div>
             </div>
             <div style={{ flex: 1, position: "relative", minHeight: 0 }}>
               <KnowledgeGraph activeIds={activeIds} />
