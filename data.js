@@ -15,7 +15,6 @@ window.PORTFOLIO_DATA = {
     pitch: "Building the nervous system for agentic engineering.",
     typed: [
       "One connected learning loop — observe, understand, decide, execute, validate.",
-      "Five systems. One loop. 408 PRs in 2026 YTD.",
       "I build the platforms other engineers ship on.",
       "I turn emerging AI into products used by 90M+.",
     ],
@@ -27,8 +26,8 @@ window.PORTFOLIO_DATA = {
 
   stats: [
     { value: "90M+", label: "Users impacted" },
-    { value: "408", label: "2026 PRs authored" },
-    { value: "7", label: "Major programs" },
+    { value: "500+", label: "Bar Raiser interviews" },
+    { value: "3", label: "Business units" },
     { value: "28+", label: "Hackathons" },
     { value: "2×", label: "First-place wins" },
     { value: "1", label: "Patent holder" },
@@ -47,12 +46,11 @@ window.PORTFOLIO_DATA = {
       window: "Apr 10 → Jul 2026",
       sponsor: "Migration & Upgrade Program lead · MAIA PM · my manager",
       story: "I built an autonomous agent that walks a merchant through onboarding end to end. Over one weekend I grew the test set from 332 to 9,513 real businesses so the team finally had real-world ground truth, then demoed it live to 14 senior leaders: two real storefronts upgraded and accepting Venmo in about 20 minutes, on stage.",
-      midyear: "May–Jul: named to the MAIA build core (Jun 8). The standalone Venmo working group folded into the single Migration & Upgrade Program (Jun 26). Execution tickets opened and cohorting moved to live pilots (Jun 17). In the loop: MAIA is the agentic solution at scale — it executes the intelligence Darwin has refined and Vireo has observed, and gets measurably better with every cycle.",
       stack: ["LLM Agents", "RAG", "D3.js", "CommonCrawl", "AWS Athena", "Remotion"],
       metrics: [
         { k: "Onboarding", v: "~3 mo → 20 min" },
         { k: "Businesses scored", v: "9,513" },
-        { k: "Live demo", v: "to 14 leaders" },
+        { k: "Pilot cohort", v: "Live merchants" },
         { k: "Status", v: "In production" },
       ],
       accent: "cyan",
@@ -69,13 +67,12 @@ window.PORTFOLIO_DATA = {
       window: "2026 · productionized Jun 30",
       sponsor: "AI Toolkit lead · AI Labs",
       story: "If a task has a prompt going in, an answer coming out, and a way to score that answer, Darwin can improve it automatically: try many variations, keep the best, and open a pull request with the upgrade. Every attempt is saved with its score and the reasoning behind it, so each round builds on the last. It plugs into any code repository with no setup.",
-      midyear: "Jun 30: callable workflows productionized — reusable workflow, composite action, repository_dispatch (15+ org PRs). Jul: E2E fossil proofs with parent-sync reruns (Jul 6), post-merge Bloom on current Cosmos models (Jul 9), Council intelligence pilot live Jul 11 — independent dual-model review with deterministic aggregation, proven on PR #86 — plus Analytics Home, bounded Foresight (read-only Jira), and Distillery lesson gates with cryptographic approval binding. In the loop: Darwin runs both the inner loop (prompt-level GEPA evolution) and the outer loop (org-wide lesson gates and Council review) — the decision engine that makes MAIA and the whole system self-improving.",
       stack: ["GEPA", "DSPy", "Cosmos", "Graph DB", "GitHub Actions"],
       metrics: [
         { k: "What it does", v: "Self-improves AI skills" },
-        { k: "Upgrades shipped", v: "71 pull requests" },
-        { k: "Variations tested", v: "1,020" },
-        { k: "Setup needed", v: "None — any repo" },
+        { k: "Candidate pool", v: "1,020 variations" },
+        { k: "Integrates with", v: "Any repo, zero setup" },
+        { k: "Output", v: "Scored PR with full diff" },
       ],
       vocabulary: ["Seed", "Zephyr", "Polaris", "Compass", "Bloom", "Fossil", "Garden", "Gardener"],
       accent: "amber",
@@ -92,7 +89,6 @@ window.PORTFOLIO_DATA = {
       window: "2026 ongoing",
       sponsor: "Devmo platform team · Venmo AI Council",
       story: "AI agents are hard to trust because you can't see what they actually did. Vireo records their actions from four different entry points and distills the logs into a memory the next run can draw on. It installs in two minutes and became the team's standard for watching agents in production.",
-      midyear: "Jul 11: v3 reconciliation engine shipped (Vireo #9) — merges hook telemetry with Data Table archives. Now wired end-to-end into Devmo: agents in k8s and in-process emit Vireo spans to a shared webhook (v2.1 subagent schema merged in Devmo #309, Jul 8; runtime stack in #335/#336). Plus n8n v2 ingestion, menubar lifecycle notifications, agent-graph memory backfill, and a unified AI Proxy direction consolidating claude-cosmos + memory-proxy into a Swift-native runtime. In the loop: Vireo is the observation layer — every signal it captures feeds Darwin's evolution engine and makes MAIA's next run smarter.",
       stack: ["MCP", "n8n", "OpenTelemetry", "OpenInference", "Python", "Swift"],
       metrics: [
         { k: "What it is", v: "AI flight recorder" },
@@ -114,7 +110,6 @@ window.PORTFOLIO_DATA = {
       window: "Q1–Q2 2026",
       sponsor: "Devmo · AI Toolkit lead",
       story: "When dozens of internal tools all talk to AI models, that traffic needs a single safe doorway. claude-cosmos is it: every request routes through one place, gets stripped of personal data, and is logged for safety. It covers the hosted and third-party tools that a local recorder like Vireo can't see.",
-      midyear: "Now the network-layer telemetry path for MAIA (DTVZ-506) and the safe substrate that let external-agent (Hermes) research run isolated — as InfoSec/CDC confirmed in June. Used by Osaurus, Hermes Agent, Agent-0, Cosmos-IDE, and the Devmo webapp. Converging into the Vireo Unified AI Proxy (Swift) for a single capture surface across every environment. Together with Vireo: total observability coverage — intent captured locally, every model call captured over the wire.",
       stack: ["Anthropic API", "MCP", "PII Scrubbing", "Cosmos"],
       metrics: [
         { k: "What it is", v: "Safe AI gateway" },
@@ -135,7 +130,6 @@ window.PORTFOLIO_DATA = {
       window: "Foundation · Q1 2026",
       sponsor: "iOS leadership · senior eng director · Livery lead",
       story: "iOS test runs were painfully slow. I was the first at the company to run a macOS virtual machine inside a macOS host, which let the test suite run in parallel. The first result: a run that took 22m 38s finished in 7m 23s — three times faster, on the same laptops, with no changes to the tests themselves.",
-      midyear: "Became the runtime substrate Livery and Agent-0 both run on, and the VM-isolated containment that let Hermes research run safely (CDC-confirmed June). iOS sponsor signed May 5: \"I love it; I am sold on the performance.\" Evolved from CI fix to fully-agentic e2e runtime — handoff to the iOS team + a peer engineer is now active. In the loop: the Nested macOS Runtime is the safe substrate for fully-agentic end-to-end runs — isolated, parallelized, and proven at 3× speed.",
       stack: ["Virtualization.framework", "tart", "lume", "macOS", "Swift"],
       metrics: [
         { k: "iOS test suite", v: "22:38 → 7:23" },
@@ -156,30 +150,17 @@ window.PORTFOLIO_DATA = {
       window: "2026 ongoing",
       sponsor: "Devmo platform team",
       story: "Devmo is where the agentic infrastructure becomes tangible for engineers. I brought Vireo telemetry into both in-process and Kubernetes agent runtimes, added skill-read and session-end signals to distinguish helpful skills from merely present ones, and built session classification that catches failures invisible at the individual tool-call level. The Prompt Enhancer and Guardrails — including a ~90-test prompt-injection battery — are now in the canonical repo.",
-      midyear: "Core shipped; k8s telemetry in flight. Devmo #309 merged Jul 8 (end-to-end telemetry demo in #v-devmo-eng); PRs #335/#336 emit Vireo spans from k8s and in-process runtimes. Skill auto-selection (#121) and Cosmos model discovery (#279) shipped. In the loop: Devmo is the execution layer where Vireo telemetry and Darwin intelligence meet real developer workflows — it's where the loop becomes tangible for engineers.",
       stack: ["Vireo", "OpenTelemetry", "Python", "Kubernetes", "GitHub Actions"],
       metrics: [
-        { k: "Guardrail tests", v: "~90 incl. injection" },
-        { k: "Telemetry", v: "k8s + in-process" },
-        { k: "Status", v: "GA · k8s in flight" },
+        { k: "Prompt safety", v: "Injection-resistant" },
+        { k: "Observability", v: "Cloud + local agents" },
+        { k: "Status", v: "Generally available" },
       ],
       accent: "cyan",
     },
   ],
 
-  // Mid-year "also shipped" — joy & polish + platform extras
-  shipped: [
-    { name: "Devmo runtime telemetry", desc: "End-to-end flow proven Jul 8: Devmo agent → Vireo hooks → n8n ingestion → Data Table. v2.1 subagent schema merged (#309); k8s + in-process span emission in review (#335/#336). Plus skill auto-selection (#121) and Cosmos model discovery (#279).", tag: "In flight · Jul 2026" },
-    { name: "video-toolkit", desc: "New shared repo — Remotion 4.0 + Google Veo / Chirp3-TTS pipeline for explainer videos, podcasts, and per-PR narrated demo clips. Runs from GitHub Actions, no local setup.", tag: "New · open-sourced internally" },
-    { name: "Devmo Prompt Enhancer + Guardrails", desc: "Two beta PRs migrated into the canonical Devmo repo (#59 Guard Rails, #60 Prompt Enhancer). Guardrails ship with ~90 tests including a prompt-injection battery.", tag: "Productionized" },
-    { name: "DX Sounds", desc: "MCP server merged into the PayPal AI Hub — 8 themes, 14 tools. Sonic confetti for your dev loop.", tag: "In AI Hub" },
-    { name: "Hermes security exchange", desc: "Turned an InfoSec flag into a voluntary full accounting (99.88% traffic on internal proxy, 12 sessions enumerated) — elevated agent-evolution work to the enterprise AI-tools evaluation.", tag: "Enterprise input" },
-    { name: "\"Most Fun with AI\" talk", desc: "Mar 6 talk that launched FunAI Hack Hour as a recurring forum. Author of the Soul Stack (SOUL.md + STYLE.md + SKILL.md) pattern.", tag: "Talk · recurring forum" },
-    { name: "OmniGraph / PWV Knowledge Graph", desc: "38 nodes, 51 typed edges, 15 repos mapped — plus a three-track framework memo and the DEVMO DOSSIER competitive-intel field report.", tag: "Enablement" },
-    { name: "Mercury 2025 / Hackathon-2025", desc: "The autonomous-merchant blueprint (Jul–Aug 2025) that turned out to be the imagination doc for everything in 2026.", tag: "The seed doc" },
-    { name: "AI Enablement", desc: "Stabilized internal model access across containerized and macOS virtualized environments. Built knowledge-graph and skill-graph experiences that make internal capabilities discoverable. Created reusable video, audio, PR-demo, and evidence workflows for technical communication.", tag: "Broad internal enablement" },
 
-  ],
 
   // Pre-built RAG knowledge base for "Ask My Brain"
   brain: {
@@ -254,7 +235,6 @@ window.PORTFOLIO_DATA = {
       "How do Vireo and Darwin make MAIA smarter over time?",
       "How do all five systems connect?",
       "What is the connected learning loop?",
-      "What's the roadmap for the next 90 days?",
       "Why should we hire him?",
     ],
   },
@@ -268,7 +248,7 @@ window.PORTFOLIO_DATA = {
       logoAlt: "assets/logos/venmo.png",
       bullets: [
         "Authored five production AI-platform systems — Vireo, Darwin, MAIA, Nested macOS Runtime, and Devmo — turning AI prototypes into canonical platform programs adopted across the org.",
-        "Built one connected learning loop: Vireo observes agent work, Darwin runs the inner and outer evolution loop, MAIA executes the intelligence at scale and gets better with every cycle, and the Nested macOS Runtime provides the safe fully-agentic substrate that makes it all possible — 408 PRs authored across 7 major programs in 2026 YTD.",
+        "Built one connected learning loop: Vireo observes agent work, Darwin runs the inner and outer evolution loop, MAIA executes the intelligence at scale and gets better with every cycle, and the Nested macOS Runtime provides the safe fully-agentic substrate that makes it all possible.",
         "QRC Widget patent holder — first SwiftUI iOS widget at Venmo, cutting user friction 66%; shipped Venmo Gift Cards (Amazon, Starbucks) and Pay With Venmo for JetBlue.",
         "Official Bar Raiser — 500+ technical interviews over his career; leads interviews and cross-team AI enablement, mentoring engineers into responsible agentic workflows.",
       ],
@@ -427,7 +407,7 @@ window.PORTFOLIO_DATA = {
     principles: [
       { title: "Platform over features", body: "The most durable engineering is substrate — telemetry layers, proxy surfaces, evolution frameworks. I build the platforms that let others ship, not just point features. Five systems, one loop." },
       { title: "Observability as architecture", body: "Vireo + claude-cosmos = total coverage. Intent captured locally, ground truth captured over the wire. Anywhere an LLM call can hide is a gap I close by design." },
-      { title: "Ship, then evolve", body: "Darwin's fossil record proves it: regressions aren't failure, they're scientific signal. 71 PRs, 1,020 candidates, 408 total PRs in 2026 YTD — every failure informs the next bloom." },
+      { title: "Ship, then evolve", body: "Darwin's fossil record proves it: regressions aren't failure, they're scientific signal. Every candidate that doesn't make it narrows the search space for the one that does." },
     ],
   },
 

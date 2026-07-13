@@ -133,7 +133,7 @@ function Flagship() {
           <em>One loop.</em>
         </h2>
         <p style={{ color: "var(--text-2)", maxWidth: "62ch", fontSize: 16, lineHeight: 1.7 }}>
-          Vireo <em>observes</em> every agent action. Darwin runs the <em>inner loop</em> (GEPA prompt evolution) and the <em>outer loop</em> (Council review, lesson gates) — the decision engine that makes the whole system self-improving. MAIA is the <em>agentic solution at scale</em>: it executes Darwin-refined intelligence on real merchant workflows and gets measurably better with every Vireo-observed cycle. The Nested macOS Runtime provides the <em>safe, fully-agentic substrate</em> — parallelized, isolated, 3× faster. Devmo is where the telemetry and intelligence meet <em>real developer workflows</em>. 408 PRs. VP-adjacent sponsorship across 3 BUs.
+          Vireo <em>observes</em> every agent action. Darwin runs the <em>inner loop</em> (GEPA prompt evolution) and the <em>outer loop</em> (Council review, lesson gates) — the decision engine that makes the whole system self-improving. MAIA is the <em>agentic solution at scale</em>: it executes Darwin-refined intelligence on real merchant workflows and gets measurably better with every Vireo-observed cycle. The Nested macOS Runtime provides the <em>safe, fully-agentic substrate</em> — parallelized, isolated, 3× faster. Devmo is where the telemetry and intelligence meet <em>real developer workflows</em>, closing the loop.
         </p>
 
         <div className="flagship-list">
@@ -211,12 +211,6 @@ function FlagshipCard({ f, idx }) {
         <div>
           <p className="flagship-tagline">"{f.tagline}"</p>
           <p className="flagship-story">{f.story}</p>
-          {f.midyear && (
-            <div className="flagship-midyear">
-              <span className="flagship-midyear-label">2026 update</span>
-              <p className="flagship-midyear-text">{f.midyear}</p>
-            </div>
-          )}
           <div className="flagship-stack">
             {f.stack.map((s, k) => <span className="chip" key={k}>{s}</span>)}
           </div>
@@ -330,50 +324,33 @@ function Footer() {
       <div className="wrap">
         <div className="footer-grid">
           <div className="footer-pitch">
-            Let's build the <em>infra</em> for what ships next.
+            Building the <em>nervous system</em> for agentic engineering.
+            <p style={{ fontSize: 16, fontWeight: 400, marginTop: 12, color: "var(--text-2)", lineHeight: 1.7 }}>
+              Staff Software Engineer at PayPal / Venmo · New York, NY.
+              If you’re working on something ambitious in AI infrastructure, mobile platforms, or agentic systems — I’d like to hear about it.
+            </p>
           </div>
           <div className="footer-col">
-            <h4>Contact</h4>
+            <h4>Get in touch</h4>
             <a href="mailto:gsingh622@yahoo.com">gsingh622@yahoo.com</a>
+            <a href="https://www.linkedin.com/in/gurinder-singh-a30a1a48" target="_blank" rel="noopener">LinkedIn</a>
           </div>
           <div className="footer-col">
-            <h4>Elsewhere</h4>
+            <h4>Work</h4>
             <a href="https://github.com/Ripnrip" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://www.linkedin.com/in/gurinder-singh-a30a1a48" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="Gurinder Singh — Resume.html" target="_blank" rel="noopener">Résumé</a>
+            <a href="Gurinder Singh — Resume.html" target="_blank" rel="noopener">Résumé ↗</a>
           </div>
         </div>
         <div className="footer-mini">
-          <span>© 2026 Gurinder Singh · NYC</span>
-          <span>Built with care · 2026 update</span>
+          <span>© 2026 Gurinder Singh · New York</span>
+          <span>Staff Software Engineer · Mobile &amp; AI</span>
         </div>
       </div>
     </section>
   );
 }
 
-/* ---------- Mid-year Shipped ---------- */
-function Shipped() {
-  if (!D.shipped) return null;
-  return (
-    <section className="bay" id="shipped" data-screen-label="Also Shipped">
-      <div className="wrap">
-        <div className="eyebrow">Also shipped · joy, polish & platform</div>
-        <h2 className="section-title">
-          The <em>rest</em> of the year so far.
-        </h2>
-        <div className="shipped-grid">
-          {D.shipped.map((s, i) => (
-            <div className="shipped-card" key={i}>
-              <span className="shipped-tag">{s.tag}</span>
-              <h3 className="shipped-name">{s.name}</h3>
-              <p className="shipped-desc">{s.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+/* ---------- Mid-year Shipped (removed from public view) ---------- */
+function Shipped() { return null; }
 
 Object.assign(window, { Nav, Hero, Stats, Flagship, Experience, Skills, Footer, Shipped, Philosophy });
