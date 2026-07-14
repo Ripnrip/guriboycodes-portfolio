@@ -35,14 +35,12 @@ const TOPIC_NODES = {
   "MAIA": ["sys:maia"],
   "Darwin": ["sys:darwin"],
   "Vireo": ["sys:vireo"],
-  "claude-cosmos": ["sys:cosmos"],
-  "Mac-in-a-Mac": ["sys:miam"],
   "Devmo": ["sys:devmo"],
   "Merchant Sandbox": ["sys:miam"],
-  "AI Enablement": ["sys:cosmos", "sys:devmo"],
+  "AI Enablement": ["sys:devmo", "sys:darwin"],
   "The loop": ["sys:vireo", "sys:darwin", "sys:devmo", "sys:maia", "sys:miam"],
   "July 2026": ["sys:darwin", "sys:vireo", "sys:devmo"],
-  "Roadmap": ["sys:darwin", "sys:devmo", "sys:maia", "sys:miam"],
+  "Roadmap": ["sys:darwin", "sys:devmo", "sys:maia"],
   "Venmo": ["sys:maia"],
   "Mid-year": [],
   "Scope": [],
@@ -62,14 +60,13 @@ function nodesForSources(sources) {
 const SYSTEM_SKILLS = {
   "sys:maia": ["Python", "Claude", "LangChain", "MCP", "RAG Pipelines", "ChromaDB", "Pinecone"],
   "sys:vireo": ["MCP", "n8n", "Python", "Datadog", "Neo4j"],
-  "sys:cosmos": ["Claude", "MCP", "Python", "OpenAI"],
   "sys:darwin": ["Python", "DSPy / GEPA", "Neo4j", "GitHub Actions"],
-  "sys:miam": ["Swift", "Xcode", "Docker", "Fastlane"],
+  "sys:miam": ["Swift", "XCTest", "iOS", "TestFlight"],
   "sys:devmo": ["Python", "GitHub Actions", "Datadog", "n8n"],
 };
 
 const CAT_ACCENT = { ai: "var(--violet)", mobile: "var(--cyan)", cloud: "var(--emerald)", data: "var(--amber)" };
-const SYS_ACCENT = { maia: "var(--cyan)", darwin: "var(--amber)", vireo: "var(--emerald)", cosmos: "var(--violet)", miam: "var(--rose)", devmo: "var(--cyan)" };
+const SYS_ACCENT = { maia: "var(--cyan)", darwin: "var(--amber)", vireo: "var(--emerald)", miam: "var(--rose)", devmo: "var(--violet)" };
 
 /* build nodes + links */
 function buildGraph() {
@@ -343,7 +340,7 @@ ANSWER (concise, first-person as Gurinder, no headers, no markdown):`;
     } catch (e) {
       answer = sources.length
         ? `Quick take: ${sources[0].text}`
-        : "Hmm — that's outside my corpus. Try asking about MAIA, Vireo, claude-cosmos, Darwin, Devmo, the Nested macOS Runtime, the connected learning loop, the roadmap, or what it's like to work with me.";
+        : "Hmm — that's outside my corpus. Try asking about Vireo, Darwin, MAIA, Devmo, the Merchant Sandbox, the connected learning loop, or what it's like to work with me.";
     }
     setThinking(false);
     setMessages(prev => [...prev, { role: "brain", text: (answer || "").trim(), sources }]);
@@ -426,7 +423,7 @@ ANSWER (concise, first-person as Gurinder, no headers, no markdown):`;
             <div className="brain-input-row">
               <input
                 className="brain-input"
-                placeholder="Ask about MAIA, Darwin, Vireo, Nested macOS, Devmo, the loop…"
+                placeholder="Ask about Vireo, Darwin, MAIA, Devmo, Merchant Sandbox, the loop…"
                 value={input}
                 onChange={e => setInput(e.target.value)}
                 onKeyDown={e => { if (e.key === "Enter") ask(input); }}

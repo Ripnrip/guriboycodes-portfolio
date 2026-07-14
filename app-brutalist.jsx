@@ -18,9 +18,9 @@ const THEME_ACCENTS = {
 };
 
 const LAYOUTS = {
-  editorial: ["hero", "stats", "flagship", "shipped", "skills", "brain", "experience", "hackathons", "projects"],
-  impact: ["hero", "stats", "flagship", "shipped", "skills", "brain", "experience", "hackathons", "projects"],
-  showcase: ["hero", "flagship", "shipped", "skills", "brain", "experience", "stats", "hackathons", "projects"],
+  editorial: ["hero", "stats", "flagship", "skills", "brain", "experience", "hackathons", "projects"],
+  impact: ["hero", "stats", "flagship", "skills", "brain", "experience", "hackathons", "projects"],
+  showcase: ["hero", "flagship", "skills", "brain", "experience", "stats", "hackathons", "projects"],
 };
 
 function App() {

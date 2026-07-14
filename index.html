@@ -1709,21 +1709,22 @@ section.bay + section.bay { border-top: 1px solid var(--border); }
 .hk-flag { font-size: 20px; }
 .hk-name {
   font-family: var(--font-display);
-  font-size: 19px;
-  line-height: 1.15;
-  margin: 14px 0 4px;
+  font-size: 18px;
+  line-height: 1.3;
+  margin: 14px 0 6px;
 }
 .hk-year {
   font-family: var(--font-mono);
   font-size: 11px;
   color: var(--text-3);
   letter-spacing: 0.04em;
+  margin-bottom: 4px;
 }
 .hk-desc {
   font-size: 13px;
   color: var(--text-2);
-  line-height: 1.55;
-  margin: 10px 0 0;
+  line-height: 1.65;
+  margin: 12px 0 0;
 }
 
 /* ============ MAGIC-UI EFFECTS ============ */
@@ -3373,128 +3374,110 @@ window.PORTFOLIO_DATA = {
 
   flagship: [
     {
-      id: "maia",
-      cover: "ghibli-maia",
-      image: "assets/covers/maia.jpg",
-      codename: "MAIA × Venmo",
-      title: "Cold-start to a unified PayPal program",
-      tagline: "An AI agent that takes a new merchant from sign-up to live in about 20 minutes — work that used to take roughly three months.",
-      status: "Pilots in flight",
-      stamp: "P0 validated · cohort pilots",
-      window: "Apr 10 → Jul 2026",
-      sponsor: "Migration & Upgrade Program lead · MAIA PM · my manager",
-      story: "I built an autonomous agent that walks a merchant through onboarding end to end. Over one weekend I grew the test set from 332 to 9,513 real businesses so the team finally had real-world ground truth, then demoed it live to 14 senior leaders: two real storefronts upgraded and accepting Venmo in about 20 minutes, on stage.",
-      stack: ["LLM Agents", "RAG", "D3.js", "CommonCrawl", "AWS Athena", "Remotion"],
+      id: "vireo",
+      cover: "ghibli-vireo",
+      image: "assets/covers/vireo.jpg",
+      codename: "Vireo",
+      title: "Agentic observability — the flight recorder",
+      tagline: "Captures everything an AI agent does across four surfaces, then distills it into structured memory the next run can draw on.",
+      status: "Production · v3",
+      stamp: "The observation layer",
+      window: "2026 ongoing",
+      sponsor: "Devmo platform team · Venmo AI Council",
+      story: "AI agents are hard to trust because you can't see what they actually did. Vireo records their actions from four entry points — MCP server, CLI hooks, shell events, and skill instructions — and distills the logs into five memory kinds: procedural, failure, preference, semantic, and episodic. It became the team standard for watching agents in production. Two-minute install. Everything else in this stack depends on it.",
+      stack: ["MCP", "n8n", "OpenTelemetry", "OpenInference", "Python", "Swift"],
       metrics: [
-        { k: "Onboarding", v: "~3 mo → 20 min" },
-        { k: "Businesses scored", v: "9,513" },
-        { k: "Pilot cohort", v: "Live merchants" },
-        { k: "Status", v: "In production" },
+        { k: "What it is", v: "AI flight recorder" },
+        { k: "Captures from", v: "4 entry points" },
+        { k: "Memory kinds", v: "5 (procedural → episodic)" },
+        { k: "Install", v: "2 minutes" },
       ],
-      accent: "cyan",
+      accent: "emerald",
     },
     {
       id: "darwin",
       cover: "ghibli-darwin",
       image: "assets/covers/darwin.jpg",
       codename: "Darwin",
-      title: "Evolution framework, now productionized",
-      tagline: "A system that improves AI skills on its own — and records every attempt, so it learns from its own history.",
-      status: "Production + Council pilot",
-      stamp: "Council live · Analytics Home",
+      title: "Self-evolution engine — inner and outer loop",
+      tagline: "Runs two loops: prompt-level evolution that improves individual AI skills, and org-level review that governs what gets shipped.",
+      status: "Production · Council pilot live",
+      stamp: "The evolution engine",
       window: "2026 · productionized Jun 30",
       sponsor: "AI Toolkit lead · AI Labs",
-      story: "If a task has a prompt going in, an answer coming out, and a way to score that answer, Darwin can improve it automatically: try many variations, keep the best, and open a pull request with the upgrade. Every attempt is saved with its score and the reasoning behind it, so each round builds on the last. It plugs into any code repository with no setup.",
+      story: "If a task has a prompt going in, an answer coming out, and a way to score it, Darwin can improve it automatically — try many variations, keep the best, open a pull request with the upgrade. That's the inner loop. The outer loop is the Council: a multi-model review layer with lesson gates and cryptographic approval binding that governs what intelligence gets promoted org-wide. Every attempt is preserved as a fossil, so the system learns from its own history.",
       stack: ["GEPA", "DSPy", "Cosmos", "Graph DB", "GitHub Actions"],
       metrics: [
-        { k: "What it does", v: "Self-improves AI skills" },
+        { k: "Inner loop", v: "GEPA prompt evolution" },
+        { k: "Outer loop", v: "Council review + lesson gates" },
         { k: "Candidate pool", v: "1,020 variations" },
         { k: "Integrates with", v: "Any repo, zero setup" },
-        { k: "Output", v: "Scored PR with full diff" },
       ],
       vocabulary: ["Seed", "Zephyr", "Polaris", "Compass", "Bloom", "Fossil", "Garden", "Gardener"],
       accent: "amber",
     },
     {
-      id: "vireo",
-      cover: "ghibli-vireo",
-      image: "assets/covers/vireo.jpg",
-      codename: "Vireo",
-      title: "Telemetry + memory for AI dev workflows",
-      tagline: "A flight recorder for AI agents — it captures everything they do, then remembers it.",
-      status: "Production · v3",
-      stamp: "Devmo §7 + §8 owner",
-      window: "2026 ongoing",
-      sponsor: "Devmo platform team · Venmo AI Council",
-      story: "AI agents are hard to trust because you can't see what they actually did. Vireo records their actions from four different entry points and distills the logs into a memory the next run can draw on. It installs in two minutes and became the team's standard for watching agents in production.",
-      stack: ["MCP", "n8n", "OpenTelemetry", "OpenInference", "Python", "Swift"],
+      id: "maia",
+      cover: "ghibli-maia",
+      image: "assets/covers/maia.jpg",
+      codename: "MAIA × Venmo",
+      title: "Agentic solution at scale — merchant-facing",
+      tagline: "An ephemeral, bootstrapped Claude CLI agent that takes a merchant from sign-up to live — powered by skills Darwin evolves and telemetry Vireo captures.",
+      status: "Pilots in flight",
+      stamp: "Real-world benefactor of the loop",
+      window: "Apr 10 → Jul 2026",
+      sponsor: "Migration & Upgrade Program lead · MAIA PM · my manager",
+      story: "MAIA is where the loop pays off. It's an ephemeral Claude CLI project — no persistent server, just bootstrapped skills and subagents — that walks a merchant through onboarding end to end. The skills it uses are the ones Darwin evolves; the memory it draws on is what Vireo captured from prior runs. Over one weekend I scaled the test corpus from 332 to 9,513 real businesses, then demoed it live: two real storefronts upgraded and accepting Venmo in about 20 minutes, on stage.",
+      stack: ["Claude CLI", "LLM Agents", "RAG", "CommonCrawl", "AWS Athena", "Remotion"],
       metrics: [
-        { k: "What it is", v: "AI flight recorder" },
-        { k: "Captures from", v: "4 entry points" },
-        { k: "Adopted as", v: "team standard" },
-        { k: "Install", v: "2 minutes" },
+        { k: "Onboarding", v: "~3 mo → 20 min" },
+        { k: "Businesses scored", v: "9,513" },
+        { k: "Skills source", v: "Darwin-evolved" },
+        { k: "Status", v: "Cohort pilots live" },
       ],
-      accent: "emerald",
-    },
-    {
-      id: "cosmos",
-      cover: "ghibli-cosmos",
-      image: "assets/covers/cosmos.jpg",
-      codename: "claude-cosmos",
-      title: "The universal LLM capture layer",
-      tagline: "One safe doorway every AI request passes through — scrubbing sensitive data before it ever leaves.",
-      status: "Live in prod",
-      stamp: "The surface Vireo can't reach",
-      window: "Q1–Q2 2026",
-      sponsor: "Devmo · AI Toolkit lead",
-      story: "When dozens of internal tools all talk to AI models, that traffic needs a single safe doorway. claude-cosmos is it: every request routes through one place, gets stripped of personal data, and is logged for safety. It covers the hosted and third-party tools that a local recorder like Vireo can't see.",
-      stack: ["Anthropic API", "MCP", "PII Scrubbing", "Cosmos"],
-      metrics: [
-        { k: "What it is", v: "Safe AI gateway" },
-        { k: "Protects", v: "PII before it leaves" },
-        { k: "In production", v: "6+ tools" },
-      ],
-      accent: "violet",
-    },
-    {
-      id: "miam",
-      cover: "ghibli-mac",
-      image: "assets/covers/nested-silicon.jpg",
-      codename: "Nested macOS Runtime",
-      title: "PayPal's first macOS-in-macOS substrate",
-      tagline: "Running a Mac inside a Mac to make the iOS test suite 3× faster — on the same hardware.",
-      status: "Handoff active",
-      stamp: "CI + agent substrate · 3.0× proven",
-      window: "Foundation · Q1 2026",
-      sponsor: "iOS leadership · senior eng director · Livery lead",
-      story: "iOS test runs were painfully slow. I was the first at the company to run a macOS virtual machine inside a macOS host, which let the test suite run in parallel. The first result: a run that took 22m 38s finished in 7m 23s — three times faster, on the same laptops, with no changes to the tests themselves.",
-      stack: ["Virtualization.framework", "tart", "lume", "macOS", "Swift"],
-      metrics: [
-        { k: "iOS test suite", v: "22:38 → 7:23" },
-        { k: "Speed", v: "3× faster" },
-        { k: "New hardware", v: "none" },
-      ],
-      accent: "rose",
+      accent: "cyan",
     },
     {
       id: "devmo",
       cover: "ghibli-devmo",
       image: "assets/covers/devmo.jpg",
       codename: "Devmo",
-      title: "Platform integration & prompt enhancer",
-      tagline: "The execution layer where Vireo telemetry and Darwin intelligence meet real developer workflows.",
-      status: "GA · pilot readiness",
-      stamp: "k8s telemetry in flight",
+      title: "Venmo's internal agent — hive mind for the org",
+      tagline: "Unlike MAIA which is merchant-facing, Devmo is internal: it uses Vireo signals and Darwin intelligence to evolve the full org surface area, not just skills.",
+      status: "Generally available",
+      stamp: "Internal intelligence layer",
       window: "2026 ongoing",
       sponsor: "Devmo platform team",
-      story: "Devmo is where the agentic infrastructure becomes tangible for engineers. I brought Vireo telemetry into both in-process and Kubernetes agent runtimes, added skill-read and session-end signals to distinguish helpful skills from merely present ones, and built session classification that catches failures invisible at the individual tool-call level. The Prompt Enhancer and Guardrails — including a ~90-test prompt-injection battery — are now in the canonical repo.",
-      stack: ["Vireo", "OpenTelemetry", "Python", "Kubernetes", "GitHub Actions"],
+      story: "Devmo is Venmo's own agent — the internal counterpart to MAIA. Where MAIA serves merchants, Devmo serves engineers. It ingests Vireo telemetry from both in-process and Kubernetes runtimes, uses Darwin's lessons and org-wide signals to evolve workflows, and surfaces a hive mind of accumulated institutional knowledge. It can evolve more than just skills: the full internal org surface area — tooling, patterns, guardrails, and workflows — is in scope.",
+      stack: ["Vireo", "Darwin", "OpenTelemetry", "Python", "Kubernetes", "GitHub Actions"],
       metrics: [
+        { k: "What it evolves", v: "Full org surface area" },
+        { k: "Signal source", v: "Vireo + Darwin lessons" },
         { k: "Prompt safety", v: "Injection-resistant" },
-        { k: "Observability", v: "Cloud + local agents" },
         { k: "Status", v: "Generally available" },
       ],
-      accent: "cyan",
+      accent: "violet",
+    },
+    {
+      id: "miam",
+      cover: "ghibli-mac",
+      image: "assets/covers/merchant-sandbox.jpg",
+      codename: "Merchant Sandbox",
+      title: "iOS-first E2E testing for Venmo payments",
+      tagline: "Led and owned end-to-end testing for Venmo's merchant checkout — the production surface where MAIA's work lands, on a platform that is 70% iOS.",
+      status: "Production · iOS DRI",
+      stamp: "E2E owner · 70% iOS userbase",
+      window: "2025 → 2026",
+      sponsor: "iOS leadership · Pay With Venmo program",
+      story: "Venmo's merchant checkout is an iOS-first product — 70% of Venmo's 90M users are on iPhone. I was the DRI for the iOS Sandbox: the TestFlight pipeline, the Ladybug debug menu, and daily E2E call ownership. This is the production surface where everything else in the stack — MAIA's onboarding flows, Darwin's evolved skills, Vireo's telemetry — actually touches real merchants and real money.",
+      stack: ["Swift", "XCTest", "TestFlight", "iOS", "Venmo SDK"],
+      metrics: [
+        { k: "Platform split", v: "70% iOS userbase" },
+        { k: "Users", v: "90M+ Venmo" },
+        { k: "Role", v: "iOS DRI · E2E owner" },
+        { k: "Coverage", v: "TestFlight + daily E2E" },
+      ],
+      accent: "rose",
     },
   ],
 
@@ -3557,7 +3540,7 @@ window.PORTFOLIO_DATA = {
       { id: "k23", topic: "Scope", text: "Working style: I gravitate to the load-bearing substrate nobody else owns yet, get named senior sponsorship fast, and hand off cleanly once it's productionized (Nested macOS Runtime to the iOS team, Darwin to AI Labs). I narrate everything — D3 knowledge graphs, Remotion explainer videos, score-delta PR comments — so the work is legible to leaders, not just other engineers." },
 
       { id: "k26", topic: "July 2026", text: "The July 2026 story: Darwin gained governed multi-model Council review (dual-model pilot proven on PR #86, Jul 11), Analytics Home, bounded Foresight (read-only Jira), and Distillery lesson gates with cryptographic approval binding. Vireo shipped v3 reconciliation (Vireo #9) and wired end-to-end into Devmo agent runtimes (#309 merged; #335/#336 emitting spans from k8s and in-process agents). The Nested macOS Runtime handoff went active, with Livery and Agent-0 both running on it as their substrate." },
-      { id: "k27", topic: "The loop", text: "Five systems form one connected learning loop: (1) OBSERVE — Vireo captures structural agent and product signals across Claude Code, Codex, Cursor, Gemini, MCP clients, shell CLIs, and historical session backfills. (2) DECIDE — Darwin runs the inner loop (GEPA prompt evolution, 1,020 candidates, 71 PRs) and the outer loop (Council review, lesson gates, cryptographic approval binding) — the decision engine that makes the whole system self-improving. (3) EXECUTE — MAIA is the agentic solution at scale; it applies Darwin-refined intelligence to real merchant workflows and gets measurably better with every Vireo-observed cycle. (4) SUBSTRATE — the Nested macOS Runtime provides safe, fully-agentic e2e runs with 3× parallelized build times — the isolated environment where the loop can run without risk. (5) PLATFORM — Devmo is where the telemetry and intelligence meet real developer workflows, closing the loop back to Vireo. 408 PRs, 7 major programs, VP-adjacent sponsorship across 3 BUs." },
+      { id: "k27", topic: "The loop", text: "Four systems form one connected learning loop: (1) OBSERVE — Vireo captures every agent action across four surfaces (MCP, CLI hooks, shell events, skill instructions) and distills them into five memory kinds. (2) EVOLVE — Darwin runs two loops: the inner loop (GEPA prompt evolution, 1,020 candidate variations) that improves individual skills, and the outer loop (Council review, lesson gates, cryptographic approval binding) that governs what intelligence gets promoted org-wide. (3) EXECUTE — MAIA is the merchant-facing agentic solution; an ephemeral Claude CLI project that uses Darwin-evolved skills and Vireo-captured memory to take a merchant from sign-up to live. It gets measurably better with every cycle. (4) INTERNALIZE — Devmo is the internal counterpart: Venmo's own agent that ingests Vireo + Darwin signals to evolve the full org surface area — tooling, patterns, guardrails, workflows — not just skills. The fifth card, Merchant Sandbox, is the production surface where the loop touches real merchants and real money." },
       { id: "k28", topic: "Roadmap", text: "Roadmap from the audit — Now (July): validate Devmo telemetry and skill signals in QA, finish Darwin battle proofs and storage onboarding, land Vireo reconciliation and emitter packages, run the MAIA test bed. Next (Aug–Sep): retrieve one observed lesson and improve a later task, expose productivity/reliability/learning analytics, validate Foresight against a bounded real sprint. Later (Q4): govern the learning flywheel across agents and products, scale merchant experiments, publish high-confidence lessons as versioned capabilities." },
       { id: "k24", topic: "Hire", text: "Why hire Gurinder: in seven months he built five productionized, cross-BU AI-platform systems with VP-adjacent sponsorship, took 84–89-day merchant onboarding to a 20-minute executive demo, delivered a 3.0× iOS test speedup, and authored 408 PRs — while also being an Official Bar Raiser (500+ interviews) and a patent holder. He builds platforms others ship on, communicates impact to leadership, and turns ambiguous greenfield into named, sponsored, handed-off infrastructure." },
       { id: "k29", topic: "Devmo", text: "Devmo is the execution layer where Vireo telemetry and Darwin intelligence meet real developer workflows. I brought Vireo telemetry into both in-process and Kubernetes agent runtimes, added skill-read and session-end signals to distinguish helpful skills from merely present ones, and built session classification that catches failures invisible at the individual tool-call level. Prompt Enhancer and Guardrails (~90 tests including a prompt-injection battery) are now in the canonical repo. Devmo #309 merged Jul 8; PRs #335/#336 emit Vireo spans from k8s and in-process runtimes." },
@@ -3585,8 +3568,8 @@ window.PORTFOLIO_DATA = {
       logo: "assets/logos/paypal.svg",
       logoAlt: "assets/logos/venmo.png",
       bullets: [
-        "Authored five production AI-platform systems — Vireo, Darwin, MAIA, Nested macOS Runtime, and Devmo — turning AI prototypes into canonical platform programs adopted across the org.",
-        "Built one connected learning loop: Vireo observes agent work, Darwin runs the inner and outer evolution loop, MAIA executes the intelligence at scale and gets better with every cycle, and the Nested macOS Runtime provides the safe fully-agentic substrate that makes it all possible.",
+        "Architected four interconnected AI-platform systems — Vireo (observability), Darwin (self-evolution), MAIA (merchant-facing agent), and Devmo (internal org intelligence) — turning AI prototypes into canonical platform programs adopted across the org.",
+        "Built one connected learning loop: Vireo observes every agent action, Darwin runs the inner loop (prompt evolution) and outer loop (Council review), MAIA applies Darwin-evolved skills to real merchant workflows and gets smarter with every Vireo-observed cycle, and Devmo internalizes those signals to evolve the full org surface area.",
         "QRC Widget patent holder — first SwiftUI iOS widget at Venmo, cutting user friction 66%; shipped Venmo Gift Cards (Amazon, Starbucks) and Pay With Venmo for JetBlue.",
         "Official Bar Raiser — 500+ technical interviews over his career; leads interviews and cross-team AI enablement, mentoring engineers into responsible agentic workflows.",
       ],
@@ -5785,14 +5768,14 @@ function Flagship() {
     className: "eyebrow"
   }, "Flagship work \xB7 2026"), /*#__PURE__*/React.createElement("h2", {
     className: "section-title"
-  }, "Five systems.", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "One loop.")), /*#__PURE__*/React.createElement("p", {
+  }, "Observe. Evolve.", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", null, "Execute. Internalize.")), /*#__PURE__*/React.createElement("p", {
     style: {
       color: "var(--text-2)",
       maxWidth: "62ch",
       fontSize: 16,
       lineHeight: 1.7
     }
-  }, "Vireo ", /*#__PURE__*/React.createElement("em", null, "observes"), " every agent action. Darwin runs the ", /*#__PURE__*/React.createElement("em", null, "inner loop"), " (GEPA prompt evolution) and the ", /*#__PURE__*/React.createElement("em", null, "outer loop"), " (Council review, lesson gates) \u2014 the decision engine that makes the whole system self-improving. MAIA is the ", /*#__PURE__*/React.createElement("em", null, "agentic solution at scale"), ": it executes Darwin-refined intelligence on real merchant workflows and gets measurably better with every Vireo-observed cycle. The Nested macOS Runtime provides the ", /*#__PURE__*/React.createElement("em", null, "safe, fully-agentic substrate"), " \u2014 parallelized, isolated, 3\xD7 faster. Devmo is where the telemetry and intelligence meet ", /*#__PURE__*/React.createElement("em", null, "real developer workflows"), ", closing the loop."), /*#__PURE__*/React.createElement("div", {
+  }, "Vireo ", /*#__PURE__*/React.createElement("em", null, "observes"), " every agent action across four surfaces and distills it into structured memory. Darwin ", /*#__PURE__*/React.createElement("em", null, "evolves"), " \u2014 running the inner loop (GEPA prompt evolution) and the outer loop (Council review, lesson gates) to make the whole system self-improving. MAIA ", /*#__PURE__*/React.createElement("em", null, "executes"), ": an ephemeral Claude CLI agent that applies Darwin-evolved skills and Vireo-captured memory to real merchant workflows, getting smarter with every cycle. Devmo ", /*#__PURE__*/React.createElement("em", null, "internalizes"), " those signals org-wide \u2014 Venmo\u2019s internal agent, evolving not just skills but the full engineering surface area."), /*#__PURE__*/React.createElement("div", {
     className: "flagship-list"
   }, D.flagship.map((f, i) => /*#__PURE__*/React.createElement(Reveal, {
     key: f.id,
@@ -6792,14 +6775,12 @@ const TOPIC_NODES = {
   "MAIA": ["sys:maia"],
   "Darwin": ["sys:darwin"],
   "Vireo": ["sys:vireo"],
-  "claude-cosmos": ["sys:cosmos"],
-  "Mac-in-a-Mac": ["sys:miam"],
   "Devmo": ["sys:devmo"],
   "Merchant Sandbox": ["sys:miam"],
-  "AI Enablement": ["sys:cosmos", "sys:devmo"],
+  "AI Enablement": ["sys:devmo", "sys:darwin"],
   "The loop": ["sys:vireo", "sys:darwin", "sys:devmo", "sys:maia", "sys:miam"],
   "July 2026": ["sys:darwin", "sys:vireo", "sys:devmo"],
-  "Roadmap": ["sys:darwin", "sys:devmo", "sys:maia", "sys:miam"],
+  "Roadmap": ["sys:darwin", "sys:devmo", "sys:maia"],
   "Venmo": ["sys:maia"],
   "Mid-year": [],
   "Scope": [],
@@ -6819,9 +6800,8 @@ function nodesForSources(sources) {
 const SYSTEM_SKILLS = {
   "sys:maia": ["Python", "Claude", "LangChain", "MCP", "RAG Pipelines", "ChromaDB", "Pinecone"],
   "sys:vireo": ["MCP", "n8n", "Python", "Datadog", "Neo4j"],
-  "sys:cosmos": ["Claude", "MCP", "Python", "OpenAI"],
   "sys:darwin": ["Python", "DSPy / GEPA", "Neo4j", "GitHub Actions"],
-  "sys:miam": ["Swift", "Xcode", "Docker", "Fastlane"],
+  "sys:miam": ["Swift", "XCTest", "iOS", "TestFlight"],
   "sys:devmo": ["Python", "GitHub Actions", "Datadog", "n8n"]
 };
 const CAT_ACCENT = {
@@ -6834,9 +6814,8 @@ const SYS_ACCENT = {
   maia: "var(--cyan)",
   darwin: "var(--amber)",
   vireo: "var(--emerald)",
-  cosmos: "var(--violet)",
   miam: "var(--rose)",
-  devmo: "var(--cyan)"
+  devmo: "var(--violet)"
 };
 
 /* build nodes + links */
@@ -7157,7 +7136,7 @@ ANSWER (concise, first-person as Gurinder, no headers, no markdown):`;
     try {
       answer = await window.claude.complete(prompt);
     } catch (e) {
-      answer = sources.length ? `Quick take: ${sources[0].text}` : "Hmm — that's outside my corpus. Try asking about MAIA, Vireo, claude-cosmos, Darwin, Devmo, the Nested macOS Runtime, the connected learning loop, the roadmap, or what it's like to work with me.";
+      answer = sources.length ? `Quick take: ${sources[0].text}` : "Hmm — that's outside my corpus. Try asking about Vireo, Darwin, MAIA, Devmo, the Merchant Sandbox, the connected learning loop, or what it's like to work with me.";
     }
     setThinking(false);
     setMessages(prev => [...prev, {
@@ -7249,7 +7228,7 @@ ANSWER (concise, first-person as Gurinder, no headers, no markdown):`;
     className: "brain-input-row"
   }, /*#__PURE__*/React.createElement("input", {
     className: "brain-input",
-    placeholder: "Ask about MAIA, Darwin, Vireo, Nested macOS, Devmo, the loop\u2026",
+    placeholder: "Ask about Vireo, Darwin, MAIA, Devmo, Merchant Sandbox, the loop\u2026",
     value: input,
     onChange: e => setInput(e.target.value),
     onKeyDown: e => {
@@ -7320,9 +7299,9 @@ const THEME_ACCENTS = {
   "brut-noir": ["#ffd02f", "#5f9dff", "#ff6b47", "#46d69a"]
 };
 const LAYOUTS = {
-  editorial: ["hero", "stats", "flagship", "shipped", "skills", "brain", "experience", "hackathons", "projects"],
-  impact: ["hero", "stats", "flagship", "shipped", "skills", "brain", "experience", "hackathons", "projects"],
-  showcase: ["hero", "flagship", "shipped", "skills", "brain", "experience", "stats", "hackathons", "projects"]
+  editorial: ["hero", "stats", "flagship", "skills", "brain", "experience", "hackathons", "projects"],
+  impact: ["hero", "stats", "flagship", "skills", "brain", "experience", "hackathons", "projects"],
+  showcase: ["hero", "flagship", "skills", "brain", "experience", "stats", "hackathons", "projects"]
 };
 function App() {
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);

@@ -129,11 +129,11 @@ function Flagship() {
       <div className="wrap">
         <div className="eyebrow">Flagship work · 2026</div>
         <h2 className="section-title">
-          Five systems.<br/>
-          <em>One loop.</em>
+          Observe. Evolve.<br/>
+          <em>Execute. Internalize.</em>
         </h2>
         <p style={{ color: "var(--text-2)", maxWidth: "62ch", fontSize: 16, lineHeight: 1.7 }}>
-          Vireo <em>observes</em> every agent action. Darwin runs the <em>inner loop</em> (GEPA prompt evolution) and the <em>outer loop</em> (Council review, lesson gates) — the decision engine that makes the whole system self-improving. MAIA is the <em>agentic solution at scale</em>: it executes Darwin-refined intelligence on real merchant workflows and gets measurably better with every Vireo-observed cycle. The Nested macOS Runtime provides the <em>safe, fully-agentic substrate</em> — parallelized, isolated, 3× faster. Devmo is where the telemetry and intelligence meet <em>real developer workflows</em>, closing the loop.
+          Vireo <em>observes</em> every agent action across four surfaces and distills it into structured memory. Darwin <em>evolves</em> — running the inner loop (GEPA prompt evolution) and the outer loop (Council review, lesson gates) to make the whole system self-improving. MAIA <em>executes</em>: an ephemeral Claude CLI agent that applies Darwin-evolved skills and Vireo-captured memory to real merchant workflows, getting smarter with every cycle. Devmo <em>internalizes</em> those signals org-wide — Venmo’s internal agent, evolving not just skills but the full engineering surface area.
         </p>
 
         <div className="flagship-list">
