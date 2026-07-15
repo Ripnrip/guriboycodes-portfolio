@@ -661,10 +661,10 @@
 }
 .hk-card:hover { border-color: var(--border-2); transform: translateY(-2px); }
 .hk-card.has-img { padding-top: 0; overflow: hidden; }
-.hk-thumb { margin: 0 -22px 16px; height: 112px; overflow: hidden; background: var(--panel-2); }
+.hk-thumb { margin: 0 -22px 16px; height: 180px; overflow: hidden; background: var(--panel-2); }
 .hk-thumb.cycle { position: relative; }
 .hk-thumb.cycle img { position: absolute; inset: 0; transition: opacity 0.7s ease; }
-.hk-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; transition: transform 0.5s ease; }
+.hk-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; transition: transform 0.5s ease; }
 .hk-card.has-img:hover .hk-thumb img { transform: scale(1.05); }
 .hk-card.win {
   background: linear-gradient(180deg, color-mix(in oklab, var(--accent) 9%, var(--panel)) 0%, var(--panel) 100%);
