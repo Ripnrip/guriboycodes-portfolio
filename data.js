@@ -278,11 +278,11 @@ window.PORTFOLIO_DATA = {
   ],
 
   hackathons: [
-    { place: "1st", year: "2016", name: "Devcamp NYC — Google NYC", flag: "🇺🇸", img: "assets/events/devcamp-nyc.jpg", desc: "Talent Management App — first place among 300+ participants at Google NYC.", win: true },
-    { place: "Team", year: "2023", name: "HackZurich — Legal Lunatics", flag: "🇨🇭", img: "assets/events/legal-lunatics.jpg", desc: "Implenia-sponsored build with a returning 5-person crew." },
-    { place: "Judge", year: "2022", name: "Hack Yale (2×)", flag: "🇺🇸", img: "assets/events/hack-yale.jpg", desc: "Evaluated technical feasibility & innovation for 500+ participants." },
+    { place: "1st", year: "2016", name: "Devcamp NYC — Google NYC", flag: "🇺🇸", img: "assets/events/devcamp-nyc.jpg", imgPos: "center 30%", desc: "Talent Management App — first place among 300+ participants at Google NYC.", win: true },
+    { place: "Team", year: "2023", name: "HackZurich — Legal Lunatics", flag: "🇨🇭", img: "assets/events/legal-lunatics.jpg", imgPos: "center 40%", desc: "Implenia-sponsored build with a returning 5-person crew." },
+    { place: "Judge", year: "2022", name: "Hack Yale (2×)", flag: "🇺🇸", img: "assets/events/hack-yale.jpg", imgPos: "center 35%", desc: "Evaluated technical feasibility & innovation for 500+ participants." },
     { place: "Mentor", year: "—", name: "PennApps — UPenn", flag: "🇺🇸", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663074533385/ouubxQbTilpimrkl.png", desc: "Mentored students through complex mobile & AI implementations." },
-    { place: "Conf", year: "—", name: "try! Swift Tokyo", flag: "🇯🇵", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663074533385/PaiIlTkTPPrhiDxI.png", desc: "iOS community conference in Tokyo — plugged into the global Swift network." },
+    { place: "Conf", year: "—", name: "try! Swift Tokyo", flag: "🇯🇵", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663074533385/PaiIlTkTPPrhiDxI.png", imgPos: "center 75%", desc: "iOS community conference in Tokyo — plugged into the global Swift network." },
     { place: "Conf", year: "2018", name: "dotSwift — Paris", flag: "🇫🇷", img: "assets/events/dotswift-paris.jpg", desc: "iOS conference in Paris — with Paul Hudson (@twostraws) of Hacking with Swift." },
     { place: "Giving back", year: "2019", name: "Bayside High School", flag: "🇺🇸", imgs: ["assets/events/bayside-high-school-mentor.jpg", "assets/events/bayside-high-school-stage.jpg"], desc: "Mentored students at Queens College — hands-on coding workshops and a keynote on breaking into tech." },
   ],

@@ -61,7 +61,7 @@ function ReelCard({ clip, onOpen }) {
   );
 }
 
-function HkThumb({ imgs }) {
+function HkThumb({ imgs, imgPos }) {
   const [f, setF] = useMd_state(0);
   useMd_effect(() => {
     if (imgs.length < 2) return;
@@ -71,7 +71,7 @@ function HkThumb({ imgs }) {
   return (
     <div className={`hk-thumb ${imgs.length > 1 ? "cycle" : ""}`}>
       {imgs.map((s, i) => (
-        <img key={i} src={s} alt="" loading="lazy" style={imgs.length > 1 ? { opacity: f === i ? 1 : 0 } : undefined} />
+        <img key={i} src={s} alt="" loading="lazy" style={{ objectPosition: imgPos || "center center", ...(imgs.length > 1 ? { opacity: f === i ? 1 : 0 } : {}) }} />
       ))}
     </div>
   );
@@ -116,7 +116,7 @@ function HackathonReel() {
             const imgs = h.imgs || (h.img ? [h.img] : []);
             return (
             <div className={`hk-card ${h.win ? "win" : ""} ${imgs.length ? "has-img" : ""}`} key={i}>
-              {imgs.length > 0 && <HkThumb imgs={imgs} />}
+              {imgs.length > 0 && <HkThumb imgs={imgs} imgPos={h.imgPos} />}
               <div className="hk-card-top">
                 <span className="hk-place">{h.place}</span>
                 <span className="hk-flag">{h.flag}</span>
